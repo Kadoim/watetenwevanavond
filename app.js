@@ -847,14 +847,13 @@
     });
     $("#btnClearYes").addEventListener("click", () => {
         if (S.readOnly) return;
-        if (!weekIsEmpty(S.week) && !sameAsLastSaved()) saveWeek("", true);
         S.week = { days: Array(7).fill(null), extras: [] };
         S.shop = { checked: {}, extra: [] };
         persist("week");
         persist("shop");
         $("#clearConfirm").hidden = true;
         renderAll();
-        toast("Vorige week bewaard · nieuwe week, lege lijst");
+        toast("Nieuwe week, lege lijst");
     });
 
     /* ---------- weekmenu's bewaren ---------- */
