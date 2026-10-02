@@ -1933,6 +1933,8 @@
     /* ---------- toevoegen via een chatbot naar keuze ---------- */
     const FIELDS =
         'name (tekst), time (getal, minuten), servings (getal), tags (array van korte labels; voeg "koemelkvrij" toe als het recept koemelkvrij is), ingredients (array van strings, elk beginnend met hoeveelheid en eenheid zoals "600 g kipfilet" of "2 paprika\'s"), steps (array van duidelijke stappen), thermomix (array met een VOLLEDIGE Thermomix TM6-versie van begin tot eind, elke stap met tijd / temperatuur / snelheid en eventueel linksom, en vermeld wat in de pan of oven moet; houd rekening met max. 2,2 l in de mengbeker. Laat de array LEEG tenzij de bron zelf een Thermomix-recept is of de Thermomix echt het meeste werk doet, zoals bij soep, risotto, curry, stoofpot of saus), prep (tekst: wat kan vooraf), day2 (tekst: restjes/dag 2-tip), cowmilk_note (tekst: wat werd koemelkvrij gemaakt, of leeg)';
+    const SUGGEST_FIELD =
+        "suggestions (array van objecten met from, to en reason: grotere aanpassingen die je zou voorstellen maar NIET hebt uitgevoerd, bv. een ander vlees of een ander hoofdbestanddeel; leeg als er niets is)";
     function servingsFor(t) {
         return t === "dinner"
             ? "4 porties (de website schaalt zelf naar 1–8)"
@@ -1966,16 +1968,31 @@
     function convertPrompt(type, source, wish) {
         return `Zet het recept hieronder om naar het formaat van onze gezinsreceptenwebsite (${LIBS[type].toLowerCase()}).
 Is het een link, open dan de pagina en gebruik dat recept. Is er een foto of PDF bijgevoegd, lees het recept daaruit.
-Behoud het gerecht zelf; pas alleen aan waar het logisch is volgens ons smaakprofiel. Schrijf in standaard Nederlands.
+Neem het recept GETROUW over en schrijf in standaard Nederlands.
+Vervang of schrap GEEN hoofdingrediënten en verander het karakter van het gerecht niet: vlees en vis, de kaas of het hoofdbestanddeel van het gerecht, en de basis zoals pasta, rijst of aardappel blijven wat in de bron staat. Dat geldt ook als iets in ons smaakprofiel onder "liever niet" staat.
+Kleine aanpassingen mogen wel: koemelkzuivel vervangen door een plantaardig alternatief (meld dat in cowmilk_note), stappen duidelijker en vollediger maken, en hoeveelheden omrekenen.
+Zou je volgens ons smaakprofiel iets groters vervangen of weglaten, voer het dan NIET uit maar zet het als voorstel in het veld suggestions. Wij beslissen zelf.
 Hoeveelheden voor ${servingsFor(type)}. Maak het koemelkvrij waar dat zonder kwaliteitsverlies kan en zeg dat in cowmilk_note. Thermomix: alleen een volledige TM6-versie als de bron een Thermomix-recept is (neem die dan getrouw over) of als de Thermomix echt het meeste werk doet; anders laat je thermomix leeg. Er is ook een Thermomix Friend (37–120°C, alleen linksom, snelheid 1–2, kan stomen met de Varoma, kan niet hakken of mixen); gebruik die voor een tweede onderdeel dat tegelijk moet garen, en zet "Friend:" voor die stap. Bij een traybake: heel concreet (snijgrootte, volgorde, temperatuur, wanneer wat erbij).
-${wish ? "Extra wens: " + wish + "\n" : ""}
-Ons smaakprofiel:
+${wish ? "Extra wens van ons (die mag je wel uitvoeren, ook als het een hoofdingrediënt is): " + wish + "\n" : ""}
+Ons smaakprofiel (alleen om voorstellen te doen, niet om het recept zelf te veranderen):
 ${profileText()}
 
-Antwoord met uitsluitend één JSON-object (geen uitleg, geen codeblok) met deze velden: ${FIELDS}.
+Antwoord met uitsluitend één JSON-object (geen uitleg, geen codeblok) met deze velden: ${FIELDS}, ${SUGGEST_FIELD}.
 
 RECEPT:
 ${source || "(zie bijgevoegde foto of PDF)"}`;
+    }
+    function adjustPrompt(r, picks) {
+        const base = cleanRecipe(r);
+        delete base.added;
+        delete base.lib;
+        return `Pas dit recept aan met de volgende vervanging${picks.length > 1 ? "en" : ""}, en pas ingrediënten, stappen, Thermomix-stappen, naam en tags daar consequent op aan (bakwijze, gaartijden en hoeveelheden inbegrepen):
+${picks.map((p) => `- ${p.from} → ${p.to}`).join("\n")}
+
+Verander verder niets. Antwoord met uitsluitend één JSON-object (geen uitleg, geen codeblok) met dezelfde velden; zet suggestions op [].
+
+RECEPT:
+${JSON.stringify(base)}`;
     }
     function ideasPrompt(type, n, wish) {
         return `Bedenk ${n} nieuwe, originele recepten (${LIBS[type].toLowerCase()}) voor onze gezinsreceptenwebsite. Schrijf in standaard Nederlands.
@@ -2011,15 +2028,36 @@ Antwoord met uitsluitend een JSON-array (geen uitleg, geen codeblok) van ${n} ob
             return null;
         }
     }
+    function suggestionsOf(r) {
+        return (Array.isArray(r.suggestions) ? r.suggestions : [])
+            .filter((g) => g && g.from && g.to)
+            .map((g) => ({ from: String(g.from), to: String(g.to), reason: String(g.reason || "") }))
+            .slice(0, 5);
+    }
     function previewHtml(r, idx) {
         const dup = similar(r.name, r.lib);
+        const sugg = suggestionsOf(r);
         return `<div class="preview"><strong>${esc(r.name)}</strong><span class="small muted">${LIBS[r.lib]} · ${r.time || "?"} min · ${r.servings || "?"} porties · ${(r.tags || []).map(esc).join(", ")}</span>
     <ul>${r.ingredients
         .slice(0, 6)
         .map((i) => `<li>${esc(i)}</li>`)
         .join("")}${r.ingredients.length > 6 ? `<li>… en ${r.ingredients.length - 6} meer</li>` : ""}</ul>
     ${dup ? `<span class="small" style="color:var(--tomato)">Lijkt op een bestaand recept: “${esc(dup.name)}”.</span>` : ""}
-    <div class="row"><button class="btn sm primary" data-addprev="${idx}">${dup ? "Toch toevoegen" : "Toevoegen aan mijn recepten"}</button></div></div>`;
+    ${
+        sugg.length
+            ? `<div class="suggest-box"><strong>De chatbot stelt een grotere aanpassing voor. Wil je die?</strong>
+      <p class="small muted" style="margin:2px 0 6px">Niet uitgevoerd: het recept hierboven is nog het origineel.</p>
+      ${sugg
+          .map(
+              (g, j) =>
+                  `<label class="sugg"><input type="checkbox" data-sugg="${idx}:${j}"><span><b>${esc(g.from)} → ${esc(g.to)}</b>${g.reason ? `<span class="small muted"> · ${esc(g.reason)}</span>` : ""}</span></label>`,
+          )
+          .join("")}
+      <div class="row"><button class="btn sm" data-adjust="${idx}">Aangepaste versie laten maken</button></div>
+      <p class="status small" data-adjstatus="${idx}"></p></div>`
+            : ""
+    }
+    <div class="row"><button class="btn sm primary" data-addprev="${idx}">${dup ? "Toch toevoegen" : sugg.length ? "Origineel toevoegen" : "Toevoegen aan mijn recepten"}</button></div></div>`;
     }
     let pending = [];
     $("#cpConvert").addEventListener("click", () => {
@@ -2062,6 +2100,25 @@ Antwoord met uitsluitend een JSON-array (geen uitleg, geen codeblok) van ${n} ob
         $("#ansResult").innerHTML = list.map(previewHtml).join("");
     });
     $("#ansResult").addEventListener("click", async (e) => {
+        const adj = e.target.closest("[data-adjust]");
+        if (adj) {
+            const i = +adj.dataset.adjust,
+                r = pending[i],
+                all = suggestionsOf(r);
+            const picks = all.filter((g, j) => {
+                const cb = document.querySelector(`[data-sugg="${i}:${j}"]`);
+                return cb && cb.checked;
+            });
+            const st = document.querySelector(`[data-adjstatus="${i}"]`);
+            if (!picks.length) {
+                st.textContent = "Vink eerst aan welke aanpassing je wilt.";
+                return;
+            }
+            copyText(adjustPrompt(r, picks), "Opdracht gekopieerd.");
+            st.textContent =
+                "Plak de opdracht in de chatbot, kopieer het nieuwe antwoord, plak het hierboven en klik opnieuw op Controleer.";
+            return;
+        }
         const b = e.target.closest("[data-addprev]");
         if (!b) return;
         b.disabled = true;

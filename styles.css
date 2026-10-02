@@ -1233,3 +1233,23 @@ details summary {
     font-weight: 700;
     flex-basis: 100%;
 }
+
+/* voorstel van de chatbot voor een grotere aanpassing */
+.suggest-box {
+    background: var(--saffron-soft);
+    border: 1px solid var(--saffron);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.suggest-box .sugg {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    cursor: pointer;
+}
+.suggest-box .sugg input {
+    accent-color: var(--basil);
+}
