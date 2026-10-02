@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#2e6a43" />
         <title>Gezinsmenu</title>
+        <link rel="manifest" href="manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Gezinsmenu" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
             rel="stylesheet"
@@ -41,11 +47,28 @@
                     </div>
                     <div class="row">
                         <button class="btn primary" id="btnSuggest">✨ Stel 5 avondmalen voor</button>
+                        <button class="btn" id="btnSaveWeek">💾 Bewaren</button>
+                        <button class="btn" id="btnPrint">🖨 Afdrukken</button>
                         <button class="btn ghost" id="btnClearWeek">Week leegmaken</button>
                     </div>
                 </div>
+                <form id="saveWeekForm" hidden class="confirm save-week" style="margin-bottom: 12px">
+                    <label for="saveWeekName">Naam voor dit weekmenu</label>
+                    <input type="text" id="saveWeekName" maxlength="60" />
+                    <button class="btn sm primary" type="submit">Bewaar</button>
+                    <button class="btn sm ghost" type="button" id="saveWeekCancel">Annuleer</button>
+                </form>
+                <div id="printChoice" hidden class="confirm print-choice" style="margin-bottom: 12px">
+                    <span>Wat wil je afdrukken?</span>
+                    <button class="btn sm primary" data-print="week">Weekmenu + boodschappenlijst</button>
+                    <button class="btn sm" data-print="all">Ook de recepten</button>
+                    <button class="btn sm ghost" data-print="cancel">Annuleer</button>
+                </div>
                 <div id="clearConfirm" hidden class="confirm" style="margin-bottom: 12px">
-                    <span>Alle dagen, lunches en vinkjes wissen?</span>
+                    <span
+                        >Alle dagen, lunches en vinkjes wissen? Het huidige weekmenu wordt eerst
+                        bewaard.</span
+                    >
                     <button class="btn sm danger" id="btnClearYes">Ja, leegmaken</button>
                     <button class="btn sm" id="btnClearNo">Annuleer</button>
                 </div>
@@ -60,6 +83,14 @@
                                 boodschappenlijst.
                             </p>
                             <ul id="extras"></ul>
+                        </div>
+                        <div class="panel archive">
+                            <h3>Bewaarde weekmenu's</h3>
+                            <p class="muted small" style="margin: 4px 0 0">
+                                Zet een vroegere week terug om ze opnieuw te gebruiken. Bij “Week leegmaken”
+                                wordt de huidige week automatisch eerst bewaard.
+                            </p>
+                            <ul id="archive"></ul>
                         </div>
                     </div>
                     <aside class="panel shop" aria-labelledby="shopTitle">
@@ -299,7 +330,17 @@
                 <p id="loginMsg" class="status" role="status"></p>
             </div>
         </div>
+        <div id="print" class="print-only" aria-hidden="true"></div>
         <div id="overlay" class="overlay" hidden></div>
+        <div
+            id="cook"
+            class="cook"
+            hidden
+            role="dialog"
+            aria-modal="true"
+            aria-label="Kookmodus"
+            tabindex="-1"
+        ></div>
         <div id="toast" class="toast" hidden role="status"></div>
 
         <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>

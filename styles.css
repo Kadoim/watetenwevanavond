@@ -458,16 +458,38 @@ label.lbl {
     flex-direction: column;
     gap: 6px;
 }
+/* naam krijgt de volle breedte; porties en wissen staan eronder, zodat niets over elkaar schuift */
 .extras li {
-    display: flex;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 6px 8px;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 8px 0;
+    border-top: 1px solid var(--line);
+}
+.extras li:first-child {
+    border-top: 0;
+}
+.extras li .pill {
+    grid-column: 1;
+    justify-self: start;
 }
 .extras li .nm {
-    flex: 1;
+    grid-column: 2 / 4;
     min-width: 0;
     cursor: pointer;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+.extras li .stepper {
+    grid-column: 1 / 3;
+    justify-self: start;
+}
+.extras li .icon-btn {
+    grid-column: 3;
+}
+.extras li.muted {
+    display: block;
 }
 
 /* boodschappen */
@@ -808,4 +830,406 @@ details summary {
             border-color 0.15s,
             background 0.15s;
     }
+}
+
+/* kookmodus: volledig scherm, grote tekst, timers bovenaan, navigatie onderaan binnen duimbereik */
+.cook-start {
+    margin: 8px 0 4px;
+}
+.cook {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+    outline: none;
+}
+.cook-top {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 16px 10px;
+}
+.cook-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.cook-head .icon-btn {
+    font-size: 1.4rem;
+}
+.cook-title {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.cook-title .eyebrow {
+    margin: 0;
+}
+.cook-title strong {
+    font-family: var(--f-display);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cook-progress {
+    height: 4px;
+    background: var(--surface-2);
+    border-radius: 999px;
+    max-width: 760px;
+    margin: 8px auto 0;
+    overflow: hidden;
+}
+.cook-progress span {
+    display: block;
+    height: 100%;
+    background: var(--basil);
+}
+.cook-timers {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.cook-timers:not(:empty) {
+    margin-top: 10px;
+}
+.cook-timer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--saffron-soft);
+    border: 1px solid var(--saffron);
+    border-radius: 10px;
+    padding: 6px 8px 6px 12px;
+}
+.cook-timer.paused {
+    opacity: 0.7;
+}
+.cook-timer.done {
+    background: var(--tomato-soft);
+    border-color: var(--tomato);
+}
+@media (prefers-reduced-motion: no-preference) {
+    .cook-timer.done .cook-tleft {
+        animation: cookPulse 1s ease-in-out infinite;
+    }
+}
+@keyframes cookPulse {
+    50% {
+        opacity: 0.45;
+    }
+}
+.cook-tlabel {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 700;
+    color: inherit;
+}
+.cook-tleft {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 1.3rem;
+    font-variant-numeric: tabular-nums;
+}
+.cook-confirm,
+.cook-ing {
+    max-width: 760px;
+    width: calc(100% - 32px);
+    margin: 12px auto 0;
+}
+.cook-ing {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 14px;
+    max-height: 45vh;
+    overflow-y: auto;
+}
+.cook-body {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+.cook-step {
+    font-size: clamp(1.35rem, 5vw, 1.8rem);
+    line-height: 1.45;
+    margin: 0 0 20px;
+    text-wrap: pretty;
+}
+.cook-tbtns .btn {
+    font-size: 1.05rem;
+    padding: 12px 18px;
+}
+.cook-need ul {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 0;
+}
+.cook-need li {
+    padding: 3px 0;
+}
+.cook-nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    padding: 12px 16px 16px;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+}
+.cook-nav .btn {
+    justify-content: center;
+    padding: 14px;
+    font-size: 1.05rem;
+}
+@media (min-width: 800px) {
+    .cook-nav {
+        padding-inline: calc((100% - 760px) / 2);
+    }
+}
+
+/* afdrukken: alleen #print op papier, op het scherm nooit zichtbaar */
+.print-choice {
+    flex-wrap: wrap;
+}
+@media screen {
+    .print-only {
+        display: none;
+    }
+}
+@media print {
+    @page {
+        size: A4;
+        margin: 14mm;
+    }
+    body > *:not(#print) {
+        display: none !important;
+    }
+    body {
+        background: #fff;
+        color: #000;
+        font-size: 11pt;
+    }
+    .print-only {
+        display: block;
+    }
+    .pr-page {
+        break-after: page;
+    }
+    .pr-page:last-child {
+        break-after: auto;
+    }
+    .pr-page h1 {
+        font-size: 20pt;
+        margin: 0 0 2mm;
+    }
+    .pr-page h2 {
+        font-size: 13pt;
+        margin: 6mm 0 2mm;
+    }
+    .pr-meta {
+        color: #444;
+        margin: 0 0 6mm;
+    }
+    .pr-week {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .pr-week th,
+    .pr-week td {
+        text-align: left;
+        border-bottom: 1px solid #999;
+        padding: 3.5mm 2mm;
+        vertical-align: top;
+    }
+    .pr-week thead th {
+        border-bottom: 2px solid #000;
+        font-size: 9pt;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .pr-week tbody th {
+        width: 26mm;
+    }
+    .pr-shop {
+        columns: 2;
+        column-gap: 10mm;
+    }
+    .pr-cat {
+        break-inside: avoid;
+        margin-bottom: 5mm;
+    }
+    .pr-cat h3 {
+        font-size: 10pt;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #000;
+        padding-bottom: 1mm;
+        margin: 0 0 2mm;
+    }
+    .pr-cat ul,
+    .pr-recipe ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .pr-cat li {
+        display: flex;
+        gap: 2.5mm;
+        align-items: baseline;
+        padding: 1mm 0;
+    }
+    .pr-cat li b {
+        margin-left: auto;
+        font-weight: 400;
+        color: #333;
+        white-space: nowrap;
+    }
+    .pr-box {
+        width: 3.2mm;
+        height: 3.2mm;
+        border: 1px solid #000;
+        flex: none;
+        transform: translateY(0.4mm);
+    }
+    .pr-cols {
+        display: grid;
+        grid-template-columns: 1fr 1.8fr;
+        gap: 8mm;
+    }
+    .pr-recipe li {
+        padding: 1mm 0;
+    }
+    .pr-recipe ol {
+        padding-left: 5mm;
+        margin: 0;
+    }
+    .pr-recipe ol li {
+        margin-bottom: 2mm;
+    }
+    .pr-tip {
+        margin-top: 4mm;
+        font-size: 10pt;
+    }
+}
+
+/* compacte kopbalk op de gsm: merk + status + uitloggen op één rij, tabs op één schuifbare rij */
+@media (max-width: 600px) {
+    .topbar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 6px 10px;
+        padding-block: 6px 4px;
+    }
+    .brand {
+        font-size: 1.1rem;
+    }
+    .brand .plate {
+        width: 20px;
+        height: 20px;
+        box-shadow: inset 0 0 0 4px var(--basil-soft);
+    }
+    .brand {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .auth {
+        grid-row: 1;
+        grid-column: 2;
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+    /* dagnaam boven het gerecht, zodat lange namen en grote tekst passen */
+    .day {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+    }
+    #who {
+        display: none;
+    }
+    /* status als bolletje; de tekst blijft voor schermlezers */
+    .sync {
+        font-size: 0;
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        background: var(--muted);
+    }
+    .sync.live {
+        background: var(--basil);
+    }
+    nav.tabs {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        order: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+    nav.tabs::-webkit-scrollbar {
+        display: none;
+    }
+    nav.tabs button {
+        padding: 6px 12px;
+        flex: none;
+    }
+}
+
+/* bewaarde weekmenu's */
+.archive {
+    margin-top: 20px;
+}
+.archive ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+}
+.archive li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.archive li:first-child {
+    border-top: 0;
+}
+.archive li.muted {
+    border: 0;
+}
+.wk-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+.wk-sum {
+    margin: 0;
+}
+.save-week {
+    flex-wrap: wrap;
+}
+.save-week input {
+    flex: 1 1 220px;
+    width: auto;
+}
+.save-week label {
+    font-weight: 700;
+    flex-basis: 100%;
 }

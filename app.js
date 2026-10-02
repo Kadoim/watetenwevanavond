@@ -18,7 +18,7 @@
         "Witte vis alleen in heel toegankelijke gerechten. Vegetarisch alleen als je het vlees niet mist.",
         "Liever niet: couscous/bulgur en gelijkaardige korrels (kinderen eten wel graag rijst), kipgehakt, herkenbare stukken varkensvlees. Gemengd rund-varkensgehakt is wél prima (lasagne, bolognaise). Rundvlees af en toe, zonder vettige stukjes.",
         "Koemelkvrij waar het kan zonder kwaliteitsverlies (plantaardige room/yoghurt, edelgist).",
-        "Thermomix (met groentenrasp/Cutter) waar nuttig. Lage actieve werktijd is belangrijker dan totale tijd; oven/Thermomix mag lang bezig zijn. Shortcuts (diepvries, passata, blik, pesto) zijn prima.",
+        "Thermomix TM6 + Thermomix Friend (met groentenrasp/Cutter) waar nuttig. Lage actieve werktijd is belangrijker dan totale tijd; oven/Thermomix mag lang bezig zijn. Shortcuts (diepvries, passata, blik, pesto) zijn prima.",
         "Verborgen groenten in sauzen zijn heel welkom. Dubbel koken voor 2 dagen, invriezen en restjes hergebruiken (wrap, bowl, pasta) ook.",
         "Traybakes: graag, maar met heel concrete uitleg (snijgrootte, volgorde, temperatuur, wanneer wat erbij).",
     ];
@@ -30,6 +30,9 @@
         prefs: { fav: [], no: SEED.hiddenByDefault.slice() },
         shop: { checked: {}, extra: [] },
         own: [],
+        weeks: [],
+        restoreId: null,
+        deleteWeekId: null,
         suggestion: null,
         pickDay: null,
         filters: {
@@ -237,8 +240,12 @@
             /(zout|peper|kruiden|paprikapoeder|komijn|kaneel|oregano|kerrie|garam|tandoori|nootmuskaat|tijm|rozemarijn|edelgist|noten|cashew|walnoot|amandel|zaden|sesam|chia|suiker|bakpoeder|maizena)/,
         ],
     ];
+    // Gedroogde kruiden en specerijen eerst, anders belanden bv. paprikapoeder en chilivlokken bij de groenten.
+    const SPICE =
+        /(poeder|gedroogde|kruiden|vlokken|zout\b|komijn|kaneel|kurkuma|garam|ketoembar|za'atar|nootmuskaat|tijm|oregano|sesamzaad)/;
     function cat(name) {
         const n = norm(name);
+        if (SPICE.test(n)) return "Kruiden & voorraad";
         for (const [c, re] of CATS) if (re.test(n)) return c;
         return "Overig";
     }
@@ -250,6 +257,18 @@
             .map((w) => (w.length > 4 ? w.replace(/(en|s)$/, "") : w.replace(/^uien$/, "ui")))
             .join(" ");
     }
+    // enkelvoud/meervoud van de eenheid volgens de opgetelde hoeveelheid
+    function unitFor(q, u) {
+        const one = u
+            .replace(/^(.*je)s$/, "$1")
+            .replace(/^blikken$/, "blik")
+            .replace(/^(stengel|stronk)s?$/, "$1");
+        if (q <= 1) return one;
+        if (/je$/.test(one)) return one + "s";
+        if (one === "blik") return "blikken";
+        if (one === "stengel") return "stengels";
+        return u;
+    }
     function shoppingItems() {
         const map = new Map();
         const add = (r, portions) => {
@@ -258,8 +277,11 @@
             (r.ingredients || []).forEach((line) => {
                 const p = parseIng(line);
                 const name = p.name.replace(/\s*\(.*?\)\s*/g, " ").trim();
-                const key = singular(norm(name)) + "|" + (p.q == null ? "" : p.unit);
+                // "teentje" en "teentjes" (of "blik" en "blikken") samen optellen
+                const unitKey = p.unit.replace(/(jes|je|ken|s)$/, "");
+                const key = singular(norm(name)) + "|" + (p.q == null ? "" : unitKey);
                 const cur = map.get(key) || { name, unit: p.unit, q: 0, hasQ: p.q != null, from: new Set() };
+                if (p.unit.length > cur.unit.length && p.unit.startsWith(cur.unit)) cur.unit = p.unit;
                 if (p.q != null) cur.q += p.q * f;
                 cur.from.add(r.name);
                 map.set(key, cur);
@@ -273,7 +295,10 @@
             key,
             name: v.name,
             cat: cat(v.name),
-            qty: v.hasQ && v.q ? fmtQ(roundQ(v.q, v.unit)) + (v.unit ? " " + v.unit : "") : "",
+            qty:
+                v.hasQ && v.q
+                    ? fmtQ(roundQ(v.q, v.unit)) + (v.unit ? " " + unitFor(roundQ(v.q, v.unit), v.unit) : "")
+                    : "",
             from: [...v.from],
         }));
         S.shop.extra.forEach((t, i) =>
@@ -330,6 +355,7 @@
         S.prefs = Object.assign({ fav: [], no: SEED.hiddenByDefault.slice() }, lsGet("prefs", {}));
         S.shop = Object.assign({ checked: {}, extra: [] }, lsGet("shop", {}));
         S.own = lsGet("own", []);
+        S.weeks = lsGet("weeks", []);
     }
     function sanitizeWeek(w) {
         w = w || {};
@@ -377,6 +403,23 @@
             showLogin("Inloggen lukte niet: " + ((e && e.message) || e), true);
         }
     }
+    /* Reservekopie van de login.
+       Firebase bewaart de login in IndexedDB. In een web-app op het beginscherm van een iPhone gaat
+       die soms verloren wanneer iOS de app afsluit, waardoor je telkens opnieuw moet inloggen.
+       We bewaren dezelfde gegevens daarom ook in localStorage, onder de sleutel die Firebase zelf
+       gebruikt. Vindt Firebase bij het opstarten niets in IndexedDB, dan zoekt het daar en zet het
+       de login terug. Bij uitloggen wordt de kopie gewist. */
+    function loginKey() {
+        return "firebase:authUser:" + CFG.apiKey + ":[DEFAULT]";
+    }
+    function backupLogin(user) {
+        try {
+            if (user) localStorage.setItem(loginKey(), JSON.stringify(user.toJSON()));
+            else localStorage.removeItem(loginKey());
+        } catch (e) {
+            /* opslag niet beschikbaar: niets aan te doen */
+        }
+    }
     function initStore() {
         loadLocal();
         renderAll();
@@ -400,7 +443,9 @@
             login();
         });
         $("#btnLogout").addEventListener("click", () => auth.signOut());
+        auth.onIdTokenChanged(backupLogin);
         auth.onAuthStateChanged((user) => {
+            backupLogin(user);
             unsubs.forEach((u) => u());
             unsubs = [];
             if (!user) {
@@ -414,6 +459,7 @@
             $("#who").hidden = false;
             $("#who").textContent = user.email;
             $("#btnLogout").hidden = false;
+            $("#btnLogout").title = "Ingelogd als " + user.email;
             hideLogin();
             S.mode = "live";
             setSync();
@@ -450,6 +496,15 @@
                     checked: Object.assign({}, v.checked || {}),
                     extra: Array.isArray(v.extra) ? v.extra.slice() : [],
                 }),
+        );
+        unsubs.push(
+            fcol("weeks").onSnapshot((snap) => {
+                S.weeks = snap.docs
+                    .map((d) => Object.assign({}, d.data(), { id: d.id }))
+                    .sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0));
+                lsSet("weeks", S.weeks);
+                renderAll();
+            }, onErr),
         );
         unsubs.push(
             fcol("recipes").onSnapshot((snap) => {
@@ -553,6 +608,8 @@
         if (t !== "dinner") S.pickDay = null;
         renderAll();
         window.scrollTo({ top: 0 });
+        const sel = document.querySelector(`nav.tabs button[data-tab="${t}"]`);
+        if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: "nearest", inline: "nearest" });
     }
     document
         .querySelectorAll("nav.tabs button")
@@ -607,6 +664,7 @@
             : `<li class="muted small">Nog niets gekozen.</li>`;
         renderShop();
         renderSuggest();
+        renderArchive();
     }
     function renderSuggest() {
         const b = $("#suggestBox");
@@ -789,13 +847,289 @@
     });
     $("#btnClearYes").addEventListener("click", () => {
         if (S.readOnly) return;
+        if (!weekIsEmpty(S.week) && !sameAsLastSaved()) saveWeek("", true);
         S.week = { days: Array(7).fill(null), extras: [] };
         S.shop = { checked: {}, extra: [] };
         persist("week");
         persist("shop");
         $("#clearConfirm").hidden = true;
         renderAll();
-        toast("Nieuwe week, lege lijst");
+        toast("Vorige week bewaard · nieuwe week, lege lijst");
+    });
+
+    /* ---------- weekmenu's bewaren ---------- */
+    // Een bewaarde week is een momentopname van de dagen en lunch/ontbijt. We bewaren ook de namen,
+    // zodat een bewaarde week leesbaar blijft als een eigen recept later verwijderd wordt.
+    function weekIsEmpty(w) {
+        return !w.days.some((d) => d) && !w.extras.length;
+    }
+    function weekSnapshot() {
+        const days = S.week.days.map((d) => {
+            if (!d) return null;
+            const c = JSON.parse(JSON.stringify(d));
+            if (d.kind === "recipe") {
+                const r = byKey(d.key);
+                if (r) c.name = r.name;
+            }
+            return c;
+        });
+        const extras = S.week.extras.map((x) => {
+            const r = byKey(x.key);
+            return Object.assign({}, x, r ? { name: r.name } : {});
+        });
+        return { days, extras };
+    }
+    function sameAsLastSaved() {
+        const last = S.weeks[0];
+        if (!last) return false;
+        const strip = (w) =>
+            JSON.stringify({
+                d: (w.days || []).map((d) => (d ? [d.kind, d.key || d.text || "", d.portions || 0] : null)),
+                x: (w.extras || []).map((x) => [x.key, x.portions || 1]),
+            });
+        return strip(last) === strip(S.week);
+    }
+    function defaultWeekName() {
+        const first = S.week.days.find((d) => d && d.kind === "recipe");
+        const r = first && byKey(first.key);
+        const date = new Date().toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
+        return `Week van ${date}` + (r ? ` (${r.name.split(" ").slice(0, 3).join(" ")}…)` : "");
+    }
+    async function saveWeek(label, quiet) {
+        if (weekIsEmpty(S.week)) {
+            if (!quiet) toast("Er staat nog niets in deze week.");
+            return;
+        }
+        const body = Object.assign(
+            { label: label || defaultWeekName(), savedAt: Date.now() },
+            weekSnapshot(),
+        );
+        if (S.mode === "live") {
+            try {
+                await fcol("weeks").add(body);
+            } catch (e) {
+                onWriteError(e);
+                return;
+            }
+        } else {
+            S.weeks.unshift(Object.assign({ id: "loc" + Date.now() }, body));
+            lsSet("weeks", S.weeks);
+            renderAll();
+        }
+        if (!quiet) toast("Weekmenu bewaard");
+    }
+    async function deleteWeek(id) {
+        if (S.mode === "live") {
+            try {
+                await fcol("weeks").doc(id).delete();
+            } catch (e) {
+                onWriteError(e);
+                return;
+            }
+        } else {
+            S.weeks = S.weeks.filter((w) => w.id !== id);
+            lsSet("weeks", S.weeks);
+        }
+        toast("Bewaard weekmenu verwijderd");
+    }
+    function restoreWeek(id) {
+        const w = S.weeks.find((x) => x.id === id);
+        if (!w) return;
+        const strip = (o) => {
+            const c = Object.assign({}, o);
+            delete c.name;
+            return c;
+        };
+        S.week = sanitizeWeek({
+            days: (w.days || []).map((d) => (d ? strip(d) : null)),
+            extras: (w.extras || []).map(strip),
+        });
+        S.shop = { checked: {}, extra: S.shop.extra };
+        persist("week");
+        persist("shop");
+        toast(`“${w.label}” staat weer klaar`);
+    }
+    function weekSummary(w) {
+        const names = (w.days || [])
+            .filter((d) => d && d.kind === "recipe")
+            .map((d) => {
+                const r = byKey(d.key);
+                return r ? r.name : d.name || "?";
+            });
+        return names.length ? names.join(" · ") : "Geen avondmalen";
+    }
+    function renderArchive() {
+        const el = $("#archive");
+        if (!el) return;
+        el.innerHTML = S.weeks.length
+            ? S.weeks
+                  .map((w) => {
+                      const when = new Date(w.savedAt || 0).toLocaleDateString("nl-BE", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                      });
+                      const confirmRestore =
+                          S.restoreId === w.id
+                              ? `<div class="confirm"><span>Huidig weekmenu vervangen door deze week?${weekIsEmpty(S.week) || sameAsLastSaved() ? "" : " Bewaar het eerst als je het nog nodig hebt."}</span><button class="btn sm primary" data-wk="restoreyes" data-id="${esc(w.id)}">Ja, terugzetten</button><button class="btn sm" data-wk="no">Annuleer</button></div>`
+                              : "";
+                      const confirmDel =
+                          S.deleteWeekId === w.id
+                              ? `<div class="confirm"><span>Deze bewaarde week definitief verwijderen?</span><button class="btn sm danger" data-wk="delyes" data-id="${esc(w.id)}">Verwijder</button><button class="btn sm" data-wk="no">Annuleer</button></div>`
+                              : "";
+                      return `<li><div class="wk-head"><strong>${esc(w.label)}</strong><span class="small muted">${when}</span></div>
+          <p class="small muted wk-sum">${esc(weekSummary(w))}</p>
+          <div class="row"><button class="btn sm" data-wk="restore" data-id="${esc(w.id)}">Terugzetten</button><button class="icon-btn" data-wk="del" data-id="${esc(w.id)}" aria-label="Verwijder ${esc(w.label)}">✕</button></div>
+          ${confirmRestore}${confirmDel}</li>`;
+                  })
+                  .join("")
+            : `<li class="muted small">Nog geen bewaarde weken.</li>`;
+    }
+    $("#archive").addEventListener("click", (e) => {
+        const t = e.target.closest("[data-wk]");
+        if (!t) return;
+        if (S.readOnly) return toast("Je kunt hier alleen meekijken.");
+        const a = t.dataset.wk,
+            id = t.dataset.id;
+        S.restoreId = null;
+        S.deleteWeekId = null;
+        if (a === "restore") S.restoreId = id;
+        if (a === "del") S.deleteWeekId = id;
+        if (a === "restoreyes") restoreWeek(id);
+        if (a === "delyes") deleteWeek(id);
+        renderAll();
+    });
+    $("#btnSaveWeek").addEventListener("click", () => {
+        if (weekIsEmpty(S.week)) return toast("Er staat nog niets in deze week.");
+        const f = $("#saveWeekForm");
+        f.hidden = !f.hidden;
+        if (!f.hidden) {
+            $("#saveWeekName").value = defaultWeekName();
+            $("#saveWeekName").select();
+        }
+    });
+    $("#saveWeekCancel").addEventListener("click", () => ($("#saveWeekForm").hidden = true));
+    $("#saveWeekForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (S.readOnly) return;
+        $("#saveWeekForm").hidden = true;
+        saveWeek($("#saveWeekName").value.trim());
+    });
+
+    /* ---------- afdrukken ---------- */
+    // Pagina 1: weekmenu. Pagina 2: boodschappenlijst (wat al in huis is, valt weg). Daarna eventueel elk recept op een eigen pagina.
+    function printDate() {
+        return new Date().toLocaleDateString("nl-BE", { weekday: "long", day: "numeric", month: "long" });
+    }
+    function buildPrint(withRecipes) {
+        const rows = S.week.days
+            .map((d, i) => {
+                let what = "—",
+                    por = "",
+                    time = "";
+                if (d && d.kind === "recipe") {
+                    const r = byKey(d.key);
+                    what = r ? esc(r.name) : "(recept bestaat niet meer)";
+                    por = d.portions || 4;
+                    time = r && r.time ? r.time + " min" : "";
+                } else if (d && d.kind === "left") {
+                    const prev = S.week.days[i - 1];
+                    const r = prev && prev.kind === "recipe" ? byKey(prev.key) : null;
+                    what = "Restjes" + (r ? ": " + esc(r.name) : "");
+                } else if (d) what = esc(d.text);
+                return `<tr><th>${DAYS[i]}</th><td>${what}</td><td>${por}</td><td>${time}</td></tr>`;
+            })
+            .join("");
+        const extras = S.week.extras
+            .map((x) => {
+                const r = byKey(x.key);
+                return r ? `<li>${LIBS[r.lib]}: ${esc(r.name)} (${x.portions || 1}×)</li>` : "";
+            })
+            .join("");
+
+        const all = shoppingItems();
+        const items = all.filter((it) => !S.shop.checked[it.key]);
+        const skipped = all.length - items.length;
+        const groups = {};
+        items.forEach((it) => (groups[it.cat] = groups[it.cat] || []).push(it));
+        const order = CATS.map((c) => c[0]).concat(["Overig", "Extra"]);
+        const shop = order
+            .filter((c) => groups[c])
+            .map(
+                (c) =>
+                    `<section class="pr-cat"><h3>${c}</h3><ul>${groups[c]
+                        .sort((a, b) => a.name.localeCompare(b.name, "nl"))
+                        .map(
+                            (it) =>
+                                `<li><span class="pr-box"></span><span>${esc(it.name)}</span><b>${esc(it.qty)}</b></li>`,
+                        )
+                        .join("")}</ul></section>`,
+            )
+            .join("");
+
+        let recipes = "";
+        if (withRecipes) {
+            const seen = new Set();
+            const list = [];
+            S.week.days.forEach((d) => {
+                if (d && d.kind === "recipe" && !seen.has(d.key)) {
+                    seen.add(d.key);
+                    list.push({ r: byKey(d.key), portions: d.portions || 4 });
+                }
+            });
+            S.week.extras.forEach((x) => {
+                if (!seen.has(x.key)) {
+                    seen.add(x.key);
+                    list.push({ r: byKey(x.key), portions: x.portions || 1 });
+                }
+            });
+            recipes = list
+                .filter((x) => x.r)
+                .map(({ r, portions }) => {
+                    const f = portions / (r.servings || 4);
+                    return `<article class="pr-page pr-recipe">
+          <h1>${esc(r.name)}</h1>
+          <p class="pr-meta">${portions} ${portions > 1 ? "porties" : "portie"} · ${r.time || "?"} min</p>
+          <div class="pr-cols">
+            <div><h2>Ingrediënten</h2><ul>${(r.ingredients || [])
+                .map((l) => {
+                    const sl = scaledLine(l, f);
+                    return `<li>${sl.qty ? `<b>${esc(sl.qty)}</b> ` : ""}${esc(sl.name)}</li>`;
+                })
+                .join("")}</ul></div>
+            <div><h2>Bereiding</h2><ol>${(r.steps || []).map((st) => `<li>${esc(st)}</li>`).join("")}</ol>
+            ${r.prep ? `<p class="pr-tip"><b>Vooraf:</b> ${esc(r.prep)}</p>` : ""}</div>
+          </div></article>`;
+                })
+                .join("");
+        }
+
+        $("#print").innerHTML = `
+      <article class="pr-page">
+        <h1>Weekmenu</h1><p class="pr-meta">Afgedrukt op ${printDate()}</p>
+        <table class="pr-week"><thead><tr><th>Dag</th><th>Avondeten</th><th>Porties</th><th>Tijd</th></tr></thead><tbody>${rows}</tbody></table>
+        ${extras ? `<h2>Lunch &amp; ontbijt</h2><ul>${extras}</ul>` : ""}
+      </article>
+      <article class="pr-page">
+        <h1>Boodschappenlijst</h1>
+        <p class="pr-meta">${items.length} ${items.length === 1 ? "item" : "items"}${skipped ? ` · ${skipped} al in huis, niet afgedrukt` : ""}</p>
+        <div class="pr-shop">${shop || "<p>Niets nodig.</p>"}</div>
+      </article>
+      ${recipes}`;
+    }
+    $("#btnPrint").addEventListener("click", () => {
+        $("#printChoice").hidden = !$("#printChoice").hidden;
+    });
+    $("#printChoice").addEventListener("click", (e) => {
+        const b = e.target.closest("[data-print]");
+        if (!b) return;
+        $("#printChoice").hidden = true;
+        if (b.dataset.print === "cancel") return;
+        buildPrint(b.dataset.print === "all");
+        setTimeout(() => window.print(), 50);
+    });
+    window.addEventListener("afterprint", () => {
+        $("#print").innerHTML = "";
     });
 
     /* ---------- weekvoorstel ---------- */
@@ -1092,7 +1426,12 @@
     function openRecipe(k, portions) {
         const r = byKey(k);
         if (!r) return;
-        detail = { r, portions: portions || (r.lib === "dinner" ? 4 : 1), view: "normal", confirmDel: false };
+        detail = {
+            r,
+            portions: portions || (r.lib === "dinner" ? 4 : r.servings || 1),
+            view: "normal",
+            confirmDel: false,
+        };
         renderDetail();
         $("#overlay").hidden = false;
         document.body.style.overflow = "hidden";
@@ -1144,7 +1483,9 @@
         ${r.cowmilk_note ? `<div class="box"><strong>Koemelk</strong>${esc(r.cowmilk_note)}</div>` : ""}
       </div>
       <div><h3>Zo maak je het</h3>
+        <button class="btn primary cook-start" data-d="cook">▶ Kookmodus met timers</button>
         ${tmx ? `<div class="segmented" role="group" aria-label="Bereidingswijze"><button data-d="view" data-v="normal" aria-pressed="${view !== "tmx"}">Gewoon</button><button data-d="view" data-v="tmx" aria-pressed="${view === "tmx"}">Thermomix</button></div>` : ""}
+        ${view === "tmx" && tmx ? `<p class="small muted" style="margin:6px 0 0">Voor de TM6. “Friend:” = tegelijk op de Thermomix Friend; zonder Friend staat erbij hoe het ook kan. De hoeveelheden in de stappen gelden voor ${r.servings || 4} porties.</p>` : ""}
         <ol class="steps">${(steps || []).map((s) => `<li>${esc(s)}</li>`).join("")}</ol>
         ${f !== 1 ? `<p class="small muted">De hoeveelheden zijn aangepast naar ${portions} porties; tijden in de stappen gelden voor het originele recept.</p>` : ""}
         ${r.prep ? `<div class="box"><strong>Vooraf / slim voorbereiden</strong>${esc(r.prep)}</div>` : ""}
@@ -1159,6 +1500,7 @@
         const a = t.dataset.d,
             r = detail.r;
         if (a === "close") return closeDetail();
+        if (a === "cook") return openCook(detail.r, detail.portions, detail.view);
         if (a === "view") {
             detail.view = t.dataset.v;
             return renderDetail();
@@ -1204,12 +1546,394 @@
         renderAll();
     });
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && detail) closeDetail();
+        if (e.key === "Escape" && detail && !cook) closeDetail();
     });
+
+    /* ---------- kookmodus ---------- */
+    // Eén stap per scherm, timers die je uit de staptekst haalt, het scherm blijft aan.
+    let cook = null;
+    const timers = []; // { id, label, step, total, end, pausedLeft, done }
+    let timerTick = null,
+        timerSeq = 0,
+        wakeLock = null,
+        audioCtx = null,
+        alarmLoop = null;
+
+    // "bak 6–8 minuten" → 8 min; "rooster 25 min" → 25 min. Seconden en uren laten we weg:
+    // korte Thermomix-tijden telt het toestel zelf af, en "een nacht laten staan" hoort niet in een timer.
+    const TIME_RE = /(\d+)(?:\s*[–-]\s*(\d+))?\s*(minuten|minuut|min)\b/gi;
+    function stepTimes(text) {
+        const out = [];
+        let m;
+        TIME_RE.lastIndex = 0;
+        while ((m = TIME_RE.exec(text))) {
+            const lo = +m[1],
+                hi = m[2] ? +m[2] : lo;
+            if (hi < 1 || hi > 180) continue;
+            if (!out.some((t) => t.min === hi))
+                out.push({ min: hi, label: m[2] ? `${lo}–${hi} min` : `${hi} min` });
+        }
+        return out;
+    }
+
+    // Welke ingrediënten komen in deze stap voor? Bewust voorzichtig: een woord uit de stap moet
+    // duidelijk overeenkomen met een woord uit het ingrediënt (kip ↔ kipfilet, tomaten ↔ kerstomaten).
+    const ING_SKIP = new Set(
+        (
+            "een de het en of met van in op voor tot aan uit bij naar als dan zo nog wat per " +
+            "blokjes plakjes reepjes repen partjes ringen stukjes stukken roosjes schijfjes maantjes helften " +
+            "pot pan kom kommen vuur deksel rest"
+        ).split(" "),
+    );
+    const ING_STOP = new Set(
+        "verse vers gedroogde gedroogd ongezoete plantaardige plantaardig volkoren grote groot kleine klein rode rood witte wit zwarte zwart gele groene gepelde gekookte gekookt gerookte gerookt geraspte lichte light milde mild stevige rijpe bloemig vastkokende diepvries blik pot bakje zakje stuks stuk koelvak gesneden fijngesneden optioneel liefst".split(
+            " ",
+        ),
+    );
+    function words(s) {
+        return norm(s)
+            .replace(/\(.*?\)/g, " ")
+            .split(/[^a-z']+/)
+            .filter((w) => w.length >= 2);
+    }
+    function stepIngredients(stepText, ingLines, f) {
+        const sw = words(stepText).filter((w) => !ING_SKIP.has(w));
+        return ingLines
+            .map((line) => ({ line, s: scaledLine(line, f) }))
+            .filter(({ s }) => {
+                const iw = words(s.name).filter((w) => !ING_STOP.has(w) && w !== "en" && w.length >= 2);
+                return iw.some((w) =>
+                    sw.some(
+                        (x) =>
+                            x === w ||
+                            (x.length >= 3 && w.length >= 4 && w.startsWith(x)) ||
+                            (w.length >= 4 && (x.startsWith(w) || x.endsWith(w))) ||
+                            (x.length >= 4 && w.endsWith(x)),
+                    ),
+                );
+            })
+            .map(({ s }) => s);
+    }
+
+    function openCook(r, portions, view) {
+        const tmx = view === "tmx" && (r.thermomix || []).length > 0;
+        cook = { r, portions, f: portions / (r.servings || 4), tmx, i: 0, showIng: false };
+        $("#cook").hidden = false;
+        document.body.style.overflow = "hidden";
+        keepAwake();
+        renderCook();
+        $("#cook").focus();
+    }
+    function closeCook(force) {
+        const running = timers.filter((t) => !t.done);
+        if (!force && running.length) {
+            cook.confirmClose = true;
+            return renderCook();
+        }
+        timers.splice(0, timers.length);
+        stopAlarm();
+        releaseAwake();
+        cook = null;
+        $("#cook").hidden = true;
+        $("#cook").innerHTML = "";
+        if (!detail) document.body.style.overflow = "";
+    }
+    function cookSteps() {
+        return (cook.tmx ? cook.r.thermomix : cook.r.steps) || [];
+    }
+
+    function fmtTime(ms) {
+        const sec = Math.max(0, Math.ceil(ms / 1000));
+        const m = Math.floor(sec / 60),
+            s = sec % 60;
+        return `${m}:${String(s).padStart(2, "0")}`;
+    }
+    function timerLeft(t) {
+        return t.pausedLeft != null ? t.pausedLeft : t.end - Date.now();
+    }
+
+    function renderCook() {
+        if (!cook) return;
+        const steps = cookSteps();
+        const n = steps.length;
+        const i = Math.min(cook.i, n - 1);
+        const text = steps[i] || "";
+        const times = stepTimes(text);
+        const ingNow = stepIngredients(text, cook.r.ingredients || [], cook.f);
+        const hasTmx = (cook.r.thermomix || []).length > 0;
+        $("#cook").innerHTML = `
+  <div class="cook-top">
+    <div class="cook-head">
+      <button class="icon-btn" data-c="close" aria-label="Kookmodus sluiten">✕</button>
+      <div class="cook-title"><span class="eyebrow">Stap ${i + 1} van ${n}${cook.tmx ? " · Thermomix" : ""}</span><strong>${esc(cook.r.name)}</strong></div>
+      <button class="btn sm" data-c="ing" aria-expanded="${cook.showIng}">Ingrediënten</button>
+    </div>
+    <div class="cook-progress" aria-hidden="true"><span style="width:${((i + 1) / n) * 100}%"></span></div>
+    <div id="cookTimers" class="cook-timers">${((timerShape = timers.map((t) => `${t.id}${t.done ? "d" : ""}${t.pausedLeft != null ? "p" : ""}`).join()), timersHtml())}</div>
+  </div>
+  ${
+      cook.confirmClose
+          ? `<div class="confirm cook-confirm"><span>Er lopen nog timers. Kookmodus sluiten en de timers stoppen?</span><button class="btn sm danger" data-c="closeyes">Sluiten</button><button class="btn sm" data-c="closeno">Verder koken</button></div>`
+          : ""
+  }
+  ${
+      cook.showIng
+          ? `<div class="cook-ing"><h3>Ingrediënten · ${cook.portions} ${cook.portions > 1 ? "porties" : "portie"}</h3><ul class="ing">${(
+                cook.r.ingredients || []
+            )
+                .map((l) => {
+                    const s = scaledLine(l, cook.f);
+                    return `<li>${s.qty ? `<b>${esc(s.qty)}</b> ` : ""}${esc(s.name)}</li>`;
+                })
+                .join(
+                    "",
+                )}</ul>${hasTmx ? `<div class="segmented"><button data-c="mode" data-v="normal" aria-pressed="${!cook.tmx}">Gewoon</button><button data-c="mode" data-v="tmx" aria-pressed="${cook.tmx}">Thermomix</button></div>` : ""}</div>`
+          : ""
+  }
+  <div class="cook-body" aria-live="polite">
+    <p class="cook-step">${esc(text)}</p>
+    ${
+        times.length
+            ? `<div class="row cook-tbtns">${times
+                  .map(
+                      (t) =>
+                          `<button class="btn primary" data-c="timer" data-min="${t.min}">⏱ Timer ${t.min} min${t.label.includes("–") ? ` <span class="small">(${t.label})</span>` : ""}</button>`,
+                  )
+                  .join("")}</div>`
+            : ""
+    }
+    ${
+        ingNow.length
+            ? `<div class="box cook-need"><strong>Ingrediënten in deze stap</strong><ul>${ingNow
+                  .map((s) => `<li>${s.qty ? `<b>${esc(s.qty)}</b> ` : ""}${esc(s.name)}</li>`)
+                  .join("")}</ul></div>`
+            : ""
+    }
+    ${cook.f !== 1 && times.length ? `<p class="small muted">De tijden gelden voor ${cook.r.servings || 4} porties. Voor een grotere hoeveelheid kan het iets langer duren.</p>` : ""}
+  </div>
+  <div class="cook-nav">
+    <button class="btn" data-c="prev" ${i === 0 ? "disabled" : ""}>← Vorige</button>
+    ${i < n - 1 ? `<button class="btn primary" data-c="next">Volgende →</button>` : `<button class="btn primary" data-c="done">Klaar · smakelijk!</button>`}
+  </div>`;
+    }
+
+    function timersHtml() {
+        if (!timers.length) return "";
+        return timers
+            .map((t) => {
+                const left = timerLeft(t);
+                return `<div class="cook-timer ${t.done ? "done" : ""} ${t.pausedLeft != null ? "paused" : ""}">
+          <button class="cook-tlabel" data-c="goto" data-step="${t.step}" title="Naar deze stap">Stap ${t.step + 1} · ${t.total} min</button>
+          <span class="cook-tleft">${t.done ? "Tijd is om!" : fmtTime(left)}</span>
+          ${
+              t.done
+                  ? `<button class="btn sm primary" data-c="tok" data-id="${t.id}">OK</button>`
+                  : `<button class="btn sm" data-c="tpause" data-id="${t.id}">${t.pausedLeft != null ? "▶" : "❚❚"}</button><button class="btn sm ghost" data-c="tstop" data-id="${t.id}" aria-label="Timer stoppen">✕</button>`
+          }
+        </div>`;
+            })
+            .join("");
+    }
+    // Alleen de cijfers bijwerken zolang er niets wijzigt aan de knoppen; anders kan een tik verloren gaan
+    // doordat de knop net vervangen wordt.
+    let timerShape = "";
+    function refreshTimers() {
+        const el = document.getElementById("cookTimers");
+        if (!el) return;
+        const shape = timers
+            .map((t) => `${t.id}${t.done ? "d" : ""}${t.pausedLeft != null ? "p" : ""}`)
+            .join();
+        if (shape !== timerShape || el.children.length !== timers.length) {
+            timerShape = shape;
+            el.innerHTML = timersHtml();
+            return;
+        }
+        timers.forEach((t, i) => {
+            const left = el.children[i].querySelector(".cook-tleft");
+            if (left && !t.done) left.textContent = fmtTime(timerLeft(t));
+        });
+    }
+
+    function startTimer(min) {
+        unlockAudio();
+        const step = cook.i;
+        timers.push({
+            id: ++timerSeq,
+            step,
+            total: min,
+            end: Date.now() + min * 60000,
+            pausedLeft: null,
+            done: false,
+        });
+        ensureTick();
+        refreshTimers();
+        toast(`Timer van ${min} min gestart`);
+    }
+    function ensureTick() {
+        if (timerTick) return;
+        timerTick = setInterval(tick, 500);
+    }
+    function tick() {
+        let rang = false;
+        timers.forEach((t) => {
+            if (!t.done && t.pausedLeft == null && t.end <= Date.now()) {
+                t.done = true;
+                rang = true;
+            }
+        });
+        if (rang) startAlarm();
+        if (!timers.some((t) => !t.done && t.pausedLeft == null)) {
+            clearInterval(timerTick);
+            timerTick = null;
+        }
+        refreshTimers();
+    }
+
+    // Geluid: iOS laat pas geluid toe na een tik van de gebruiker, dus we "ontgrendelen" bij het starten van een timer.
+    function unlockAudio() {
+        try {
+            audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === "suspended") audioCtx.resume();
+        } catch (e) {
+            audioCtx = null;
+        }
+    }
+    function beep() {
+        if (!audioCtx) return;
+        const t0 = audioCtx.currentTime;
+        [0, 0.25, 0.5].forEach((d) => {
+            const o = audioCtx.createOscillator(),
+                g = audioCtx.createGain();
+            o.type = "sine";
+            o.frequency.value = 880;
+            g.gain.setValueAtTime(0.0001, t0 + d);
+            g.gain.exponentialRampToValueAtTime(0.4, t0 + d + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, t0 + d + 0.18);
+            o.connect(g).connect(audioCtx.destination);
+            o.start(t0 + d);
+            o.stop(t0 + d + 0.2);
+        });
+    }
+    function startAlarm() {
+        if (alarmLoop) return;
+        let count = 0;
+        const ring = () => {
+            beep();
+            if (navigator.vibrate) navigator.vibrate([300, 150, 300]);
+            if (++count >= 20 || !timers.some((t) => t.done)) stopAlarm();
+        };
+        ring();
+        alarmLoop = setInterval(ring, 3000);
+    }
+    function stopAlarm() {
+        if (alarmLoop) clearInterval(alarmLoop);
+        alarmLoop = null;
+    }
+
+    // Scherm aan houden tijdens het koken (Wake Lock). Niet elk toestel ondersteunt dit; dan gebeurt er gewoon niets.
+    async function keepAwake() {
+        try {
+            if ("wakeLock" in navigator && !wakeLock) {
+                wakeLock = await navigator.wakeLock.request("screen");
+                wakeLock.addEventListener("release", () => (wakeLock = null));
+            }
+        } catch (e) {
+            wakeLock = null;
+        }
+    }
+    function releaseAwake() {
+        if (wakeLock) wakeLock.release().catch(() => {});
+        wakeLock = null;
+    }
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState !== "visible" || !cook) return;
+        keepAwake(); // het systeem geeft de vergrendeling vrij als de app op de achtergrond gaat
+        if (timers.length) {
+            unlockAudio();
+            tick();
+        }
+    });
+
+    function cookGo(delta) {
+        const n = cookSteps().length;
+        cook.i = Math.min(n - 1, Math.max(0, cook.i + delta));
+        renderCook();
+        const b = document.querySelector("#cook .cook-body");
+        if (b) b.scrollTop = 0;
+    }
+    $("#cook").addEventListener("click", (e) => {
+        const t = e.target.closest("[data-c]");
+        if (!t || !cook) return;
+        const a = t.dataset.c;
+        const tm = timers.find((x) => x.id === +t.dataset.id);
+        if (a === "close") return closeCook(false);
+        if (a === "closeyes") return closeCook(true);
+        if (a === "closeno") cook.confirmClose = false;
+        if (a === "ing") cook.showIng = !cook.showIng;
+        if (a === "mode") {
+            cook.tmx = t.dataset.v === "tmx";
+            cook.i = 0;
+        }
+        if (a === "prev") return cookGo(-1);
+        if (a === "next") return cookGo(1);
+        if (a === "done") {
+            if (timers.some((x) => !x.done)) cook.confirmClose = true;
+            else return closeCook(true);
+        }
+        if (a === "goto") {
+            cook.i = +t.dataset.step;
+        }
+        if (a === "timer") return startTimer(+t.dataset.min);
+        if (a === "tpause" && tm) {
+            if (tm.pausedLeft != null) {
+                tm.end = Date.now() + tm.pausedLeft;
+                tm.pausedLeft = null;
+                ensureTick();
+            } else tm.pausedLeft = tm.end - Date.now();
+            return refreshTimers();
+        }
+        if ((a === "tstop" || a === "tok") && tm) {
+            timers.splice(timers.indexOf(tm), 1);
+            if (!timers.some((x) => x.done)) stopAlarm();
+            return refreshTimers();
+        }
+        renderCook();
+    });
+    document.addEventListener("keydown", (e) => {
+        if (!cook) return;
+        if (e.key === "ArrowRight") cookGo(1);
+        if (e.key === "ArrowLeft") cookGo(-1);
+        if (e.key === "Escape") {
+            e.stopImmediatePropagation();
+            closeCook(false);
+        }
+    });
+    // Vegen tussen stappen
+    let touchX = null,
+        touchY = null;
+    $("#cook").addEventListener(
+        "touchstart",
+        (e) => {
+            touchX = e.touches[0].clientX;
+            touchY = e.touches[0].clientY;
+        },
+        { passive: true },
+    );
+    $("#cook").addEventListener(
+        "touchend",
+        (e) => {
+            if (touchX == null || !cook) return;
+            const dx = e.changedTouches[0].clientX - touchX,
+                dy = e.changedTouches[0].clientY - touchY;
+            touchX = null;
+            if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) cookGo(dx < 0 ? 1 : -1);
+        },
+        { passive: true },
+    );
 
     /* ---------- toevoegen via een chatbot naar keuze ---------- */
     const FIELDS =
-        'name (tekst), time (getal, minuten), servings (getal), tags (array van korte labels; voeg "koemelkvrij" toe als het recept koemelkvrij is), ingredients (array van strings, elk beginnend met hoeveelheid en eenheid zoals "600 g kipfilet" of "2 paprika\'s"), steps (array van duidelijke stappen), thermomix (array met Thermomix/Cutter-stappen; leeg als niet nuttig), prep (tekst: wat kan vooraf), day2 (tekst: restjes/dag 2-tip), cowmilk_note (tekst: wat werd koemelkvrij gemaakt, of leeg)';
+        'name (tekst), time (getal, minuten), servings (getal), tags (array van korte labels; voeg "koemelkvrij" toe als het recept koemelkvrij is), ingredients (array van strings, elk beginnend met hoeveelheid en eenheid zoals "600 g kipfilet" of "2 paprika\'s"), steps (array van duidelijke stappen), thermomix (array met een VOLLEDIGE Thermomix TM6-versie van begin tot eind, elke stap met tijd / temperatuur / snelheid en eventueel linksom, en vermeld wat in de pan of oven moet; houd rekening met max. 2,2 l in de mengbeker. Laat de array LEEG tenzij de bron zelf een Thermomix-recept is of de Thermomix echt het meeste werk doet, zoals bij soep, risotto, curry, stoofpot of saus), prep (tekst: wat kan vooraf), day2 (tekst: restjes/dag 2-tip), cowmilk_note (tekst: wat werd koemelkvrij gemaakt, of leeg)';
     function servingsFor(t) {
         return t === "dinner"
             ? "4 porties (de website schaalt zelf naar 1–8)"
@@ -1244,7 +1968,7 @@
         return `Zet het recept hieronder om naar het formaat van onze gezinsreceptenwebsite (${LIBS[type].toLowerCase()}).
 Is het een link, open dan de pagina en gebruik dat recept. Is er een foto of PDF bijgevoegd, lees het recept daaruit.
 Behoud het gerecht zelf; pas alleen aan waar het logisch is volgens ons smaakprofiel. Schrijf in standaard Nederlands.
-Hoeveelheden voor ${servingsFor(type)}. Maak het koemelkvrij waar dat zonder kwaliteitsverlies kan en zeg dat in cowmilk_note. Voeg Thermomix-stappen toe waar nuttig. Bij een traybake: heel concreet (snijgrootte, volgorde, temperatuur, wanneer wat erbij).
+Hoeveelheden voor ${servingsFor(type)}. Maak het koemelkvrij waar dat zonder kwaliteitsverlies kan en zeg dat in cowmilk_note. Thermomix: alleen een volledige TM6-versie als de bron een Thermomix-recept is (neem die dan getrouw over) of als de Thermomix echt het meeste werk doet; anders laat je thermomix leeg. Er is ook een Thermomix Friend (37–120°C, alleen linksom, snelheid 1–2, kan stomen met de Varoma, kan niet hakken of mixen); gebruik die voor een tweede onderdeel dat tegelijk moet garen, en zet "Friend:" voor die stap. Bij een traybake: heel concreet (snijgrootte, volgorde, temperatuur, wanneer wat erbij).
 ${wish ? "Extra wens: " + wish + "\n" : ""}
 Ons smaakprofiel:
 ${profileText()}
@@ -1256,7 +1980,7 @@ ${source || "(zie bijgevoegde foto of PDF)"}`;
     }
     function ideasPrompt(type, n, wish) {
         return `Bedenk ${n} nieuwe, originele recepten (${LIBS[type].toLowerCase()}) voor onze gezinsreceptenwebsite. Schrijf in standaard Nederlands.
-Hoeveelheden voor ${servingsFor(type)}. Normale supermarktingrediënten, veel groenten, duidelijke stappen. Koemelkvrij waar het zonder kwaliteitsverlies kan. Thermomix-stappen waar nuttig.
+Hoeveelheden voor ${servingsFor(type)}. Normale supermarktingrediënten, veel groenten, duidelijke stappen. Koemelkvrij waar het zonder kwaliteitsverlies kan. Thermomix: alleen een volledige TM6-versie waar de Thermomix echt het meeste werk doet (soep, risotto, curry, stoofpot, saus); anders thermomix leeg laten.
 ${wish ? "Waar we nu zin in hebben: " + wish + "\n" : ""}
 Ons smaakprofiel:
 ${profileText()}

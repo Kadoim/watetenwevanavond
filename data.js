@@ -9,10 +9,10 @@ window.APP_DATA = {
             "tags": [
                 "pasta",
                 "familie",
-                "thermomix",
                 "snel",
                 "koemelkvrij",
-                "gehakt"
+                "gehakt",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g gemengd gehakt",
@@ -38,9 +38,13 @@ window.APP_DATA = {
                 "Bestrooi met edelgistvlokken en serveer meteen."
             ],
             "thermomix": [
-                "Hak ui en courgette 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg plantaardige roomkaas en 100 g kookvocht toe en mix 30 sec / snelheid 7.",
-                "Meng de saus met de apart gekookte pasta en het gemengd gehakt."
+                "Kook de penne in een kookpot op het fornuis volgens de verpakking. Schep 150 ml kookvocht apart.",
+                "Doe de ui (in vieren) en de knoflook in de mengbeker en hak 5 sec / snelheid 5. Schraap de wand af.",
+                "Voeg 1 el olijfolie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg 600 g gehakt, oregano, paprikapoeder en ½ tl zout toe. Bak 8 min / 120°C / linksom / snelheid 1 zonder maatbeker. Schep het gehakt in een kom; de mengbeker hoeft niet gespoeld.",
+                "Doe de courgettes in stukken in de mengbeker en hak 4 sec / snelheid 5. Gaar 8 min / 100°C / snelheid 1.",
+                "Voeg de roomkaas en 100 ml kookvocht toe en mix 30 sec / snelheid 5–8, geleidelijk verhogen, tot een gladde saus.",
+                "Doe het gehakt en de gehalveerde kerstomaten terug en warm 2 min / 90°C / linksom / snelheid 1. Proef, meng met de pasta en bestrooi met edelgistvlokken."
             ],
             "prep": "Maak de courgettesaus 2 dagen vooraf; ideaal als 'verborgen groenten'.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -55,9 +59,9 @@ window.APP_DATA = {
                 "vis",
                 "aardappel",
                 "familie",
-                "thermomix",
                 "snel",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g scampi (gepeld)",
@@ -80,9 +84,12 @@ window.APP_DATA = {
                 "Doe de scampi terug in de saus en warm 1 minuut door, niet langer, anders worden ze taai. Serveer met de krieltjes."
             ],
             "thermomix": [
-                "Snijd prei met de groentenrasp.",
-                "Stoom krieltjes in het kookmandje en prei eventueel in de Varoma.",
-                "Maak de saus 5 min / 90°C / linksom / snelheid 1; voeg scampi pas op het einde toe."
+                "Doe 500 g water en 1 tl zout in de mengbeker. Leg de gehalveerde krieltjes in het kookmandje en zet het in de mengbeker. Kook 20 min / Varoma / snelheid 1 tot ze gaar zijn. Haal het mandje eruit, giet het water af.",
+                "Bak ondertussen de scampi in een pan in 1 el olie 1–2 min per kant op hoog vuur tot ze net roze zijn. Haal ze uit de pan.",
+                "Hak de knoflook in de lege mengbeker 3 sec / snelheid 7. Voeg 1 el olie en de prei in ringen toe en stoof 8 min / 120°C / linksom / snelheid 1 zonder maatbeker.",
+                "Voeg de spinazie in 2 delen toe en laat telkens 2 min / 100°C / linksom / snelheid 1 slinken (gebruik de spatel om ze naar beneden te duwen).",
+                "Voeg kookroom, mosterd, rasp van ½ citroen, 1 el citroensap, peper en zout toe. Gaar 3 min / 90°C / linksom / snelheid 1.",
+                "Doe de scampi erbij en warm 1 min / 80°C / linksom / snelheid 1, niet langer. Serveer met de krieltjes."
             ],
             "prep": "Prei vooraf snijden en scampi ontdooien maakt dit een echte snelle avond.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -97,9 +104,9 @@ window.APP_DATA = {
                 "rund",
                 "pasta",
                 "familie",
-                "thermomix",
                 "snel",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g mager rundergehakt",
@@ -121,9 +128,11 @@ window.APP_DATA = {
                 "Schep pasta en broccoli door de saus. Voeg zo nodig nog wat kookvocht toe. Werk af met edelgistvlokken."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5.",
-                "Stoom broccoli in Varoma of kook mee met pasta.",
-                "Meng room, mosterd en 80 g kookvocht 4 min / 90°C / snelheid 2."
+                "Kook de pasta in een kookpot op het fornuis; voeg de broccoliroosjes de laatste 5 minuten toe. Schep 100 ml kookvocht apart.",
+                "Doe de ui (in vieren) en de knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg 500 g gehakt toe en bak 8 min / 120°C / linksom / snelheid 1 zonder maatbeker; maak het halverwege los met de spatel.",
+                "Voeg kookroom, mosterd, 50 ml kookvocht, peper en ½ tl zout toe. Gaar 4 min / 100°C / linksom / snelheid 1.",
+                "Schep de saus over de pasta met broccoli, meng en bestrooi met edelgistvlokken."
             ],
             "prep": "Broccoli kan vooraf in roosjes; gehakt kan een dag vooraf gebakken.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -138,7 +147,6 @@ window.APP_DATA = {
                 "kip",
                 "rijst",
                 "familie",
-                "thermomix",
                 "mealprep",
                 "koemelkvrij"
             ],
@@ -164,10 +172,7 @@ window.APP_DATA = {
                 "Giet de saus over de kip en laat al roerend 1–2 minuten inkoken tot de kip glanst en plakkerig is.",
                 "Verdeel rijst, kip, broccoli, komkommer en mango over kommen en bestrooi eventueel met sesamzaad."
             ],
-            "thermomix": [
-                "Meng saus 10 sec / snelheid 4.",
-                "Kook rijst in het kookmandje en stoom broccoli in de Varoma als de hoeveelheid past."
-            ],
+            "thermomix": [],
             "prep": "Maak extra rijst en kip voor lunch de volgende dag.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -207,10 +212,7 @@ window.APP_DATA = {
                 "Snijd de sla in reepjes en komkommer en tomaat in blokjes.",
                 "Warm de wraps 20 seconden per stuk op in een droge pan of 30 seconden in de microgolf. Zet alles los op tafel en vul de wraps pas bij het eten, zodat ze niet slap worden."
             ],
-            "thermomix": [
-                "Meng de saus 15 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Kip en saus kunnen vooraf; groenten droog en apart bewaren.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -223,9 +225,9 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "rijst",
-                "thermomix",
                 "familie",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -253,9 +255,12 @@ window.APP_DATA = {
                 "Kook de sperziebonen ondertussen 6–7 minuten beetgaar in gezouten water. Serveer met rijst en boontjes."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en fruit 3 min / 120°C / snelheid 1.",
-                "Voeg tomaat en kruiden toe: 12 min / 100°C / snelheid 1.",
-                "Stoom boontjes in de Varoma; roer sojayoghurt pas na het garen door de saus."
+                "Friend: doe 1200 g water en 1 tl zout in de mengbeker. Hang het kookmandje met de gespoelde rijst erin, zet de Varoma met de sperziebonen erop en kook 20 min / Varoma / snelheid 1. Geen Friend? Doe dit eerst in de TM6 (snelheid 4) en houd rijst en bonen warm onder een deksel.",
+                "TM6: doe ui (in vieren), knoflook en gember in de mengbeker en hak 5 sec / snelheid 5. Schraap de wand af.",
+                "Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1. Voeg garam masala, paprikapoeder, kurkuma en tomatenpuree toe en bak 1 min / 120°C / snelheid 1.",
+                "Voeg de tomatenblokjes en ½ tl zout toe en mix 20 sec / snelheid 6 tot een gladde saus.",
+                "Voeg de kip in blokjes van 2–3 cm toe en gaar 15 min / 100°C / linksom / snelheid 1, met het kookmandje als spatdeksel in plaats van de maatbeker.",
+                "Voeg de sojayoghurt toe en roer 1 min / linksom / snelheid 1, zonder warmte; laten koken doet hem schiften. Serveer met rijst en bonen."
             ],
             "prep": "Sausbasis kan volledig vooraf.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -270,9 +275,9 @@ window.APP_DATA = {
                 "rund",
                 "couscous",
                 "familie",
-                "thermomix",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g mager gehakt",
@@ -299,9 +304,11 @@ window.APP_DATA = {
                 "Los het bouillonblokje op in 275 ml kokend water, giet over de couscous, dek af en laat 5 minuten wellen. Maak los met een vork en serveer met de balletjes en saus."
             ],
             "thermomix": [
-                "Hak ui en groenten 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg passata toe en gaar 15 min / 100°C / snelheid 1.",
-                "Verwarm water voor couscous in de mengbeker."
+                "Meng gehakt, ei, paneermeel, 1 tl komijn, kaneel, peper en ½ tl zout met de hand en rol er 24 balletjes van. Leg ze in de ingevette Varoma.",
+                "Doe ui (in vieren), knoflook, paprika en courgette in stukken in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 5 min / 120°C / snelheid 1.",
+                "Voeg passata, 1 tl komijn, paprikapoeder en 200 g water toe. Zet de Varoma met de balletjes erop en gaar 20 min / Varoma / linksom / snelheid 1.",
+                "Controleer of de balletjes gaar zijn (vanbinnen niet meer roze) en doe ze bij de saus. Kruid met peper en zout.",
+                "Couscous: los het bouillonblokje op in 275 ml kokend water, giet over de couscous, dek af en laat 5 minuten wellen. Maak los met een vork."
             ],
             "prep": "Balletjes en saus zijn diepvriesvriendelijk.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -315,8 +322,8 @@ window.APP_DATA = {
             "tags": [
                 "vegetarisch",
                 "pasta",
-                "thermomix",
-                "familie"
+                "familie",
+                "thermomix"
             ],
             "ingredients": [
                 "320 g volkoren pasta",
@@ -339,9 +346,11 @@ window.APP_DATA = {
                 "Meng pasta, tomatensaus en geroosterde aubergine. Leg kleine lepeltjes ricotta erop en werk af met gescheurde basilicum."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en fruit 3 min / 120°C / snelheid 1.",
-                "Maak tomatensaus 15 min / 100°C / snelheid 1.",
-                "Aubergine wordt het lekkerst geroosterd in oven of airfryer."
+                "Verwarm de oven voor op 220 °C (hetelucht 200 °C). Meng de aubergineblokjes op een bakplaat met 3 el olie, oregano en zout en rooster 25 minuten. (Airfryer: 15–18 min op 200 °C.)",
+                "Kook ondertussen de pasta in een kookpot op het fornuis.",
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg passata, gehalveerde kerstomaten, peper en ½ tl zout toe en gaar 15 min / 100°C / linksom / snelheid 1 zonder maatbeker (kookmandje als spatdeksel).",
+                "Meng pasta, saus en aubergine en werk af met lepeltjes ricotta en basilicum."
             ],
             "prep": "Aubergine kan vooraf geroosterd.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -380,11 +389,7 @@ window.APP_DATA = {
                 "Hak voor de chimichurri de peterselie en knoflook fijn en meng met 3 el olijfolie, 2 el citroensap, peper en een snuf zout.",
                 "Snijd komkommer, tomaat en avocado in blokjes. Verdeel couscous, groenten en kip over borden en lepel de chimichurri erover."
             ],
-            "thermomix": [
-                "Hak peterselie en knoflook 5 sec / snelheid 7; voeg citroen en olie toe en meng 10 sec / snelheid 4.",
-                "Verwarm water voor couscous.",
-                "Gebruik de groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Chimichurri blijft 3 dagen goed.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -421,11 +426,7 @@ window.APP_DATA = {
                 "Dep de scampi droog. Bak ze in de olie in een hete pan 1–2 minuten per kant tot ze net roze zijn. Kruid met peper.",
                 "Snijd de komkommer in blokjes. Bouw de bowls met bulgur, boontjes, komkommer en scampi en schep de saus erover."
             ],
-            "thermomix": [
-                "Meng sojayoghurtsaus 10 sec / snelheid 4.",
-                "Stoom boontjes in Varoma.",
-                "Gebruik de groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Ook koud lekker als lunch.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -441,7 +442,8 @@ window.APP_DATA = {
                 "mexicaans",
                 "familie",
                 "snel",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g mager gehakt",
@@ -466,8 +468,11 @@ window.APP_DATA = {
                 "Meng de pasta door de saus en serveer met een lepel sojayoghurt."
             ],
             "thermomix": [
-                "Gebruik de groentenrasp voor courgette.",
-                "Maak tomatensaus in de mengbeker 12 min / 100°C / linksom / snelheid 1."
+                "Kook de pasta in een kookpot op het fornuis.",
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg 500 g gehakt, komijn, paprikapoeder en eventueel chilipoeder toe en bak 8 min / 120°C / linksom / snelheid 1 zonder maatbeker; maak halverwege los met de spatel.",
+                "Voeg de courgette in blokjes, de tomatenblokjes en de uitgelekte maïs toe en gaar 10 min / 100°C / linksom / snelheid 1. Kruid met peper en zout.",
+                "Meng met de pasta en serveer met een lepel sojayoghurt."
             ],
             "prep": "Saus kan dubbel en ingevroren.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -505,11 +510,7 @@ window.APP_DATA = {
                 "Kook ondertussen de pasta beetgaar en meng met de rest van de warme passata. Snijd de courgettes in halve maantjes en bak ze 6–8 minuten in 1 el olie op middelhoog vuur. Kruid met peper en zout.",
                 "Serveer de kip op de tomatenpasta met courgette ernaast en wat basilicum."
             ],
-            "thermomix": [
-                "Rasp Parmezaan 10 sec / snelheid 10.",
-                "Maak passata met basilicum warm 10 min / 100°C / snelheid 1.",
-                "Gebruik de groentenrasp voor courgette."
-            ],
+            "thermomix": [],
             "prep": "Kip kan 's ochtends al worden voorbereid.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -546,10 +547,7 @@ window.APP_DATA = {
                 "Voeg paprika en knoflook toe en bak 4 minuten op middelhoog vuur. Voeg zongedroogde tomaat en spinazie toe en laat 2 minuten slinken.",
                 "Roer de roomkaas los met 100 ml kookvocht, giet in de pan en meng met de pasta. Voeg zo nodig nog wat kookvocht toe. Werk af met edelgistvlokken."
             ],
-            "thermomix": [
-                "Gebruik de groentenrasp voor paprika.",
-                "Meng plantaardige roomkaas met 100 g kookvocht 4 min / 90°C / snelheid 2."
-            ],
+            "thermomix": [],
             "prep": "Paprika en kip vooraf snijden.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -562,9 +560,9 @@ window.APP_DATA = {
             "tags": [
                 "vegetarisch",
                 "pasta",
-                "thermomix",
                 "familie",
-                "snel"
+                "snel",
+                "thermomix"
             ],
             "ingredients": [
                 "320 g volkoren pasta",
@@ -586,8 +584,11 @@ window.APP_DATA = {
                 "Werk af met de rest van de Parmezaan."
             ],
             "thermomix": [
-                "Blend broccoli, erwten, ricotta, citroen en 100 g kookvocht 30 sec / snelheid 7.",
-                "Warm 3 min / 90°C / snelheid 2 indien nodig."
+                "Kook de pasta in een kookpot op het fornuis; voeg de broccoliroosjes 5 minuten voor het einde toe en de erwten de laatste 2 minuten. Schep 150 ml kookvocht apart.",
+                "Doe de Parmezaan in stukken in de mengbeker en maal 10 sec / snelheid 10. Schep eruit.",
+                "Doe een derde van de broccoli en erwten in de mengbeker met ricotta, de helft van de Parmezaan, rasp van ½ citroen, 1 el citroensap, knoflook, basilicum, olie en 100 ml kookvocht. Mix 30 sec / snelheid 5–8, geleidelijk verhogen.",
+                "Warm de saus 2 min / 80°C / snelheid 2. Kruid met peper en zout.",
+                "Meng met de pasta en de rest van de groenten en werk af met de rest van de Parmezaan."
             ],
             "prep": "Groene saus kan 2 dagen vooraf.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -603,7 +604,8 @@ window.APP_DATA = {
                 "pasta",
                 "familie",
                 "snel",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g gepelde garnalen",
@@ -628,8 +630,11 @@ window.APP_DATA = {
                 "Meng de pasta en de garnalen door de saus, warm 1 minuut door en werk af met basilicum."
             ],
             "thermomix": [
-                "Gebruik de groentenrasp voor courgette en paprika.",
-                "Maak tomatensaus 12 min / 100°C / linksom / snelheid 1."
+                "Kook de penne in een kookpot op het fornuis.",
+                "Bak de garnalen in een pan in 1 el olie 2 minuten op hoog vuur en haal ze eruit.",
+                "Doe ui (in vieren), knoflook, paprika en courgette in stukken in de mengbeker en hak 4 sec / snelheid 5. Voeg 1 el olie toe en fruit 5 min / 120°C / snelheid 1.",
+                "Voeg tomaten in blokjes, passata, oregano, peper en ½ tl zout toe en gaar 12 min / 100°C / linksom / snelheid 1 zonder maatbeker.",
+                "Voeg de garnalen toe en warm 1 min / 90°C / linksom / snelheid 1. Meng met de penne en werk af met basilicum."
             ],
             "prep": "Groentesaus kan vooraf.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -668,11 +673,7 @@ window.APP_DATA = {
                 "Voeg de paprika toe en roerbak nog 2 minuten zodat die beet houdt.",
                 "Giet de saus erbij, laat 1 minuut binden en schep de noedels erdoor tot alles warm en glanzend is."
             ],
-            "thermomix": [
-                "Meng teriyakisaus 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor paprika.",
-                "Stoom boontjes eventueel in Varoma."
-            ],
+            "thermomix": [],
             "prep": "Saus kan een week vooraf.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -710,10 +711,7 @@ window.APP_DATA = {
                 "Meng de sojayoghurt met geperste knoflook, 1 el citroensap, peper en zout. Snijd komkommer en tomaat in blokjes voor de salade.",
                 "Serveer de balletjes met de aardappelen, salade en saus."
             ],
-            "thermomix": [
-                "Meng citroen-sojayoghurt 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Balletjes vooraf vormen; aardappelen alvast snijden.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -752,10 +750,7 @@ window.APP_DATA = {
                 "Meng de sojayoghurt met de limoenrasp en nog 1 el limoensap.",
                 "Prak het vruchtvlees van de aardappelen wat los, vul ze met het gehaktmengsel en werk af met de tomatensalsa en limoensaus."
             ],
-            "thermomix": [
-                "Meng de limoen-sojasaus 10 sec / snelheid 4.",
-                "Hak tomaat en rode ui samen 3 sec / snelheid 4 voor de salsa."
-            ],
+            "thermomix": [],
             "prep": "Zoete aardappelen kunnen vooraf worden geroosterd.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -791,10 +786,7 @@ window.APP_DATA = {
                 "Leg de vis op de groenten en rooster nog 12–15 minuten tot de vis gaar is (hij valt makkelijk uit elkaar).",
                 "Serveer met partjes citroen."
             ],
-            "thermomix": [
-                "Meng harissa-citroenmarinade 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor courgette, paprika en ui."
-            ],
+            "thermomix": [],
             "prep": "Alles kan vooraf op de bakplaat worden gezet, behalve de vis.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -834,11 +826,7 @@ window.APP_DATA = {
                 "Prak de avocado met 1 el limoensap en een snuf zout. Meng de sojayoghurt met de limoenrasp.",
                 "Zet alles los op tafel zodat iedereen zelf zijn bowl samenstelt."
             ],
-            "thermomix": [
-                "Kook de rijst in het kookmandje.",
-                "Prak de avocado met limoensap 5 sec / snelheid 4 voor grove guacamole.",
-                "Meng de limoen-sojasaus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Perfect 'bouw-je-eigen-bowl' voor tieners.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -851,9 +839,9 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "rijst",
-                "thermomix",
                 "familie",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -882,9 +870,12 @@ window.APP_DATA = {
                 "Stoom of kook de bloemkoolroosjes ondertussen 6–8 minuten beetgaar. Serveer met rijst."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5, fruit 3 min / 120°C / snelheid 1.",
-                "Voeg tomaat en kruiden toe: 15 min / 100°C / snelheid 1.",
-                "Stoom bloemkool in Varoma; roer sojayoghurt na het garen door de saus."
+                "Friend: doe 1200 g water en 1 tl zout in de mengbeker. Hang het kookmandje met de gespoelde rijst erin, zet de Varoma met de bloemkoolroosjes erop en kook 20 min / Varoma / snelheid 1. Geen Friend? Doe dit eerst in de TM6 (snelheid 4) en houd warm.",
+                "TM6: doe ui (in vieren), knoflook en gember in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg garam masala, paprikapoeder, kurkuma en tomatenpuree toe en bak 1 min / 120°C / snelheid 1.",
+                "Voeg tomatenblokjes, suiker en ½ tl zout toe en mix 20 sec / snelheid 6 tot een gladde saus.",
+                "Voeg de kip in blokjes toe en gaar 15 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Voeg de sojayoghurt toe en roer 1 min / linksom / snelheid 1 zonder warmte. Serveer met rijst en bloemkool."
             ],
             "prep": "Saus kan vooraf; bloemkool al in roosjes.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -899,9 +890,9 @@ window.APP_DATA = {
                 "rund",
                 "aardappel",
                 "familie",
-                "thermomix",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g mager gehakt",
@@ -928,9 +919,11 @@ window.APP_DATA = {
                 "Serveer de puree met de balletjes en tomatensaus."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en maak saus 15 min / 100°C / snelheid 1.",
-                "Kook aardappelen en wortel in kookmandje; maak daarna puree kort op lage snelheid.",
-                "Balletjes kunnen tegelijk in Varoma worden gestoomd."
+                "Meng gehakt, ei, paneermeel, de helft van de kruiden, peper en ½ tl zout en rol er balletjes van 3 cm van. Leg ze op het Varoma-bakje. Leg de wortels in schijfjes onderin de Varoma.",
+                "Friend: doe ui (fijngesneden), knoflook, 1 el olie, passata, de rest van de kruiden en 100 g water in de mengbeker. Zet de Varoma met wortels en balletjes erop en gaar 25 min / Varoma / linksom / snelheid 1. Doe de balletjes daarna in de saus.",
+                "TM6 (tegelijk): plaats de vlinder. Doe 900 g aardappelen in stukken van 3 cm, 250 g sojadrink en 1 tl zout in de mengbeker en gaar 25 min / 98°C / snelheid 1.",
+                "Voeg margarine en een snuf nootmuskaat toe en pureer 20 sec / snelheid 3 (met de vlinder). Te dik? Voeg wat warme sojadrink toe.",
+                "Geen Friend? Maak eerst de saus met balletjes en wortels in de TM6 (stap 2, hak de ui dan eerst 5 sec / snelheid 5), giet in een kookpot en houd warm. Spoel de mengbeker en maak daarna de puree."
             ],
             "prep": "Maak dubbel en vries saus+balletjes in.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -966,10 +959,7 @@ window.APP_DATA = {
                 "Snijd de kip in blokjes, kruid met peper en zout en bak in 1 el olie 6–7 minuten op hoog vuur tot ze goudbruin en gaar is.",
                 "Meng de pasta met pesto en een scheut kookvocht. Schep kip en geroosterde groenten erdoor."
             ],
-            "thermomix": [
-                "Gebruik de groentenrasp voor courgette en paprika.",
-                "Pesto kan in de mengbeker worden gemaakt of gebruik een goede potversie."
-            ],
+            "thermomix": [],
             "prep": "Rooster een dubbele bakplaat groenten voor lunch.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -982,7 +972,6 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "licht",
-                "thermomix",
                 "familie",
                 "snel",
                 "koemelkvrij"
@@ -1007,11 +996,7 @@ window.APP_DATA = {
                 "Bak de bloemkoolrijst in een tweede pan in 1 el olie 4–5 minuten op hoog vuur, zodat hij nog beet houdt. Kruid met zout.",
                 "Meng de sojayoghurt met ½ tl kerriepoeder en serveer erbij. Geef grotere eters eventueel gewone rijst erbij."
             ],
-            "thermomix": [
-                "Bloemkoolroosjes 5 sec / snelheid 5 in porties.",
-                "Gebruik de groentenrasp voor paprika.",
-                "Meng sojayoghurt-kerriesaus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Maak extra bloemkoolrijst en vries rauw in.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1049,10 +1034,7 @@ window.APP_DATA = {
                 "Snipper intussen de ui, pers de knoflook en snijd courgette en paprika in kleine blokjes. Bak ze in de olie 5 minuten op middelhoog vuur, voeg de passata toe en laat 15 minuten pruttelen. Kruid met peper en zout.",
                 "Kook de penne beetgaar in gezouten water. Serveer penne met groentesaus en de gehaktballen erop."
             ],
-            "thermomix": [
-                "Maak groentesaus in de mengbeker.",
-                "Gebruik de groentenrasp voor courgette en paprika."
-            ],
+            "thermomix": [],
             "prep": "Gehaktballen vooraf vormen en invriezen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1066,7 +1048,8 @@ window.APP_DATA = {
                 "vegetarisch",
                 "pasta",
                 "oven",
-                "familie"
+                "familie",
+                "thermomix"
             ],
             "ingredients": [
                 "12 cannellonibuizen",
@@ -1090,8 +1073,12 @@ window.APP_DATA = {
                 "Dek af met aluminiumfolie en bak 20 minuten. Haal de folie eraf en bak nog 15 minuten tot de pasta zacht is en de kaas goudbruin."
             ],
             "thermomix": [
-                "Hak spinazie kort en meng met ricotta 10 sec / snelheid 3.",
-                "Gebruik de groentenrasp voor courgette."
+                "Verwarm de oven voor op 190 °C (hetelucht 170 °C).",
+                "Doe de knoflook in de mengbeker en hak 3 sec / snelheid 7. Voeg 1 el olie en de spinazie toe (in 2 delen) en laat telkens 3 min / 100°C / linksom / snelheid 1 slinken.",
+                "Giet de spinazie in een zeef en duw het vocht er goed uit. Doe ze terug in de mengbeker met ricotta, nootmuskaat, peper en ½ tl zout en meng 10 sec / snelheid 4.",
+                "Vul de cannelloni met een spuitzak of diepvrieszakje met een afgeknipt hoekje.",
+                "Meng de passata met oregano, peper en zout. Leg een derde in een ovenschaal met daarop dunne plakjes courgette, dan de cannelloni, en bedek met de rest van de saus en de mozzarella.",
+                "Bak afgedekt 20 minuten, daarna zonder folie nog 15 minuten tot de pasta zacht is."
             ],
             "prep": "Volledig een dag vooraf opbouwen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -1133,11 +1120,7 @@ window.APP_DATA = {
                 "Bak de kip in de olie op hoog vuur 6–7 minuten goudbruin en gaar. Giet de saus erbij en laat 1–2 minuten inkoken tot ze plakkerig is.",
                 "Serveer de kip met rijst, broccoli en de uitgelekte radijspickle."
             ],
-            "thermomix": [
-                "Gebruik de groentenrasp voor radijs.",
-                "Meng sticky saus 10 sec / snelheid 4.",
-                "Stoom broccoli in Varoma."
-            ],
+            "thermomix": [],
             "prep": "Radijspickle blijft 3 dagen goed.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1150,9 +1133,9 @@ window.APP_DATA = {
             "tags": [
                 "rund",
                 "stoof",
-                "thermomix",
                 "familie",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g rundreepjes",
@@ -1179,9 +1162,11 @@ window.APP_DATA = {
                 "Doe het rundvlees terug in de pot en warm 2–3 minuten mee. Kruid met peper en zout en werk af met gehakte koriander of peterselie."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en fruit 3 min / 120°C / snelheid 1.",
-                "Gebruik de groentenrasp voor courgette en paprika.",
-                "Gaar groentestoof met linksom draaien; rund apart bakken voor betere textuur."
+                "Bak de rundreepjes in een pan in 1 el olie 2 minuten op hoog vuur rondom bruin. Haal eruit. (Vlees bruinen lukt beter in de pan dan in de mengbeker.)",
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie, komijn, kaneel en paprikapoeder toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg de zoete aardappel in blokjes van 2 cm, paprika in stukken, tomatenblokjes, het bouillonblokje en 150 g water toe. Gaar 15 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Giet de stoof in een kookpot; met courgette en vlees erbij wordt het te veel voor de mengbeker (max 2,2 l). Voeg de courgette in stukken toe en laat 8 minuten zacht stoven op het fornuis.",
+                "Voeg het vlees toe en warm 2–3 minuten mee. Kruid met peper en zout en werk af met koriander of peterselie."
             ],
             "prep": "Stoofbasis kan de dag ervoor.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -1195,8 +1180,8 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "rijst",
-                "thermomix",
-                "familie"
+                "familie",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -1220,9 +1205,12 @@ window.APP_DATA = {
                 "Serveer de risotto met de kip erop."
             ],
             "thermomix": [
-                "Hak ui/courgette 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg rijst en bouillon toe en gaar volgens risottofunctie of ca. 18 min / 100°C / linksom / snelheid 1.",
-                "Meng Parmezaan 20 sec / linksom / snelheid 2."
+                "Bak de kip in blokjes in een pan in 1 el olie 6–7 minuten goudbruin en gaar. Of: Friend, 12 min / 120°C / linksom / snelheid 1 zonder maatbeker.",
+                "TM6: doe ui (in vieren), knoflook en 1 courgette in stukken in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg de risottorijst toe en bak 3 min / 120°C / linksom / snelheid 1 zonder maatbeker.",
+                "Voeg 900 g bouillon (heet water + blokje) en de tweede courgette in kleine blokjes toe. Zet het kookmandje als spatdeksel op het deksel en gaar 16 min / 100°C / linksom / snelheid 1.",
+                "Voeg margarine, Parmezaan en 1 el citroensap toe en meng 20 sec / linksom / snelheid 1. Laat 2 minuten rusten in de mengbeker; de risotto wordt dan nog romiger.",
+                "Kruid met peper en serveer met de kip erop."
             ],
             "prep": "Risotto is minder geschikt om volledig vooraf te maken, maar groenten wel.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -1260,10 +1248,7 @@ window.APP_DATA = {
                 "Rasp de helft van de komkommer, knijp het vocht eruit en meng met sojayoghurt, geperste knoflook, 1 el citroensap, peper en zout.",
                 "Snijd de rest van de komkommer in staafjes en serveer als rauwkost bij de kip, frietjes en dip."
             ],
-            "thermomix": [
-                "Gebruik de groentenrasp/Cutter voor wortel en komkommer.",
-                "Meng sojayoghurtdip 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Frieten kunnen vooraf gesneden; aardappel in koud water bewaren.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1299,10 +1284,7 @@ window.APP_DATA = {
                 "Voeg de spinazie in delen toe en laat 2 minuten slinken.",
                 "Roer de roomkaas los met 100 ml kookvocht, giet in de pan en meng met de penne. Voeg zo nodig nog kookvocht toe."
             ],
-            "thermomix": [
-                "Meng plantaardige roomkaas en kookvocht 4 min / 90°C / snelheid 2.",
-                "Spinazie kan kort in de mengbeker slinken met linksom draaien."
-            ],
+            "thermomix": [],
             "prep": "Alles vooraf snijden = 15 minuten aan tafel.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1315,9 +1297,9 @@ window.APP_DATA = {
             "tags": [
                 "vis",
                 "noedels",
-                "thermomix",
                 "snel",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g scampi (gepeld)",
@@ -1342,9 +1324,11 @@ window.APP_DATA = {
                 "Serveer met de komkommersalade en eventueel koriander."
             ],
             "thermomix": [
-                "Hak of rasp paprika/courgette met Cutter.",
-                "Maak currysaus 10 min / 100°C / linksom / snelheid 1.",
-                "Gebruik groentenrasp voor komkommer."
+                "Bereid de rijstnoedels volgens de verpakking in heet water. Snijd de komkommer in plakjes en meng met 1 el limoensap en zout.",
+                "Bak de scampi in een pan in 1 el olie 1–2 min per kant tot ze net roze zijn.",
+                "Doe de currypasta en 50 g van de kokosmelk in de mengbeker en bak 2 min / 100°C / snelheid 1.",
+                "Voeg de rest van de kokosmelk, vissaus, suiker en de paprika en courgette in reepjes toe. Gaar 7 min / 100°C / linksom / snelheid 1.",
+                "Voeg scampi en noedels toe en warm 1 min / 90°C / linksom / snelheid 1. Breng op smaak met limoensap en serveer met de komkommer en koriander."
             ],
             "prep": "Currysaus kan vooraf; scampi pas bij afwerken.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -1382,10 +1366,7 @@ window.APP_DATA = {
                 "Warm de pita's 1–2 minuten in een broodrooster of in een hete droge pan.",
                 "Zet pita, kip, groenten en tzatziki los op tafel."
             ],
-            "thermomix": [
-                "Rasp komkommer met groentenrasp.",
-                "Meng tzatziki 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Tienerproof omdat iedereen zelf vult.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1400,7 +1381,8 @@ window.APP_DATA = {
                 "aardappel",
                 "oven",
                 "familie",
-                "mealprep"
+                "mealprep",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -1424,9 +1406,12 @@ window.APP_DATA = {
                 "Gratineer 20 minuten in de oven tot de bovenkant goudbruin is."
             ],
             "thermomix": [
-                "Snijd prei met groentenrasp.",
-                "Kook aardappelen in kookmandje en maak puree kort op lage snelheid.",
-                "Meng mosterdsaus 3 min / 90°C / snelheid 3."
+                "Verwarm de oven voor op 200 °C (hetelucht 180 °C).",
+                "Plaats de vlinder. Doe 900 g aardappelen in stukken, 200 g sojadrink en 1 tl zout in de mengbeker en gaar 25 min / 98°C / snelheid 1. Pureer met nootmuskaat 20 sec / snelheid 3. Schep in een kom; spoel de mengbeker kort.",
+                "Bak de kip in blokjes in een pan in 1 el olie 5 minuten op hoog vuur.",
+                "Doe de prei in ringen en 1 el olie in de mengbeker en stoof 8 min / 120°C / linksom / snelheid 1 zonder maatbeker.",
+                "Strooi de bloem erover en gaar 1 min / 100°C / snelheid 1. Voeg 50 g sojadrink, het bouillonblokje en de mosterd toe en gaar 3 min / 90°C / linksom / snelheid 1. Roer de kip erdoor.",
+                "Schep in een ovenschaal, verdeel de puree erover, strooi de kaas erop en gratineer 20 minuten."
             ],
             "prep": "Volledig een dag vooraf opbouwen.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -1442,7 +1427,8 @@ window.APP_DATA = {
                 "pasta",
                 "familie",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g kipgehakt",
@@ -1466,9 +1452,11 @@ window.APP_DATA = {
                 "Kook de spaghetti beetgaar in gezouten water. Doe de balletjes in de saus en serveer met de spaghetti."
             ],
             "thermomix": [
-                "Hak groenten 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg passata toe: 15 min / 100°C / snelheid 1.",
-                "Balletjes kunnen in Varoma worden gestoomd."
+                "Meng kipgehakt, ei, paneermeel, 1 tl kruiden, peper en ½ tl zout. Rol er balletjes van 3 cm van en leg ze in de ingevette Varoma.",
+                "Doe ui, knoflook, wortels en courgette in stukken in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 5 min / 120°C / snelheid 1.",
+                "Voeg passata, 1 tl kruiden en 150 g water toe. Zet de Varoma erop en gaar 20 min / Varoma / snelheid 1.",
+                "Controleer of de balletjes gaar zijn. Haal de Varoma eraf en mix de saus 20 sec / snelheid 6 als de kinderen de groenten liever niet zien. Doe de balletjes in de saus.",
+                "Kook ondertussen de spaghetti in een kookpot op het fornuis."
             ],
             "prep": "Maak dubbel voor vriezer.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -1504,10 +1492,7 @@ window.APP_DATA = {
                 "Roer pesto, kookroom en een scheut kookvocht erdoor en laat 2 minuten zacht pruttelen. Breng op smaak met wat citroensap, peper en zout.",
                 "Meng de pasta door de saus, verdeel over borden en leg de zalm erop, in grove stukken gebroken."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette.",
-                "Meng pesto-roomsaus 5 min / 90°C / snelheid 2."
-            ],
+            "thermomix": [],
             "prep": "Saus kan vooraf; zalm liefst vers bakken.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1546,10 +1531,7 @@ window.APP_DATA = {
                 "Vet een ovenschaal in. Leg 2 wraps op de bodem (gescheurd zodat ze passen), schep een derde van de vulling erop en herhaal tot je drie lagen hebt. Eindig met vulling.",
                 "Strooi de kaas erover en bak 20 minuten tot de kaas goudbruin is. Laat 5 minuten rusten voor je aansnijdt."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor paprika.",
-                "Maak vulling met linksom draaien als je kip apart bakt."
-            ],
+            "thermomix": [],
             "prep": "Volledig vooraf opbouwen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1584,10 +1566,7 @@ window.APP_DATA = {
                 "Haal de bakplaat uit de oven, schep de groenten om, leg broccoli en zalm erbij en rooster nog 12–15 minuten tot de zalm net gaar is (hij valt in lagen uit elkaar).",
                 "Serveer met partjes citroen."
             ],
-            "thermomix": [
-                "Meng saus 10 sec / snelheid 4.",
-                "Gebruik groentenrasp voor wortel."
-            ],
+            "thermomix": [],
             "prep": "Sauce en groenten vooraf.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1625,10 +1604,7 @@ window.APP_DATA = {
                 "Prak de avocado met 1 el limoensap en zout. Meng de sojayoghurt met de limoenrasp.",
                 "Warm de wraps 20 seconden per stuk in een droge pan. Zet alles op tafel en laat iedereen zelf vullen."
             ],
-            "thermomix": [
-                "Prak de avocado 5 sec / snelheid 4.",
-                "Meng de limoen-sojasaus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Superhandige 'geen zin om te koken'-avond.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1661,10 +1637,7 @@ window.APP_DATA = {
                 "Klop eieren, melk, een snuf nootmuskaat, peper en ½ tl zout los en giet over de vulling. Bestrooi met de kaas.",
                 "Bak de quiche 35–40 minuten op het onderste rooster tot hij gestold en goudbruin is (een mes in het midden komt er schoon uit). Laat 10 minuten afkoelen voor je aansnijdt."
             ],
-            "thermomix": [
-                "Klop ei-melkmengsel 15 sec / snelheid 4.",
-                "Gebruik groentenrasp voor paprika."
-            ],
+            "thermomix": [],
             "prep": "Kan volledig vooraf; ook koud lekker.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1677,9 +1650,9 @@ window.APP_DATA = {
             "tags": [
                 "vegetarisch",
                 "soep",
-                "thermomix",
                 "familie",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g verse tortellini",
@@ -1702,9 +1675,12 @@ window.APP_DATA = {
                 "Zet het vuur laag, roer spinazie en kookroom erdoor en laat 1 minuut slinken. Kruid met peper en zout."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en fruit 3 min / 120°C / snelheid 1.",
-                "Voeg tomaat en bouillon toe: 15 min / 100°C / snelheid 1; mix 20 sec / snelheid 6.",
-                "Voeg tortellini met linksom draaien toe volgens gaartijd."
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg tomatenpuree en kruiden toe en bak 1 min / 120°C / snelheid 1.",
+                "Voeg tomatenblokjes en 750 g bouillon (heet water + blokje) toe en kook 15 min / 100°C / snelheid 1.",
+                "Mix 15 sec / snelheid 5 voor een soep met nog wat stukjes, of 30 sec / snelheid 5–8 voor helemaal glad. Voeg de kookroom toe en meng 10 sec / snelheid 3.",
+                "Kook de tortellini volgens de verpakking in een pot op het fornuis; de mengbeker is te vol om ze erin te koken.",
+                "Verdeel de rauwe spinazie en de tortellini over diepe borden en schep de hete soep erover; de spinazie slinkt meteen."
             ],
             "prep": "Soepbasis kan vooraf.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -1743,10 +1719,7 @@ window.APP_DATA = {
                 "Meng sojayoghurt met mosterd, peper en zout.",
                 "Snijd sla, tomaat en komkommer. Bouw de bowls met sla, groenten, wedges en burger en lepel de saus erover."
             ],
-            "thermomix": [
-                "Meng saus 10 sec / snelheid 4.",
-                "Gebruik groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Burgers vooraf vormen.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1781,10 +1754,7 @@ window.APP_DATA = {
                 "Meng de pasta met pesto, groenten en een scheutje kookvocht tot alles glanst.",
                 "Zet de burrata op tafel en scheur hem pas open bij het serveren. Werk af met basilicum."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette/paprika.",
-                "Pesto kan in Thermomix of uit pot."
-            ],
+            "thermomix": [],
             "prep": "Groenten vooraf snijden.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1822,10 +1792,7 @@ window.APP_DATA = {
                 "Roerbak de wortel 3 minuten, voeg prei, paprika, knoflook en gember toe en roerbak nog 3–4 minuten zodat alles beet houdt.",
                 "Doe de kip terug, voeg sojasaus en ketjap toe en roerbak 1 minuut. Serveer met rijst; zet sambal apart op tafel voor wie het pikant wil."
             ],
-            "thermomix": [
-                "Kook rijst in kookmandje.",
-                "Gebruik groentenrasp voor wortel, prei en paprika."
-            ],
+            "thermomix": [],
             "prep": "Maak mild voor gezin, pittig aan tafel.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1860,10 +1827,7 @@ window.APP_DATA = {
                 "Meng 1 el olie met 2 el citroensap, peper en zout tot dressing.",
                 "Meng bulgur, geroosterde groenten en dressing. Verkruimel de feta erover (of zet hem apart op tafel) en serveer met de kip."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette/paprika.",
-                "Meng citroendressing 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Alle onderdelen ideaal voor mealprep.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1878,7 +1842,8 @@ window.APP_DATA = {
                 "oven",
                 "familie",
                 "mealprep",
-                "gehakt"
+                "gehakt",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g gemengd gehakt",
@@ -1904,9 +1869,12 @@ window.APP_DATA = {
                 "Leg de gescheurde mozzarella erop. Bak 35–40 minuten tot de bladen zacht zijn (prik met een mes) en de kaas goudbruin. Laat 10 minuten rusten voor je aansnijdt."
             ],
             "thermomix": [
-                "Hak wortel/courgette 5 sec / snelheid 5.",
-                "Maak saus 15 min / 100°C / linksom / snelheid 1.",
-                "Gebruik groentenrasp voor dunne courgetteplakken indien gewenst."
+                "Verwarm de oven voor op 190 °C (hetelucht 170 °C).",
+                "Doe ui, knoflook, wortels en courgettes in stukken in de mengbeker en hak 5 sec / snelheid 5. Schraap af en hak nog 2 sec / snelheid 5 als er nog grote stukken zijn.",
+                "Voeg 1 el olie toe en fruit 5 min / 120°C / snelheid 1.",
+                "Bak ondertussen het gehakt in een grote pan 6–8 minuten rul op hoog vuur. Groenten, gehakt en saus samen zijn te veel voor de mengbeker.",
+                "Voeg passata, tomatenpuree, kruiden en 100 g water toe aan de groenten in de mengbeker en gaar 15 min / 100°C / snelheid 1 (kookmandje als spatdeksel). Giet bij het gehakt in de pan, kruid met peper en zout.",
+                "Bouw de lasagne in een ovenschaal: saus, bladen, saus, lepeltjes ricotta; herhaal en eindig met saus en mozzarella. Bak 35–40 minuten en laat 10 minuten rusten."
             ],
             "prep": "Volledig vooraf opbouwen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -1946,9 +1914,7 @@ window.APP_DATA = {
                 "Snijd komkommer, mango en avocado in blokjes.",
                 "Zet rijst en toppings los op tafel; serveer met de rest van de sojasaus en sesamzaad."
             ],
-            "thermomix": [
-                "Kook rijst in kookmandje."
-            ],
+            "thermomix": [],
             "prep": "Tieners kunnen zelf hun bowl bouwen.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -1980,10 +1946,7 @@ window.APP_DATA = {
                 "Voeg de courgette in halve maantjes toe en bak 4 minuten mee. Voeg gehalveerde tomaten en spinazie toe en bak 2 minuten tot de spinazie geslonken is.",
                 "Doe de kip terug, roer de pesto erdoor en warm 1 minuut door. Kruid met peper."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette.",
-                "Pesto eventueel 15 sec / snelheid 7 maken."
-            ],
+            "thermomix": [],
             "prep": "Alles vooraf snijden = zeer snelle maaltijd.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2022,11 +1985,7 @@ window.APP_DATA = {
                 "Kook de aardappelen 20 minuten gaar in gezouten water. Stoom of kook broccoli en wortel in schijfjes 8–10 minuten.",
                 "Serveer plakken gehaktbrood met aardappelen en groenten."
             ],
-            "thermomix": [
-                "Maal havermout 10 sec / snelheid 8 indien fijn gewenst.",
-                "Stoom broccoli/wortel in Varoma.",
-                "Meng gehaktmassa kort op lage snelheid indien gewenst."
-            ],
+            "thermomix": [],
             "prep": "Gehaktbrood vooraf vormen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2038,7 +1997,6 @@ window.APP_DATA = {
             "time": 30,
             "tags": [
                 "vegetarisch",
-                "thermomix",
                 "familie",
                 "snel"
             ],
@@ -2064,11 +2022,7 @@ window.APP_DATA = {
                 "Verkruimel de feta erover en werk af met gehakte peterselie of koriander.",
                 "Warm de pita's in de broodrooster en serveer erbij."
             ],
-            "thermomix": [
-                "Hak ui/paprika 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Maak tomatenbasis 12 min / 100°C / snelheid 1.",
-                "Eieren mooier afwerken in pan of ovenschaal."
-            ],
+            "thermomix": [],
             "prep": "Tomatenbasis kan vooraf.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2082,8 +2036,8 @@ window.APP_DATA = {
                 "kip",
                 "rijst",
                 "familie",
-                "thermomix",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -2107,9 +2061,11 @@ window.APP_DATA = {
                 "Voeg de mango de laatste 2 minuten toe zodat hij niet uit elkaar valt. Breng op smaak met limoensap en serveer met rijst."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5.",
-                "Gebruik groentenrasp voor paprika.",
-                "Maak saus met linksom draaien; mango pas laatste 2 minuten."
+                "Friend: doe 1200 g water en 1 tl zout in de mengbeker, hang het kookmandje met de gespoelde rijst erin en kook 18 min / 100°C / snelheid 1. Geen Friend? Kook de rijst eerst in de TM6 (snelheid 4) of in een pot.",
+                "TM6: doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg de currypasta toe en bak 1 min / 120°C / snelheid 1.",
+                "Voeg kokosmelk, sojasaus, de paprika in reepjes en de kip in blokjes toe en gaar 15 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Voeg de mangoblokjes toe en warm 2 min / 90°C / linksom / snelheid 1. Breng op smaak met limoensap en serveer met de rijst."
             ],
             "prep": "Mild houden; currypasta aan tafel extra.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -2149,11 +2105,7 @@ window.APP_DATA = {
                 "Snijd de rest van de komkommer, tomaat en paprika in blokjes.",
                 "Bouw de bowls met couscous, gehakt, groenten en een flinke lepel tzatziki."
             ],
-            "thermomix": [
-                "Rasp komkommer met groentenrasp.",
-                "Meng tzatziki 10 sec / snelheid 4.",
-                "Verwarm water voor couscous."
-            ],
+            "thermomix": [],
             "prep": "Alles apart bewaren voor lunch.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2167,8 +2119,8 @@ window.APP_DATA = {
                 "vis",
                 "aardappel",
                 "familie",
-                "thermomix",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g zalmfilet (4 stukken)",
@@ -2192,9 +2144,12 @@ window.APP_DATA = {
                 "Serveer de zalm met puree en erwten en lepel de citroensaus erover."
             ],
             "thermomix": [
-                "Kook aardappelen in kookmandje en stoom zalm in Varoma.",
-                "Maak puree kort op lage snelheid.",
-                "Citroensaus 4 min / 90°C / snelheid 3."
+                "Friend: doe 500 g water in de mengbeker. Leg de erwten onderin de Varoma en de zalm (gekruid met peper en zout) op het ingevette Varoma-bakje. Stoom 15 min / Varoma / snelheid 1; de zalm is gaar als hij in lagen uit elkaar valt. Geen Friend? Stoom zalm en erwten eerst in de TM6 en houd ze afgedekt warm.",
+                "TM6: plaats de vlinder. Doe 900 g aardappelen in stukken van 3 cm, 200 g sojadrink en 1 tl zout in de mengbeker en gaar 25 min / 98°C / snelheid 1.",
+                "Voeg nootmuskaat toe en pureer 20 sec / snelheid 3. Schep in een kom en dek af. Haal de vlinder eruit en spoel de mengbeker kort.",
+                "Citroensaus: margarine in de mengbeker, 1 min / 100°C / snelheid 1. Voeg de bloem toe, 1 min / 100°C / snelheid 1.",
+                "Voeg 150 g sojadrink, rasp van ½ citroen en 1 el citroensap toe en gaar 4 min / 90°C / snelheid 3. Voeg de dille, peper en zout toe en meng 5 sec / snelheid 3.",
+                "Serveer de zalm met puree en erwten en lepel de saus erover."
             ],
             "prep": "Aardappelen vooraf schillen.",
             "cowmilk_note": "Koemelkvrije versie: zuivel in saus of dip is vervangen door een ongezoet plantaardig alternatief.",
@@ -2232,10 +2187,7 @@ window.APP_DATA = {
                 "Doe de kip terug in de pot voor de laatste 4 minuten zodat ze gaar wordt.",
                 "Roer de spinazie erdoor tot ze geslonken is. Kruid met peper en zout en serveer meteen (de orzo blijft vocht opnemen)."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette.",
-                "Gaar orzo met tomaat en bouillon met linksom draaien; controleer regelmatig op aanbranden."
-            ],
+            "thermomix": [],
             "prep": "Alles in één pan = weinig afwas.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2247,9 +2199,9 @@ window.APP_DATA = {
             "time": 35,
             "tags": [
                 "vegetarisch",
-                "thermomix",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "2 blikken kidneybonen",
@@ -2275,9 +2227,11 @@ window.APP_DATA = {
                 "Serveer met rijst, wraps of een lepel sojayoghurt."
             ],
             "thermomix": [
-                "Hak ui/paprika 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg zoete aardappel/tomaat toe en gaar met linksom draaien.",
-                "Bonen en mais pas op het einde."
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg de paprika's in stukken toe en hak 3 sec / snelheid 5.",
+                "Voeg 2 el olie, komijn, paprikapoeder, kaneel en eventueel chilipoeder toe en fruit 4 min / 120°C / snelheid 1.",
+                "Voeg de zoete aardappel in blokjes van 1,5 cm, de tomatenblokjes, het bouillonblokje en 150 g water toe. Gaar 20 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Giet in een kookpot (met bonen en maïs erbij past het niet meer in de mengbeker), voeg de gespoelde kidneybonen en maïs toe en laat 6–8 minuten zacht doorkoken op het fornuis.",
+                "Kruid met peper en zout en serveer met rijst, wraps of sojayoghurt."
             ],
             "prep": "Heel goed in te vriezen.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -2313,10 +2267,7 @@ window.APP_DATA = {
                 "Voeg de kerstomaten toe en rooster nog 8 minuten, tot de kip gaar is en de tomaten openspringen.",
                 "Meng de pesto met 1 el citroensap en lepel bij het serveren over de traybake."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette.",
-                "Meng pesto-citroendressing 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Bakplaat vooraf klaarzetten.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2356,10 +2307,7 @@ window.APP_DATA = {
                 "Sausje 1: meng de yoghurt met limoenrasp, 1 el limoensap en zout. Sausje 2: prak de avocado met 1 el limoensap en zout. Sausje 3: zet ketchup of milde salsa op tafel.",
                 "Warm de wraps 20 seconden per stuk in een droge pan. Zet alles los op tafel; iedereen bouwt zelf."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor wortel, komkommer en paprika.",
-                "Meng limoenyoghurt 10 sec / snelheid 4; guacamole 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Groenten en sausjes kunnen vooraf.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2396,10 +2344,7 @@ window.APP_DATA = {
                 "Kook de erwten 3 minuten en spoel koud. Meng met komkommerblokjes, yoghurt, 1 el citroensap, peper en zout.",
                 "Serveer vissticks met aardappelen, erwtensla en partjes citroen."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor komkommer.",
-                "Meng yoghurtsaus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Zelfgemaakte vissticks zijn tienerproof maar lichter dan frituur.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2413,7 +2358,8 @@ window.APP_DATA = {
                 "rund",
                 "pasta",
                 "familie",
-                "snel"
+                "snel",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g mager gehakt",
@@ -2436,8 +2382,11 @@ window.APP_DATA = {
                 "Roer de roomkaas erdoor tot de saus romig is; verdun zo nodig met kookvocht. Kruid met peper en zout en meng met de pasta."
             ],
             "thermomix": [
-                "Gebruik groentenrasp voor paprika.",
-                "Maak saus met linksom draaien; roomkaas laatste 3 minuten."
+                "Kook de pasta in een kookpot op het fornuis. Schep 100 ml kookvocht apart.",
+                "Doe ui (in vieren), knoflook en de paprika's in stukken in de mengbeker en hak 4 sec / snelheid 5. Voeg 1 el olie toe en fruit 5 min / 120°C / snelheid 1.",
+                "Voeg het gehakt, oregano en paprikapoeder toe en bak 8 min / 120°C / linksom / snelheid 1 zonder maatbeker; maak halverwege los met de spatel.",
+                "Voeg de passata toe en gaar 10 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Voeg de roomkaas toe en meng 1 min / 90°C / linksom / snelheid 2. Verdun zo nodig met kookvocht, kruid met peper en zout en meng met de pasta."
             ],
             "prep": "Saus kan 2 dagen vooraf.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -2475,10 +2424,7 @@ window.APP_DATA = {
                 "Prak de avocado met 1 el limoensap en zout. Meng de skyr met limoenrasp en 1 el limoensap. Snijd de tomaten in blokjes.",
                 "Warm de wraps 20 seconden per stuk in een droge pan en vul met kip, bloemkool, tomaat en sausjes."
             ],
-            "thermomix": [
-                "Verdeel de bloemkool in roosjes of hak kort 2 sec / snelheid 4.",
-                "Guacamole 5 sec / snelheid 4; limoenskyr 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Bloemkool vooraf roosteren.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2491,9 +2437,9 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "noedels",
-                "thermomix",
                 "familie",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g kipfilet",
@@ -2518,9 +2464,12 @@ window.APP_DATA = {
                 "Schep bouillon en groenten over de noedels, leg kip en ei erop en werk af met sesamolie, lente-ui en de rest van de sojasaus."
             ],
             "thermomix": [
-                "Kook eieren in kookmandje; stoom groenten in Varoma als gewenst.",
-                "Gebruik groentenrasp voor wortel.",
-                "Bouillon in mengbeker verwarmen en noedels met linksom draaien garen."
+                "Doe knoflook en gember in de mengbeker en hak 3 sec / snelheid 7. Voeg 1 l bouillon en 2 el sojasaus toe.",
+                "Leg de kipfilets heel en de wortels in reepjes onderin de Varoma. Leg de 4 eieren in hun schaal en de champignons in plakjes op het Varoma-bakje.",
+                "Zet de Varoma erop en stoom 20 min / Varoma / snelheid 1. Haal de eieren eruit na 14 minuten en leg ze in koud water (hard; voor zacht kernachtig na 11 minuten).",
+                "Voeg de paksoi in stukken toe aan de Varoma voor de laatste 5 minuten.",
+                "Kook de noedels apart in een pot volgens de verpakking en verdeel over kommen. Snijd de kip in plakjes.",
+                "Schep de hete bouillon over de noedels, leg kip, groenten en gehalveerd ei erop en werk af met sesamolie, lente-ui en de rest van de sojasaus."
             ],
             "prep": "Bouillonbasis kan vooraf.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -2559,10 +2508,7 @@ window.APP_DATA = {
                 "Voeg groenten en balletjes toe aan de bakplaat, schep de aardappelen om en rooster nog 20 minuten tot de balletjes gaar zijn.",
                 "Besprenkel met citroensap en verkruimel de feta erover aan tafel."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette, paprika en ui.",
-                "Meng gehaktkruiden kort in mengbeker indien gewenst."
-            ],
+            "thermomix": [],
             "prep": "Alles vooraf op bakplaat.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2599,10 +2545,7 @@ window.APP_DATA = {
                 "Los het bouillonblokje op in 275 ml kokend water, giet over de couscous, dek af en laat 5 minuten wellen. Maak los met een vork.",
                 "Meng couscous, groenten en kikkererwten met 1 el olie en 2 el citroensap. Serveer met kip en verkruimelde feta."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette/paprika.",
-                "Verwarm couscouswater en meng citroendressing."
-            ],
+            "thermomix": [],
             "prep": "Perfect voor restjeslunch.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2615,8 +2558,8 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "soep",
-                "thermomix",
-                "mealprep"
+                "mealprep",
+                "thermomix"
             ],
             "ingredients": [
                 "700 g aardappelen",
@@ -2639,9 +2582,12 @@ window.APP_DATA = {
                 "Serveer de soep met een lepel yoghurt, de kip-preitopping en pompoenpitten of croutons."
             ],
             "thermomix": [
-                "Hak ui/prei 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg aardappel/bouillon toe 20 min / 100°C / snelheid 1; mix geleidelijk tot snelheid 8.",
-                "Stoom kip in Varoma als de hoeveelheid past."
+                "Doe de ui (in vieren) in de mengbeker en hak 5 sec / snelheid 5. Voeg de prei in stukken toe (houd een handvol fijne ringen apart) en hak 4 sec / snelheid 5.",
+                "Voeg ½ el olie toe en stoof 5 min / 120°C / snelheid 1.",
+                "Voeg de aardappelen in blokjes en 900 g bouillon (heet water + blokje) toe; meer past niet, de mengbeker houdt 2,2 l. Kook 20 min / 100°C / snelheid 1.",
+                "Mix 1 min / snelheid 5–10, geleidelijk verhogen, met de maatbeker erop. Kruid met nootmuskaat, peper en zout. Te dik? Verdun met de rest van de bouillon.",
+                "Bak ondertussen de kip in blokjes met paprikapoeder in ½ el olie in een pan 5–6 minuten gaar; bak de apart gehouden prei de laatste 2 minuten mee.",
+                "Serveer de soep met een lepel yoghurt, de kip-preitopping en pompoenpitten of croutons."
             ],
             "prep": "Soepbasis invriezen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -2676,10 +2622,7 @@ window.APP_DATA = {
                 "Leg op elk stuk kip plakjes tomaat en mozzarella. Zet 10–12 minuten in de oven tot de kaas gesmolten is en de kip gaar.",
                 "Meng de rucola met 1 el olie, balsamico en een snuf zout. Werk de kip af met basilicum en serveer met krieltjes en salade."
             ],
-            "thermomix": [
-                "Snijd tomaat met Cutter alleen als stevig; anders met mes.",
-                "Hak basilicum kort indien gewenst."
-            ],
+            "thermomix": [],
             "prep": "Kip vooraf kruiden.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2716,10 +2659,7 @@ window.APP_DATA = {
                 "Bak de quesadilla's in een droge pan op middelhoog vuur 2–3 minuten per kant tot ze krokant zijn en de kaas gesmolten. Herhaal met de rest.",
                 "Snijd in punten en serveer met skyr gemengd met limoensap en rauwkost."
             ],
-            "thermomix": [
-                "Gebruik de groentenrasp voor paprika en courgette.",
-                "Skyrsaus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Vulling kan vooraf.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2732,8 +2672,8 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "rijst",
-                "thermomix",
-                "familie"
+                "familie",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g kipfilet",
@@ -2757,9 +2697,12 @@ window.APP_DATA = {
                 "Serveer met de kip en de krokante salie erop."
             ],
             "thermomix": [
-                "Hak ui/pompoen 5 sec / snelheid 5, fruit 5 min / 120°C / snelheid 1.",
-                "Risotto ca. 18 min / 100°C / linksom / snelheid 1.",
-                "Meng Parmezaan 20 sec / linksom / snelheid 2."
+                "Bak de kip in blokjes in een pan in 1 el olie 6–7 minuten gaar; bak de salie de laatste minuut mee tot ze krokant is.",
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie en de pompoen in blokjes van 1 cm toe en fruit 4 min / 120°C / linksom / snelheid 1.",
+                "Voeg de risottorijst toe en bak 3 min / 120°C / linksom / snelheid 1 zonder maatbeker.",
+                "Voeg 900 g bouillon (heet water + blokje) toe. Zet het kookmandje als spatdeksel op het deksel en gaar 16 min / 100°C / linksom / snelheid 1.",
+                "Voeg margarine en Parmezaan toe en meng 20 sec / linksom / snelheid 1. Laat 2 minuten rusten in de mengbeker.",
+                "Kruid met peper en serveer met de kip en de krokante salie."
             ],
             "prep": "Pompoen vooraf snijden of diepvries gebruiken.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -2798,10 +2741,7 @@ window.APP_DATA = {
                 "Rasp kool, wortel en appel. Meng yoghurt, mosterd, 1 el citroensap, peper en zout en schep door de groenten.",
                 "Serveer de kip met ovenaardappelen en coleslaw."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor kool, wortel en appel.",
-                "Meng dressing 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Coleslaw 1 dag vooraf maken.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2814,9 +2754,9 @@ window.APP_DATA = {
             "tags": [
                 "vegetarisch",
                 "soep",
-                "thermomix",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "2 blikken witte bonen",
@@ -2840,9 +2780,11 @@ window.APP_DATA = {
                 "Kruid met peper en zout. Te dik? Voeg wat heet water toe."
             ],
             "thermomix": [
-                "Hak groenten 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg tomaat/bouillon toe 15 min / 100°C / snelheid 1.",
-                "Pasta en bonen met linksom draaien volgens gaartijd."
+                "De volledige minestrone is te veel voor de mengbeker (max 2,2 l). De Thermomix maakt de soepbasis; pasta en bonen gaan erbij in een soeppot.",
+                "Doe ui (in vieren), knoflook, wortels, prei en courgette in stukken in de mengbeker en hak 4 sec / snelheid 5.",
+                "Voeg 2 el olie en de kruiden toe en fruit 5 min / 120°C / snelheid 1.",
+                "Voeg de tomatenblokjes en 600 g bouillon toe en kook 15 min / 100°C / linksom / snelheid 1.",
+                "Giet in een soeppot, voeg 400 ml bouillon, de pasta en de gespoelde bonen toe en kook volgens de gaartijd van de pasta (8–10 minuten). Kruid met peper en zout."
             ],
             "prep": "Soepbasis invriezen zonder pasta.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -2882,11 +2824,7 @@ window.APP_DATA = {
                 "Giet de helft van de saus in de pan en laat 1 minuut inkoken terwijl je de zalm ermee bedruipt.",
                 "Bouw de bowls met rijst, zalm, mango, komkommer en edamame. Serveer de rest van de saus apart en bestrooi met sesamzaad."
             ],
-            "thermomix": [
-                "Meng teriyakisaus 10 sec / snelheid 4.",
-                "Gebruik groentenrasp voor komkommer.",
-                "Kook rijst in kookmandje."
-            ],
+            "thermomix": [],
             "prep": "Mango/komkommer pas op de dag zelf.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2900,7 +2838,6 @@ window.APP_DATA = {
                 "vegetarisch",
                 "aardappel",
                 "familie",
-                "thermomix",
                 "koemelkvrij"
             ],
             "ingredients": [
@@ -2924,10 +2861,7 @@ window.APP_DATA = {
                 "Zet de pan 12–15 minuten in de oven tot het midden net gestold is (zacht drukken: het mag niet meer vloeibaar zijn). Geen ovenvaste pan? Gebruik een ingevette ovenschaal en bak 25 minuten.",
                 "Snijd de komkommer in plakjes, meng met 1 el olie, azijn en zout. Snijd de tortilla in punten en serveer met de salade."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor aardappel/paprika/ui.",
-                "Klop eieren 15 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Ook koud lekker.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -2963,10 +2897,7 @@ window.APP_DATA = {
                 "Meng honing, mosterd en 1 el citroensap. Giet in de pan bij de kip en laat 1 minuut inkoken terwijl je de kip ermee bedruipt.",
                 "Serveer de kip met aardappelen, wortel en boontjes en lepel de saus uit de pan erover."
             ],
-            "thermomix": [
-                "Meng saus 10 sec / snelheid 4.",
-                "Stoom boontjes/wortel in Varoma en kook aardappelen in mandje."
-            ],
+            "thermomix": [],
             "prep": "Groenten vooraf schoonmaken.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3000,10 +2931,7 @@ window.APP_DATA = {
                 "Meng pasta en broccoli met de saus; voeg zo nodig kookvocht toe. Kruid met peper en zout.",
                 "Verdeel over borden, leg de zalm erop en bestrooi met de rest van de Parmezaan."
             ],
-            "thermomix": [
-                "Meng ricotta-citroensaus 15 sec / snelheid 4.",
-                "Broccoli kan in Varoma worden gestoomd."
-            ],
+            "thermomix": [],
             "prep": "Saus kan vooraf.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3040,11 +2968,7 @@ window.APP_DATA = {
                 "Los het bouillonblokje op in 275 ml kokend water, giet over de couscous, dek af en laat 5 minuten wellen. Maak los met een vork.",
                 "Serveer de balletjes in saus met de couscous."
             ],
-            "thermomix": [
-                "Hak groenten 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Maak saus 12 min / 100°C / snelheid 1.",
-                "Verwarm water voor couscous."
-            ],
+            "thermomix": [],
             "prep": "Saus + balletjes goed in te vriezen.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3082,10 +3006,7 @@ window.APP_DATA = {
                 "Roerbak wortel 2 minuten, voeg paprika en courgette toe en roerbak nog 2–3 minuten zodat alles knapperig blijft.",
                 "Doe kip en noedels erbij, giet de saus erover en schep 1 minuut om tot alles warm is. Bestrooi eventueel met gehakte pinda's."
             ],
-            "thermomix": [
-                "Maak pindasaus 15 sec / snelheid 4.",
-                "Gebruik groentenrasp voor wortel/paprika/courgette."
-            ],
+            "thermomix": [],
             "prep": "Saus 4 dagen houdbaar.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3098,9 +3019,9 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "stoof",
-                "thermomix",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -3123,9 +3044,11 @@ window.APP_DATA = {
                 "Serveer met brood, rijst of krieltjes."
             ],
             "thermomix": [
-                "Hak ui/groenten 5 sec / snelheid 5 en fruit 5 min / 120°C / snelheid 1.",
-                "Voeg tomaat/bonen toe met linksom draaien.",
-                "Kip apart bakken geeft de beste textuur."
+                "Doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg de paprika en courgette in stukken toe en hak 3 sec / snelheid 4.",
+                "Voeg 1 el olie en 1 tl oregano toe en fruit 5 min / 120°C / snelheid 1.",
+                "Voeg tomatenblokjes, het bouillonblokje en 100 g water toe en gaar 5 min / 100°C / snelheid 1.",
+                "Voeg de kip in grote blokjes (gekruid met 1 tl oregano, peper en zout) toe en gaar 15 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Giet in een serveerschaal of kookpot, roer de gespoelde bonen erdoor en warm nog 3 minuten op het fornuis. Liever goudbruine kip? Bak ze eerst kort in een pan en voeg ze pas in stap 4 toe."
             ],
             "prep": "Smaakt de volgende dag nog beter.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -3161,11 +3084,7 @@ window.APP_DATA = {
                 "Klop eieren en melk los met ½ tl zout en peper. Verdeel aardappelen, ham, spinazie en paprika over de ovenschaal en giet het eimengsel erover.",
                 "Verkruimel de feta erover en bak 20–25 minuten tot de omelet gestold en licht goudbruin is (in het midden mag niets meer vloeibaar zijn)."
             ],
-            "thermomix": [
-                "Klop eieren 15 sec / snelheid 4.",
-                "Gebruik groentenrasp voor paprika.",
-                "Aardappelen kunnen vooraf in kookmandje."
-            ],
+            "thermomix": [],
             "prep": "Restjes zijn ideale lunch.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3205,9 +3124,12 @@ window.APP_DATA = {
                 "Stamp de aardappelen met boter, warme melk, nootmuskaat en zout tot puree. Snijd de kip in plakken en serveer met saus, puree en broccoli."
             ],
             "thermomix": [
-                "Kook aardappelen in mandje en stoom broccoli in Varoma.",
-                "Hak champignons kort indien gewenst; maak saus met linksom draaien.",
-                "Puree kort op lage snelheid."
+                "Friend: doe 500 g water in de mengbeker, leg de broccoliroosjes in de Varoma en stoom 15 min / Varoma / snelheid 1. Geen Friend? Kook de broccoli 5–6 minuten in een pot.",
+                "TM6: plaats de vlinder. Doe 900 g aardappelen in stukken, 250 g melk en 1 tl zout in de mengbeker en gaar 25 min / 98°C / snelheid 1. Voeg boter en nootmuskaat toe en pureer 20 sec / snelheid 3. Schep in een kom, dek af en spoel de mengbeker.",
+                "Bak ondertussen de kip in een pan in 1 el olie 5–6 minuten per kant gaar.",
+                "Doe de ui in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie en de champignons in plakjes toe en bak 8 min / 120°C / linksom / snelheid 1 zonder maatbeker.",
+                "Voeg room, mosterd en het bouillonblokje toe en gaar 4 min / 100°C / linksom / snelheid 1. Kruid met peper.",
+                "Serveer de kip in plakken met saus, puree en broccoli."
             ],
             "prep": "Champignons vooraf schoonmaken.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -3246,10 +3168,7 @@ window.APP_DATA = {
                 "Verdeel de vulling over de wraps, rol ze stevig op en leg ze met de naad naar beneden naast elkaar in een ingevette ovenschaal.",
                 "Giet de rest van de passata erover, bestrooi met kaas en bak 20 minuten tot de kaas goudbruin is."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor paprika/courgette.",
-                "Maak vulling met linksom draaien als kip apart wordt gebakken."
-            ],
+            "thermomix": [],
             "prep": "Volledig vooraf rollen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3286,11 +3205,7 @@ window.APP_DATA = {
                 "Snijd de abrikozen klein en hak de peterselie.",
                 "Meng couscous, groenten, kip, abrikoos en peterselie met 2 el citroensap. Kruid met peper en zout."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor wortel/courgette.",
-                "Verwarm water voor couscous.",
-                "Hak abrikoos kort 2 sec / snelheid 5 indien gewenst."
-            ],
+            "thermomix": [],
             "prep": "Abrikoos geeft zoet zonder dat het gerecht dessertachtig wordt.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3324,10 +3239,7 @@ window.APP_DATA = {
                 "Bak nog 15–18 minuten tot de vis gaar is (hij is wit en valt makkelijk uit elkaar).",
                 "Werk af met verse basilicum."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor courgette.",
-                "Basilicum kort hakken 3 sec / snelheid 7."
-            ],
+            "thermomix": [],
             "prep": "Bakplaat vooraf voorbereiden, vis later toevoegen.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3365,10 +3277,7 @@ window.APP_DATA = {
                 "Rooster 20–25 minuten tot de kip gaar is en de groenten randjes hebben; schep halverwege om.",
                 "Meng de yoghurt met limoenrasp en 1 el limoensap. Warm de wraps kort op en zet alles op tafel."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp/Cutter voor paprika en ui.",
-                "Meng limoenyoghurt 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Alles 's ochtends op bakplaat klaarzetten.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3401,8 +3310,11 @@ window.APP_DATA = {
                 "Schep in een ovenschaal, bestrooi met de rest van de kaas en gratineer 10–12 minuten tot goudbruin. Of serveer meteen uit de pot met de kaas erover."
             ],
             "thermomix": [
-                "Blend bloemkool, melk en mosterd 30 sec / snelheid 7.",
-                "Warm saus 4 min / 90°C / snelheid 2."
+                "Kook de macaroni in een kookpot op het fornuis; voeg twee derde van de bloemkoolroosjes de laatste 8 minuten toe.",
+                "Doe het overige derde van de bloemkool in stukken met 250 g melk in de mengbeker en kook 12 min / 100°C / snelheid 1 tot de bloemkool zacht is.",
+                "Voeg mosterd, de helft van de kaas, nootmuskaat, peper en ½ tl zout toe en mix 30 sec / snelheid 5–8, geleidelijk verhogen, tot een gladde saus.",
+                "Meng saus, macaroni, bloemkool en ham.",
+                "Serveer meteen met de rest van de kaas erover, of gratineer 10–12 minuten in de oven op 200 °C (hetelucht 180 °C)."
             ],
             "prep": "Verborgen-groentesaus die meestal goed werkt bij tieners.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -3442,11 +3354,7 @@ window.APP_DATA = {
                 "Meng de skyr met limoenrasp, 1 el limoensap en een snuf zout.",
                 "Bouw de bowls met rijst, kip en toppings, lepel de limoensaus erover en bestrooi met sesamzaad."
             ],
-            "thermomix": [
-                "Kook de rijst in het kookmandje.",
-                "Gebruik de groentenrasp voor komkommer.",
-                "Meng de limoenskyr 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Iedereen kiest zelf toppings.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3478,10 +3386,7 @@ window.APP_DATA = {
                 "Roer de pesto erdoor en kruid met peper en zout.",
                 "Verdeel de gescheurde mozzarella erover; dek de pan 1 minuut af zodat ze smelt."
             ],
-            "thermomix": [
-                "Stoom broccoli in Varoma.",
-                "Pesto kan in Thermomix of uit pot."
-            ],
+            "thermomix": [],
             "prep": "Zeer snelle vleesloze avond.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3519,10 +3424,7 @@ window.APP_DATA = {
                 "Roer de uitgelekte maïs erdoor en kruid met peper en zout.",
                 "Meng de skyr met limoenrasp en 1 el limoensap. Warm de wraps kort op en serveer met de vulling en saus."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor wortel/courgette.",
-                "Meng saus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Handig voor groentesceptische eters.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
             "day2": "Bewaar restjes gekoeld en eet ze binnen 1–2 dagen op; voeg verse toppings pas bij het serveren toe.",
@@ -3535,9 +3437,9 @@ window.APP_DATA = {
             "tags": [
                 "kip",
                 "soep",
-                "thermomix",
                 "mealprep",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "500 g kipfilet",
@@ -3561,9 +3463,11 @@ window.APP_DATA = {
                 "Snijd de kip in reepjes, kruid met peper en zout en bak in 1 el olie op hoog vuur 5–6 minuten gaar. Serveer op de soep."
             ],
             "thermomix": [
-                "Blend geroosterde groenten met bouillon geleidelijk tot snelheid 8.",
-                "Kook orzo met linksom draaien.",
-                "Kip kan in Varoma."
+                "Rooster de groenten zoals in het gewone recept: 25–30 minuten op 210 °C (hetelucht 190 °C).",
+                "Doe de geroosterde groenten (knoflook uit het velletje) en 500 g bouillon in de mengbeker. Meer past er niet bij.",
+                "Mix 1 min / snelheid 5–10, geleidelijk verhogen, met de maatbeker erop. Komt het boven de 2,2 l-markering, mix dan in 2 porties.",
+                "Giet in een soeppot, voeg de rest van de bouillon en de orzo toe en kook 8–10 minuten, af en toe roeren. Kruid met peper en zout.",
+                "Bak de kip in reepjes in een pan in 1 el olie 5–6 minuten gaar en leg ze op de soep."
             ],
             "prep": "Soepbasis invriezen zonder orzo.",
             "cowmilk_note": "Van nature koemelkvrij volgens de ingrediëntenlijst.",
@@ -3601,9 +3505,11 @@ window.APP_DATA = {
                 "Voeg kip en groenten toe en laat 8 minuten zacht garen. Breng op smaak met limoensap en serveer met rijst."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en fruit 3 min / 120°C / snelheid 1.",
-                "Stoom broccoli/wortel in Varoma.",
-                "Maak currysaus met linksom draaien."
+                "Friend: doe 1200 g water en 1 tl zout in de mengbeker. Hang het kookmandje met de gespoelde rijst erin, zet de Varoma met broccoli en wortel in schijfjes erop en kook 20 min / Varoma / snelheid 1. Geen Friend? Doe dit eerst in de TM6 (snelheid 4) en houd warm.",
+                "TM6: doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en fruit 3 min / 120°C / snelheid 1.",
+                "Voeg de currypasta toe en bak 1 min / 120°C / snelheid 1.",
+                "Voeg kokosmelk, sojasaus en de kip in blokjes toe en gaar 15 min / 100°C / linksom / snelheid 1 (kookmandje als spatdeksel).",
+                "Voeg broccoli en wortel toe en warm 2 min / 90°C / linksom / snelheid 1. Breng op smaak met limoensap en serveer met de rijst."
             ],
             "prep": "Pikante saus apart aanbieden.",
             "cowmilk_note": "Deze versie bevat koemelk en staat daarom niet onder de koemelkvrije filter.",
@@ -3620,7 +3526,6 @@ window.APP_DATA = {
                 "familie",
                 "snel",
                 "aziatisch",
-                "thermomix",
                 "topmatch",
                 "koemelkvrij"
             ],
@@ -3648,11 +3553,7 @@ window.APP_DATA = {
                 "Roer sojasaus, oestersaus, vissaus, honing, 1 el limoensap, maïzena en 3 el water door elkaar. Doe de kip terug, voeg de saus toe en laat 1–2 minuten glanzen en indikken.",
                 "Roer de cashewnoten er op het einde door en serveer meteen met de rijst."
             ],
-            "thermomix": [
-                "Kook rijst in het kookmandje als de hoeveelheid bij je model past.",
-                "Gebruik de Cutter/groentenrasp voor paprika en ui; broccoli liever in roosjes met de hand.",
-                "Meng de saus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Snijd groenten en kip vooraf; de saus kan 4–5 dagen in de koelkast.",
             "day2": "bak de rijst kort op met de overgebleven kip en groenten voor een snelle fried-rice-achtige maaltijd.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -3667,7 +3568,6 @@ window.APP_DATA = {
                 "pasta",
                 "familie",
                 "snel",
-                "thermomix",
                 "topmatch",
                 "koemelkvrij"
             ],
@@ -3691,11 +3591,7 @@ window.APP_DATA = {
                 "Breng op smaak met de rasp van ½ citroen, 1–2 el citroensap, edelgistvlokken, peper en zout.",
                 "Voeg pasta en broccoli toe en verdun met een scheut kookvocht. Schep de scampi er op het einde door en warm 1 minuut mee."
             ],
-            "thermomix": [
-                "Stoom broccoli in de Varoma terwijl elders de pasta kookt.",
-                "Meng plantaardige room, citroen en edelgist 4 min / 90°C / snelheid 2.",
-                "Knoflook 3 sec / snelheid 7 als je hem in de Thermomix wilt fijnmaken."
-            ],
+            "thermomix": [],
             "prep": "Broccoli en sauscomponenten vooraf klaarzetten; scampi pas vlak voor het eten bakken.",
             "day2": "koud of lauw als pastasalade met extra komkommer en avocado, of opnieuw zacht opwarmen met een klein scheutje plantaardige room.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -3737,10 +3633,7 @@ window.APP_DATA = {
                 "Roer sojayoghurt, mosterd, 1 el citroensap en edelgistvlokken tot een romige Caesar-achtige dressing. Verdun met 1 el water als nodig en kruid met peper.",
                 "Warm de wraps 20 seconden per stuk in een droge pan. Zet alles apart op tafel zodat iedereen zelf vult."
             ],
-            "thermomix": [
-                "Meng dressing 15 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Kip en dressing kunnen vooraf; avocado pas vlak voor eten snijden.",
             "day2": "gebruik restjes als Caesar-bowl met rijst of als lunchwrap.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -3781,11 +3674,7 @@ window.APP_DATA = {
                 "Kook de edamame 3 minuten in gezouten water. Snijd mango, komkommer en avocado in blokjes.",
                 "Verdeel de rijst over kommen en laat iedereen zelf kip en toppings toevoegen. Bestrooi eventueel met sesamzaad."
             ],
-            "thermomix": [
-                "Kook rijst in het kookmandje.",
-                "Gebruik groentenrasp voor komkommer.",
-                "Meng sticky saus 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Mango, komkommer en edamame kunnen vooraf; avocado vers.",
             "day2": "maak met restjes een koude rijstsalade en voeg extra mango of komkommer toe.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -3822,10 +3711,7 @@ window.APP_DATA = {
                 "Voeg gehalveerde tomaten en spinazie toe en bak 2 minuten tot de spinazie geslonken is.",
                 "Roer pesto en kookroom erdoor, voeg kip en pasta toe en maak smeuïg met een scheut kookvocht. Kruid met peper."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor paprika en courgette.",
-                "Meng pesto en plantaardige room 4 min / 90°C / snelheid 2."
-            ],
+            "thermomix": [],
             "prep": "Groenten snijden en kip bakken kan vooraf.",
             "day2": "koud als pastasalade met avocado, of opnieuw warm met een scheutje plantaardige room.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -3840,9 +3726,9 @@ window.APP_DATA = {
                 "pasta",
                 "familie",
                 "verborgen groenten",
-                "thermomix",
                 "topmatch",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -3866,9 +3752,11 @@ window.APP_DATA = {
                 "Meng saus, pasta, broccoli en kip en warm 2 minuten door. Proef en kruid pas op het einde met peper en zout."
             ],
             "thermomix": [
-                "Hak ui en courgette 5 sec / snelheid 5; fruit 5 min / 120°C / snelheid 1.",
-                "Voeg room, mosterd en citroen toe en mix 30 sec / snelheid 7–8.",
-                "Stoom broccoli in Varoma indien gewenst."
+                "Kook de penne in een kookpot op het fornuis; voeg de broccoliroosjes de laatste 5 minuten toe. Schep 150 ml kookvocht apart.",
+                "Bak ondertussen de kip in blokjes in een pan in 1 el olie 6–7 minuten goudbruin en gaar.",
+                "Doe ui (in vieren), knoflook en de courgettes in stukken in de mengbeker en hak 5 sec / snelheid 5. Voeg 1 el olie toe en stoof 8 min / 120°C / snelheid 1.",
+                "Voeg kookroom, mosterd, 1 el citroensap en de edelgistvlokken toe en mix 1 min / snelheid 5–9, geleidelijk verhogen, tot een volledig gladde saus. Te dik? Voeg wat kookvocht toe.",
+                "Meng saus, pasta, broccoli en kip. Proef en kruid met peper en zout."
             ],
             "prep": "Maak de verborgen-groentesaus dubbel en vries de helft in.",
             "day2": "rechtstreeks opwarmen met een scheutje water; saus blijft romig.",
@@ -3883,9 +3771,9 @@ window.APP_DATA = {
                 "kip",
                 "pasta",
                 "familie",
-                "thermomix",
                 "topmatch",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -3910,8 +3798,12 @@ window.APP_DATA = {
                 "Serveer de kip met saus op de pasta."
             ],
             "thermomix": [
-                "Knoflook 3 sec / snelheid 7.",
-                "Saus 6 min / 90°C / snelheid 2; spinazie laatste 2 minuten met linksom draaien."
+                "Kook de pasta in een kookpot op het fornuis.",
+                "Bak de kip (dunne lapjes, gekruid met kruiden, paprikapoeder, peper en zout) in een pan in 1 el olie 4–5 minuten per kant goudbruin en gaar. Laat rusten.",
+                "Doe de knoflook in de mengbeker en hak 3 sec / snelheid 7. Voeg de zongedroogde tomaten toe en hak 3 sec / snelheid 5.",
+                "Voeg kookroom en mosterd toe en gaar 4 min / 100°C / snelheid 1 zonder maatbeker, zodat de saus wat indikt.",
+                "Voeg de spinazie en de edelgistvlokken toe en laat 3 min / 100°C / linksom / snelheid 1 slinken (duw de spinazie met de spatel naar beneden).",
+                "Giet de saus over de kip en serveer met de pasta."
             ],
             "prep": "Saus kan vooraf; kip liefst pas op de dag zelf bakken.",
             "day2": "snijd kip klein en meng alles door de pasta voor een snelle éénpansopwarming.",
@@ -3953,10 +3845,7 @@ window.APP_DATA = {
                 "Rooster 12 minuten, schep om en rooster nog 8–10 minuten tot de kip gaar is en de randen van de groenten kleuren. Voeg de uitgelekte maïs de laatste 5 minuten toe.",
                 "Meng de sojayoghurt met limoenrasp en 1 el limoensap. Snijd de avocado. Serveer met de opgewarmde wraps."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp/Cutter voor paprika en ui.",
-                "Meng limoen-sojayoghurt 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Alles kan 's ochtends gesneden en gekruid klaarstaan; pas vlak voor bakken op de plaat verdelen.",
             "day2": "gebruik restjes in quesadilla's, een rijstbowl of koude wrap.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -3996,10 +3885,7 @@ window.APP_DATA = {
                 "Rasp een derde van de komkommer, knijp het vocht eruit en meng met sojayoghurt, 1 geperst teentje knoflook, 1 el olie, 1 el citroensap en zout tot tzatziki.",
                 "Snijd de rest van de komkommer, tomaat, paprika en avocado in blokjes. Zet alles los op tafel zodat iedereen zelf een bowl bouwt."
             ],
-            "thermomix": [
-                "Rasp komkommer met groentenrasp.",
-                "Meng tzatziki 10 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "prep": "Tzatziki en gesneden paprika/komkommer kunnen vooraf.",
             "day2": "vul pita of wraps met de restjes.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4018,7 +3904,8 @@ window.APP_DATA = {
                 "mealprep",
                 "verborgen groenten",
                 "topmatch",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g gemengd rund-varkensgehakt",
@@ -4047,9 +3934,12 @@ window.APP_DATA = {
                 "Bak 35–40 minuten tot de bladen zacht zijn (prik met een mes) en de bovenkant goudbruin. Laat 10 minuten rusten voor je aansnijdt."
             ],
             "thermomix": [
-                "Hak groenten in porties 5 sec / snelheid 5.",
-                "Tomatensaus 15 min / 100°C / linksom / snelheid 1.",
-                "Witte saus: margarine 2 min / 100°C / snelheid 1; bloem 2 min / 100°C / snelheid 2; sojadrink toevoegen en 7–8 min / 90°C / snelheid 4."
+                "Verwarm de oven voor op 190 °C (hetelucht 170 °C).",
+                "Witte saus eerst: margarine in de mengbeker, 2 min / 100°C / snelheid 1. Voeg de bloem toe, 2 min / 100°C / snelheid 2. Voeg de sojadrink, nootmuskaat, peper en ½ tl zout toe en gaar 8 min / 90°C / snelheid 4. Giet in een kan en spoel de mengbeker.",
+                "Doe ui, knoflook, courgettes, paprika's en wortels in stukken in de mengbeker en hak in 2 porties telkens 5 sec / snelheid 5.",
+                "Voeg 1 el olie toe en fruit 5 min / 120°C / snelheid 1. Bak ondertussen het gehakt in een grote pan 6–8 minuten rul; groenten, gehakt en saus samen zijn te veel voor de mengbeker.",
+                "Voeg passata, kruiden en 100 g water toe aan de groenten en gaar 15 min / 100°C / snelheid 1 (kookmandje als spatdeksel). Giet bij het gehakt in de pan en kruid met peper en zout.",
+                "Bouw in een ovenschaal: tomatensaus, bladen, tomatensaus, witte saus; herhaal en eindig met witte saus en plantaardige kaas. Bak 35–40 minuten en laat 10 minuten rusten."
             ],
             "prep": "Perfect voor 8 porties: maak in één grote schaal of twee kleinere schalen en vries één ongebakken in.",
             "day2": "gewoon opnieuw opwarmen; vaak nog lekkerder. Serveer met een frisse salade.",
@@ -4066,7 +3956,8 @@ window.APP_DATA = {
                 "curry",
                 "familie",
                 "topmatch",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g kipfilet",
@@ -4092,9 +3983,11 @@ window.APP_DATA = {
                 "Serveer met rijst en partjes limoen."
             ],
             "thermomix": [
-                "Hak ui 5 sec / snelheid 5 en fruit 3 min / 120°C / snelheid 1.",
-                "Maak currysaus met kokosmelk 10 min / 100°C / snelheid 1.",
-                "Stoom broccoli in Varoma."
+                "Friend: doe 1200 g water en 1 tl zout in de mengbeker. Hang het kookmandje met de gespoelde rijst erin, zet de Varoma met de broccoliroosjes erop en kook 20 min / Varoma / snelheid 1. Geen Friend? Doe dit eerst in de TM6 (snelheid 4) en houd warm.",
+                "Bak de kip in blokjes in een pan in 1 el olie 6–7 minuten gaar. Houd een portie kip en broccoli apart voor wie geen currysmaak lust.",
+                "TM6: doe ui (in vieren) en knoflook in de mengbeker en hak 5 sec / snelheid 5. Voeg de paprika's in stukken toe en hak 3 sec / snelheid 4. Fruit met 1 el olie 4 min / 120°C / snelheid 1.",
+                "Voeg de currypasta toe en bak 1 min / 120°C / snelheid 1. Voeg kokosmelk en sojasaus toe en gaar 8 min / 100°C / snelheid 1 zonder maatbeker.",
+                "Voeg kip, broccoli en mango toe en warm 2 min / 90°C / linksom / snelheid 1. Breng op smaak met limoensap."
             ],
             "prep": "Maak saus vooraf; mango pas op het einde.",
             "day2": "restjes zijn ideaal als curry-bowl met rijst of in een wrap.",
@@ -4134,11 +4027,7 @@ window.APP_DATA = {
                 "Bestrooi met de plantaardige kaas en bak 20–25 minuten tot de kip gaar is en de randjes bubbelen.",
                 "Laat 5 minuten staan voor je serveert, zodat de saus zich bindt."
             ],
-            "thermomix": [
-                "Stoom broccoli in Varoma.",
-                "Meng pesto en room 10 sec / snelheid 4.",
-                "Gebruik groentenrasp indien gewenst voor stevige groenten."
-            ],
+            "thermomix": [],
             "prep": "Volledig een dag vooraf opbouwen. Zeer geschikt voor 8 porties.",
             "day2": "afgedekt opwarmen in oven of magnetron; voeg eventueel een lepel plantaardige room toe.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4177,10 +4066,7 @@ window.APP_DATA = {
                 "Dep de scampi droog en meng met paprikapoeder, komijn en zout. Bak ze in de olie op hoog vuur 1–2 minuten per kant tot ze net roze zijn.",
                 "Warm de wraps 20 seconden per stuk in een droge pan en laat iedereen zelf vullen."
             ],
-            "thermomix": [
-                "Meng de sojayoghurtsaus 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor komkommer en paprika; mango en avocado snijd je met de hand."
-            ],
+            "thermomix": [],
             "prep": "Salsa maximaal enkele uren vooraf; avocado pas vlak voor eten.",
             "day2": "maak met restjes een rijstbowl.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4218,10 +4104,7 @@ window.APP_DATA = {
                 "Zet passata, kip, groenten, spinazie en kaas op tafel en laat iedereen zelf beleggen op een vel bakpapier.",
                 "Schuif de flatbreads met bakpapier op de hete platen en bak 8–10 minuten tot de bodem krokant is en de kaas gesmolten."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor champignons en paprika waar praktisch.",
-                "Kruid passata 10 sec / snelheid 3 met oregano."
-            ],
+            "thermomix": [],
             "prep": "Alle toppings vooraf klaarzetten; ideaal op drukke avonden.",
             "day2": "overgebleven toppings worden omelet-, wrap- of pastavulling.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4262,10 +4145,7 @@ window.APP_DATA = {
                 "Meng sojasaus met 1 el limoensap.",
                 "Zet rijst en alle toppings apart op tafel. Serveer met de soja-limoensaus en sesamzaad."
             ],
-            "thermomix": [
-                "Kook rijst in kookmandje.",
-                "Gebruik groentenrasp voor komkommer."
-            ],
+            "thermomix": [],
             "prep": "Mango/komkommer vooraf; avocado vers.",
             "day2": "koude poke-lunch met de overgebleven toppings.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4305,10 +4185,7 @@ window.APP_DATA = {
                 "Wok broccoliroosjes en ui in partjes in 1 el olie 2 minuten. Voeg paprika, sugarsnaps en geperste knoflook toe en wok nog 2–3 minuten; de groenten moeten knapperig blijven.",
                 "Doe de kip terug, voeg de saus toe en schep hooguit 1 minuut om. Proef: hartig, fris en licht zoet. Serveer met rijst."
             ],
-            "thermomix": [
-                "Meng saus 10 sec / snelheid 4.",
-                "Gebruik groentenrasp voor paprika en ui."
-            ],
+            "thermomix": [],
             "prep": "Groenten volledig vooraf snijden.",
             "day2": "restjes kort bakken met rijst.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4349,10 +4226,7 @@ window.APP_DATA = {
                 "Snijd de wraps in brede repen. Bouw in een ingevette ovenschaal laagjes: wrap, vulling, wat passata. Eindig met passata en strooi de plantaardige kaas erover.",
                 "Bak 20–25 minuten tot de bovenkant goudbruin is. Laat 5 minuten rusten en voeg de avocadoblokjes pas aan tafel toe."
             ],
-            "thermomix": [
-                "Gebruik groentenrasp voor paprika.",
-                "Maak tomatensaus 10 min / 100°C / snelheid 1 indien je extra kruiden wilt toevoegen."
-            ],
+            "thermomix": [],
             "prep": "Volledig vooraf opbouwen; avocado apart.",
             "day2": "perfect opnieuw opwarmen of restjes als burritobowl serveren.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4394,11 +4268,7 @@ window.APP_DATA = {
                 "Meng de sojayoghurt met limoenrasp en 1 el limoensap.",
                 "Verdeel rijst, kip en toppings over kommen en strooi een handje tortillachips erover als krokante topping."
             ],
-            "thermomix": [
-                "Kook rijst in mandje.",
-                "Meng limoen-sojayoghurt 10 sec / snelheid 4.",
-                "Gebruik groentenrasp voor paprika."
-            ],
+            "thermomix": [],
             "prep": "Alle componenten apart bewaren.",
             "day2": "maak wraps met de restjes.",
             "cowmilk_note": "Koemelkvrij opgebouwd.",
@@ -4414,9 +4284,9 @@ window.APP_DATA = {
                 "pasta",
                 "familie",
                 "verborgen groenten",
-                "thermomix",
                 "topmatch",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "600 g gemengd rund-varkensgehakt",
@@ -4440,9 +4310,11 @@ window.APP_DATA = {
                 "Doe het gehakt terug in de saus, roer de kookroom erdoor en laat 3 minuten zacht doorwarmen. Kruid met peper en zout en meng met de pasta."
             ],
             "thermomix": [
-                "Hak groenten in porties 5 sec / snelheid 5.",
-                "Saus 15 min / 100°C / snelheid 1; mix daarna 20 sec / snelheid 6 als je hem gladder wilt.",
-                "Room laatste 3 min toevoegen."
+                "Kook de pasta in een kookpot op het fornuis.",
+                "Doe ui, knoflook, wortels, courgette en paprika's in stukken in de mengbeker en hak in 2 porties telkens 5 sec / snelheid 5. Voeg 1 el olie toe en stoof 8 min / 120°C / snelheid 1.",
+                "Voeg passata en kruiden toe en gaar 15 min / 100°C / snelheid 1 (kookmandje als spatdeksel). Mix 30 sec / snelheid 5–8 voor een gladde saus waarin je de groenten niet meer ziet.",
+                "Bak ondertussen het gehakt in een grote pan op hoog vuur 6–8 minuten rul.",
+                "Giet de saus bij het gehakt in de pan (samen past het niet in de mengbeker), roer de kookroom erdoor en laat 3 minuten zacht doorwarmen. Kruid met peper en zout en meng met de pasta."
             ],
             "prep": "Maak dubbele saus en vries de helft in.",
             "day2": "saus kan ook over gnocchi, rijst of in lasagne.",
@@ -4483,10 +4355,7 @@ window.APP_DATA = {
                 "Meng spinazie, appel en tomaat, leg de eieren erop en werk af met dressing en walnoten. Meenemen? Doe de dressing in een apart potje."
             ],
             "prep": "Kook 6 eieren tegelijk; 3 dagen gekoeld bewaren.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4519,10 +4388,7 @@ window.APP_DATA = {
                 "Meng edamame, mango, komkommer, wortel en kiemgroenten met de dressing en strooi de cashewnoten erover."
             ],
             "prep": "Snijd komkommer en wortel voor 3 porties; mango pas de avond ervoor toevoegen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4555,9 +4421,7 @@ window.APP_DATA = {
                 "Verdeel witlof en aardbei in een kom, schep cottagecheese en avocado erop en lepel de dressing erover. Werk af met de amandelen."
             ],
             "prep": "Witlof en dressing apart houden tot vlak voor eten.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4591,9 +4455,7 @@ window.APP_DATA = {
                 "Meenemen: doe de dressing onderaan in een lunchpot, dan paprika en komkommer, kip en brie, en de veldsla bovenaan. Schud pas bij het eten."
             ],
             "prep": "Bak 3 kipfilets tegelijk en portioneer.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4625,9 +4487,7 @@ window.APP_DATA = {
                 "Besprenkel met olie en balsamico en maal er wat peper over."
             ],
             "prep": "Groenten kunnen 2 dagen vooraf; zalm pas dezelfde ochtend toevoegen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4663,11 +4523,7 @@ window.APP_DATA = {
                 "Verdeel in een kom, lepel de saus erover en strooi de cashewnoten erop."
             ],
             "prep": "Maak 3 porties bloemkoolbasis; dressing apart bewaren.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: bloemkool kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet.",
-                "Bloemkoolrijst: doe roosjes in porties in de mengbeker en hak 5 sec / snelheid 5. Controleer en herhaal kort indien nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4700,9 +4556,7 @@ window.APP_DATA = {
                 "Verkruimel de blauwe kaas en de walnoten erover en maal er peper over."
             ],
             "prep": "Linzen uit blik maken dit een ideale voorraadlunch.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4735,9 +4589,7 @@ window.APP_DATA = {
                 "Leg kip, sinaasappel, avocado en tomaat op de boerenkool en werk vlak voor het eten af met amandelen."
             ],
             "prep": "Boerenkool blijft gemarineerd 2-3 dagen goed.",
-            "thermomix": [
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4770,10 +4622,7 @@ window.APP_DATA = {
                 "Schep bonen, tonijn en groenten voorzichtig door de dressing. Blijft 2 dagen goed in de koelkast."
             ],
             "prep": "Maak 2 porties; blijft 2 dagen goed gekoeld.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4809,9 +4658,7 @@ window.APP_DATA = {
                 "Vul de bowl met sla en groenten, leg de kip erop en voeg feta, olijven en tzatziki toe."
             ],
             "prep": "Bak kip voor 3 lunches en maak een pot tzatziki.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4843,10 +4690,7 @@ window.APP_DATA = {
                 "Meng quinoa, rucola, biet en appel met olie, balsamico, peper en zout. Werk af met verkruimelde feta en de pitten."
             ],
             "prep": "Kook 300 g quinoa voor meerdere lunches en avondmaaltijden.",
-            "thermomix": [
-                "Dressing: meng olie en balsamico 5 sec / snelheid 4.",
-                "Quinoa: kook 40 g quinoa in het kookmandje met 500 g water, 15 min / Varoma / snelheid 1."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4878,9 +4722,7 @@ window.APP_DATA = {
                 "Werk vlak voor het eten af met pijnboompitten, olie, balsamico en peper."
             ],
             "prep": "Geen batchwerk nodig: 7 minuten van koelkast tot tafel.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4913,11 +4755,7 @@ window.APP_DATA = {
                 "Verdeel sla en groenten over een kom, leg de eieren erop en serveer de saus erbij."
             ],
             "prep": "Kook eieren voor 3 dagen vooruit.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4952,9 +4790,7 @@ window.APP_DATA = {
                 "Verkruimel de feta erover."
             ],
             "prep": "Rooster een volledige bakplaat voor 3 porties.",
-            "thermomix": [
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -4987,9 +4823,7 @@ window.APP_DATA = {
                 "Lepel de dressing erover of neem hem apart mee."
             ],
             "prep": "Dressing 3 dagen vooraf maken; avocado vers snijden.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5022,9 +4856,7 @@ window.APP_DATA = {
                 "Werk af met geraspte Parmezaan."
             ],
             "prep": "Bak dubbele portie; lekker koud én warm.",
-            "thermomix": [
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5058,9 +4890,7 @@ window.APP_DATA = {
                 "Meng bonen, maïs en groenten met koriander en een scheutje limoensap. Serveer de saus erbij."
             ],
             "prep": "Maak 3 bonen-groenteporties; avocado apart.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5092,10 +4922,7 @@ window.APP_DATA = {
                 "Strooi het sesamzaad erover."
             ],
             "prep": "Groentebasis 2 dagen vooraf; garnalen koel en apart.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5128,10 +4955,7 @@ window.APP_DATA = {
                 "Werk vlak voor het eten af met verkruimelde feta."
             ],
             "prep": "Maak 2-3 porties; warmt uitstekend opnieuw op.",
-            "thermomix": [
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt.",
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5163,11 +4987,7 @@ window.APP_DATA = {
                 "Serveer de eiersalade op de sla met de geraspte wortel ernaast."
             ],
             "prep": "Eiersalade blijft ongeveer 2 dagen gekoeld goed.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5200,10 +5020,7 @@ window.APP_DATA = {
                 "Leg sla, komkommer en wortel in een kom en schep de tonijnsalade erop."
             ],
             "prep": "Tonijnmengsel 's avonds maken; groenten droog bewaren.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5237,9 +5054,7 @@ window.APP_DATA = {
                 "Meng sla en tomaat met de kip en de dressing. Rasp de Parmezaan erover."
             ],
             "prep": "Kip en dressing vooraf; sla pas bij het eten mengen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5270,10 +5085,7 @@ window.APP_DATA = {
                 "Meng rucola en fruit/groenten met olie en balsamico, leg de warme halloumi erop en strooi de pompoenpitten erover."
             ],
             "prep": "Groentebasis vooraf; halloumi het lekkerst vers gebakken.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: pompoen kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5309,10 +5121,7 @@ window.APP_DATA = {
                 "Leg de tofu erop en bestrooi met sesamzaad."
             ],
             "prep": "Koolsalade blijft 3 dagen knapperig; tofu apart bewaren.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5346,9 +5155,7 @@ window.APP_DATA = {
                 "Schep alles op de sla, lepel de saus erover en werk af met gehakte walnoten."
             ],
             "prep": "Gebakken kalkoen 3 dagen gekoeld bewaren.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5379,9 +5186,7 @@ window.APP_DATA = {
                 "Eet meteen of houd de watermeloen apart tot het eten, anders wordt de salade waterig."
             ],
             "prep": "Kikkererwten en komkommer vooraf; meloen liefst dezelfde dag.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5414,10 +5219,7 @@ window.APP_DATA = {
                 "Leg veldsla, biet, appel en komkommer in een kom, verdeel de makreel erover en lepel de saus erop."
             ],
             "prep": "Biet vooraf snijden; makreel pas bij vertrek toevoegen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5450,10 +5252,7 @@ window.APP_DATA = {
                 "Meng groenten en kip met de dressing."
             ],
             "prep": "Koolmix voor 3 dagen snijden; dressing apart.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5488,11 +5287,7 @@ window.APP_DATA = {
                 "Werk vlak voor het eten af met verkruimelde feta, 1 el citroensap en peterselie."
             ],
             "prep": "Kook orzo voor 3 porties; ook koud lekker.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt.",
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5524,10 +5319,7 @@ window.APP_DATA = {
                 "Roer de ricotta los met citroenrasp, peper en een snuf zout en schep op de warme kip en groenten. Werk af met basilicum."
             ],
             "prep": "Kip vooraf bakken; courgette pas vlak voor eten.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5561,11 +5353,7 @@ window.APP_DATA = {
                 "Leg pompoen en linzen op de spinazie en voeg saus, verkruimelde feta en pompoenpitten toe."
             ],
             "prep": "Rooster een hele bakplaat pompoen voor meerdere maaltijden.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: pompoen kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet.",
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5596,11 +5384,7 @@ window.APP_DATA = {
                 "Serveer broccoli, gehalveerde eieren en tomaat met de cottagecheese."
             ],
             "prep": "Broccoli en eieren kunnen 2 dagen vooraf.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water.",
-                "Stomen: broccoli kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5634,9 +5418,7 @@ window.APP_DATA = {
                 "Meenemen: schep de hummusdressing onderaan in een lunchpot, dan de groenten, de kip en de sla bovenaan."
             ],
             "prep": "Ideale potjessalade voor 2-3 werkdagen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5672,10 +5454,7 @@ window.APP_DATA = {
                 "Leg sla en groenten in een kom, schep de kikkererwten erop en lepel de saus erover."
             ],
             "prep": "Kikkererwtenmix 3 dagen houdbaar.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5707,9 +5486,7 @@ window.APP_DATA = {
                 "Werk vlak voor het eten af met Parmezaan, citroensap, olie en peper."
             ],
             "prep": "Geen batch nodig; assembleert in minder dan 10 minuten.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5740,9 +5517,7 @@ window.APP_DATA = {
                 "Leg de burrata erop, scheur hem open bij het eten en maal er peper over."
             ],
             "prep": "Bonen-tomaatbasis vooraf; burrata bij het eten.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5774,10 +5549,7 @@ window.APP_DATA = {
                 "Serveer de zalm op krieltjes en broccoli met de saus erbij."
             ],
             "prep": "Rooster aardappel en broccoli voor 3 porties; zalm 2 porties tegelijk.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: broccoli, krieltjes kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5809,11 +5581,7 @@ window.APP_DATA = {
                 "Serveer met een lepel yoghurt."
             ],
             "prep": "Maak 3 porties in één grote pan.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: bloemkool kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet.",
-                "Bloemkoolrijst: doe roosjes in porties in de mengbeker en hak 5 sec / snelheid 5. Controleer en herhaal kort indien nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5844,10 +5612,7 @@ window.APP_DATA = {
                 "Schep de skyr in een kom en verdeel biet, komkommer, ei en pitten erover."
             ],
             "prep": "Eieren en biet vooraf; in 3 minuten samenstellen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5879,11 +5644,7 @@ window.APP_DATA = {
                 "Meng 1 el limoensap met sojasaus en sesamolie en schep voorzichtig door spinazie, edamame en groenten. Leg de eieren erop."
             ],
             "prep": "Edamame en eieren voor 3 lunches voorbereiden.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5919,9 +5680,7 @@ window.APP_DATA = {
                 "Verdeel sla, groenten, bonen en kip over een kom en serveer met de saus."
             ],
             "prep": "Maak een dubbele portie kip en bonenbasis.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5954,10 +5713,7 @@ window.APP_DATA = {
                 "Meng groenten en gespoelde kikkererwten met 1 el citroensap en peper en leg de halloumi erop."
             ],
             "prep": "Rooster groenten op zondag; 3 dagen bruikbaar.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Warme groentebasis: hak eventuele ui/sjalot 5 sec / snelheid 5, voeg 1 tl olie toe en fruit 3 min / 120°C / snelheid 1. Voeg daarna groenten toe en gaar met linksom draaien waar nodig."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -5991,11 +5747,7 @@ window.APP_DATA = {
                 "Meng krieltjes en boontjes met tomaatpartjes, olijven en tonijn. Leg het ei erop en lepel de dressing erover."
             ],
             "prep": "Kook krieltjes, boontjes en eieren voor 2-3 dagen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water.",
-                "Stomen: sperziebonen, krieltjes kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6028,11 +5780,7 @@ window.APP_DATA = {
                 "Verdeel broccoli, edamame en wortel in een kom, leg de tempeh erop en lepel de saus erover."
             ],
             "prep": "Maak 2-3 porties; saus apart bewaren.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: broccoli kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6065,11 +5813,7 @@ window.APP_DATA = {
                 "Schep bonen en groenten door de dressing en leg de eieren erop."
             ],
             "prep": "Eieren en bonenbasis vooraf; 2 dagen houdbaar.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Eieren: gaar ze in het kookmandje met 500 g water, ca. 14 min / 100°C / snelheid 1. Koel daarna onder koud water.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6101,9 +5845,7 @@ window.APP_DATA = {
                 "Werk vlak voor het eten af met verkruimelde feta, gehakte amandelen, balsamico en 1 tl olie."
             ],
             "prep": "Kip vooraf bakken; aardbeien pas dezelfde dag.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6133,10 +5875,7 @@ window.APP_DATA = {
                 "Breek de sardines in grove stukken en schep ze er voorzichtig door. Gebruik 1 tl olie uit het blikje als extra dressing."
             ],
             "prep": "Volledig uit voorraad in minder dan 10 minuten.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Snijwerk: harde groenten en kruiden kunnen kort in de mengbeker, 3–5 sec / snelheid 5. Werk in kleine porties zodat het geen puree wordt."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6169,9 +5908,7 @@ window.APP_DATA = {
                 "Schep de cottagecheese in een kom en verdeel het bonenmengsel erover."
             ],
             "prep": "Bonen-groentemix voor 3 dagen maken.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6204,10 +5941,7 @@ window.APP_DATA = {
                 "Meng appel en granaatappel erdoor met 1 el citroensap en de olie. Werk af met verkruimelde feta, amandelen en za'atar."
             ],
             "prep": "Couscous voor 3 porties koken; fruit pas later toevoegen.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Couscous: verwarm water in de mengbeker tot kookpunt, giet over de couscous in een kom en laat afgedekt wellen."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6239,9 +5973,7 @@ window.APP_DATA = {
                 "Verdeel biet, komkommer en kip over de rucola en lepel de hummus erover."
             ],
             "prep": "Alles behalve rucola kan 2 dagen vooraf.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6274,10 +6006,7 @@ window.APP_DATA = {
                 "Meng spinazie, broccoli, edamame, komkommer en avocado met de dressing en leg de zalm in repen erop."
             ],
             "prep": "Broccoli en edamame vooraf; avocado vers.",
-            "thermomix": [
-                "Dressing: doe de dressingingrediënten in de mengbeker en meng 10 sec / snelheid 4. Schraap omlaag en meng indien nodig nog 5 sec / snelheid 4.",
-                "Stomen: broccoli kun je in de Varoma garen terwijl er 500 g water in de mengbeker zit; reken meestal 15–25 min / Varoma / snelheid 1, afhankelijk van grootte en gewenste beet."
-            ],
+            "thermomix": [],
             "servings": 1
         },
         {
@@ -6315,8 +6044,9 @@ window.APP_DATA = {
             ],
             "prep": "Maak 3 porties groentebasis en een pot dressing. Bewaar apart; zo blijft de kool 3 dagen knapperig.",
             "thermomix": [
-                "Dressing: cashewnoten 5 sec / snelheid 8. Voeg basilicum, spinazie, citroen, rijstazijn en 40–60 g water toe; 30 sec / snelheid 8, schraap omlaag en herhaal indien nodig.",
-                "Groentenrasp: snijd kool en komkommer met de Cutter/groentenrasp in een vorm die bij jouw model past; werk in porties voor een gelijkmatig resultaat."
+                "Doe de cashewnoten in de mengbeker en maal 5 sec / snelheid 9.",
+                "Voeg basilicum, spinazie, 1 el citroensap, rijstazijn, een snuf zout en 3 el water toe en mix 20 sec / snelheid 8. Schraap af en mix nog 10 sec / snelheid 8 tot de dressing glad is.",
+                "Bak de kip en snijd de groenten zoals in het gewone recept, en meng de dressing pas vlak voor het eten erdoor."
             ],
             "id": 52,
             "servings": 1
@@ -6354,8 +6084,9 @@ window.APP_DATA = {
             ],
             "prep": "Groenten en dressing apart tot 3 dagen bewaren. Kikkererwten kunnen meteen bij de groentebasis.",
             "thermomix": [
-                "Dressing: cashewnoten 5 sec / snelheid 8; voeg skyr, basilicum, spinazie en citroen toe en meng 20 sec / snelheid 7.",
-                "Gebruik de groentenrasp voor kool en wortel; komkommer kan afhankelijk van gewenste structuur ook mee."
+                "Doe de cashewnoten in de mengbeker en maal 5 sec / snelheid 9.",
+                "Voeg skyr, basilicum, spinazie, 1 el citroensap en een snuf zout toe en mix 20 sec / snelheid 8. Schraap af en mix nog 10 sec / snelheid 8.",
+                "Rasp de kool en wortel met de groentenrasp (als je die hebt) en meng alles zoals in het gewone recept."
             ],
             "id": 53,
             "servings": 1
@@ -6392,10 +6123,7 @@ window.APP_DATA = {
                 "Meng de dressing door de salade, schep de kip erdoor en verkruimel de feta erover."
             ],
             "prep": "Snijd paprika en komkommer vooruit; tomaat en sla liefst maximaal 1 dag vooraf.",
-            "thermomix": [
-                "Dressing: skyr, citroen en oregano 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor komkommer en paprika waar praktisch; zachte tomaat en sla liever met de hand."
-            ],
+            "thermomix": [],
             "id": 54,
             "servings": 1
         },
@@ -6431,10 +6159,7 @@ window.APP_DATA = {
                 "Voeg de kalkoen en saus pas bij het eten toe als je de salade extra knapperig wilt houden."
             ],
             "prep": "Maak gehakt en bonenbasis voor 3 lunches; sla en saus apart.",
-            "thermomix": [
-                "Saus: skyr en limoensap 10 sec / snelheid 4.",
-                "Groentenrasp: paprika kan snel worden gesneden; sla en tomaat liever met de hand voor controle over de structuur."
-            ],
+            "thermomix": [],
             "id": 55,
             "servings": 1
         },
@@ -6469,8 +6194,8 @@ window.APP_DATA = {
             ],
             "prep": "Dressing en koolbasis 2–3 dagen vooraf; avocado en garnalen liefst op de dag zelf toevoegen.",
             "thermomix": [
-                "Dressing: basilicum, spinazie, skyr en limoen 25 sec / snelheid 7; schraap omlaag en herhaal kort.",
-                "Gebruik de groentenrasp voor de kool en eventueel komkommer."
+                "Doe skyr, basilicum, spinazie, 1 el limoensap en een snuf zout in de mengbeker en mix 20 sec / snelheid 8. Schraap af en mix nog 10 sec / snelheid 8.",
+                "Maak de salade verder zoals in het gewone recept."
             ],
             "id": 56,
             "servings": 1
@@ -6483,8 +6208,7 @@ window.APP_DATA = {
             "fiber": 11,
             "tags": [
                 "vegetarisch",
-                "mealprep",
-                "thermomix"
+                "mealprep"
             ],
             "ingredients": [
                 "200 g broccoli",
@@ -6507,11 +6231,7 @@ window.APP_DATA = {
                 "Rooster de zonnebloempitten 2 minuten in een droge pan en strooi ze erover."
             ],
             "prep": "Stoom broccoli en kook eieren voor 2–3 dagen tegelijk.",
-            "thermomix": [
-                "Doe 500 g water in de mengbeker. Eieren in het kookmandje en broccoli in de Varoma; start 14 min / Varoma / snelheid 1. Haal de eieren eruit en geef broccoli indien nodig nog enkele minuten.",
-                "Dressing: skyr, mosterd, bieslook en dille 10 sec / snelheid 4.",
-                "Rasp wortel met de groentenrasp."
-            ],
+            "thermomix": [],
             "id": 57,
             "servings": 1
         },
@@ -6545,10 +6265,7 @@ window.APP_DATA = {
                 "Meng de dressing door groenten en edamame. Snijd de zalm in reepjes en schep die er als laatste voorzichtig door."
             ],
             "prep": "Koolmix en dressing houden 2–3 dagen apart goed; zalm dezelfde dag toevoegen.",
-            "thermomix": [
-                "Dressing: skyr, dille, citroen en mosterd 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor kool, komkommer en radijs."
-            ],
+            "thermomix": [],
             "id": 58,
             "servings": 1
         },
@@ -6583,10 +6300,7 @@ window.APP_DATA = {
                 "Schep alles door elkaar en strooi de gehakte amandelen pas vlak voor het eten erover."
             ],
             "prep": "Kool, wortel en kip voor 3 porties; appel later toevoegen of met citroen mengen tegen verkleuren.",
-            "thermomix": [
-                "Dressing: skyr, kerrie en citroen 10 sec / snelheid 4.",
-                "Gebruik de groentenrasp voor kool, wortel en eventueel appel."
-            ],
+            "thermomix": [],
             "id": 59,
             "servings": 1
         },
@@ -6621,10 +6335,7 @@ window.APP_DATA = {
                 "Schep de tonijn er op het einde losjes door."
             ],
             "prep": "Bonen en harde groenten 2 dagen vooraf; sla, tomaat en tonijn later toevoegen.",
-            "thermomix": [
-                "Hak peterselie en rode ui 3 sec / snelheid 5; controleer zodat de ui niet te fijn wordt.",
-                "Gebruik de groentenrasp voor komkommer en paprika."
-            ],
+            "thermomix": [],
             "id": 60,
             "servings": 1
         },
@@ -6660,8 +6371,9 @@ window.APP_DATA = {
             ],
             "prep": "Maak 3 porties groenten + edamame en één grotere pot dressing.",
             "thermomix": [
-                "Cashewnoten 5 sec / snelheid 8. Voeg basilicum, spinazie, skyr en limoen toe; 25 sec / snelheid 7–8.",
-                "Gebruik de groentenrasp voor kool, wortel en komkommer."
+                "Doe de cashewnoten in de mengbeker en maal 5 sec / snelheid 9.",
+                "Voeg basilicum, spinazie, skyr, 1 el limoensap en een snuf zout toe en mix 20 sec / snelheid 8. Schraap af en mix nog 10 sec / snelheid 8.",
+                "Meng alles vlak voor het eten zoals in het gewone recept."
             ],
             "id": 61,
             "servings": 1
@@ -6692,7 +6404,8 @@ window.APP_DATA = {
                 "Werk vlak voor het eten af met granola en noten of zaden, zodat ze krokant blijven."
             ],
             "prep": "Portioneer fruit vooraf; granola apart houden.",
-            "servings": 1
+            "servings": 1,
+            "thermomix": []
         },
         {
             "id": 2,
@@ -6813,8 +6526,8 @@ window.APP_DATA = {
             "time": 7,
             "tags": [
                 "snel",
-                "thermomix",
-                "koemelkvrij"
+                "koemelkvrij",
+                "thermomix"
             ],
             "ingredients": [
                 "1 banaan (liefst bevroren in stukjes)",
@@ -6832,7 +6545,11 @@ window.APP_DATA = {
             ],
             "prep": "Vries porties banaan en mango vooraf in.",
             "servings": 1,
-            "thermomix": []
+            "thermomix": [
+                "Doe havermout in de mengbeker en maal 10 sec / snelheid 9.",
+                "Voeg banaan, mango, spinazie, sojayoghurt en pindakaas toe en mix 1 min / snelheid 6–10, geleidelijk verhogen. Schraap tussendoor af. Te dik? Voeg 1–2 el sojadrink toe.",
+                "Schep in een kom en werk af met zaden of vers fruit."
+            ]
         },
         {
             "id": 7,
@@ -6841,7 +6558,8 @@ window.APP_DATA = {
             "tags": [
                 "warm",
                 "familie",
-                "mealprep"
+                "mealprep",
+                "thermomix"
             ],
             "ingredients": [
                 "2 rijpe bananen",
@@ -6861,7 +6579,11 @@ window.APP_DATA = {
             ],
             "prep": "Bak dubbel; pannenkoekjes kunnen ingevroren.",
             "servings": 2,
-            "thermomix": []
+            "thermomix": [
+                "Doe havermout in de mengbeker en maal 10 sec / snelheid 9.",
+                "Voeg bananen in stukken, eieren, sojadrink, bakpoeder, kaneel en zout toe en mix 20 sec / snelheid 5 tot een glad beslag. Laat 5 minuten rusten.",
+                "Bak de pannenkoekjes in de pan zoals in het gewone recept: 2 el beslag per stuk, 2 minuten tot er belletjes verschijnen, keren en nog 1–2 minuten."
+            ]
         },
         {
             "id": 8,
