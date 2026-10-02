@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#2e6a43" />
+        <title>Gezinsmenu</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="top">
+            <div class="wrap topbar">
+                <div class="brand"><span class="plate" aria-hidden="true"></span>Gezinsmenu</div>
+                <nav class="tabs" role="tablist" aria-label="Onderdelen">
+                    <button role="tab" data-tab="week" aria-selected="true">Deze week</button>
+                    <button role="tab" data-tab="dinner" aria-selected="false">Avondeten</button>
+                    <button role="tab" data-tab="lunch" aria-selected="false">Lunch</button>
+                    <button role="tab" data-tab="breakfast" aria-selected="false">Ontbijt</button>
+                    <button role="tab" data-tab="add" aria-selected="false">+ Toevoegen</button>
+                </nav>
+                <div class="auth">
+                    <span id="sync" class="sync">Even laden…</span
+                    ><span id="who" class="small muted" hidden></span
+                    ><button class="btn sm ghost" id="btnLogout" hidden>Uitloggen</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <!-- DEZE WEEK -->
+            <section class="page" id="p-week">
+                <div class="head">
+                    <div>
+                        <p class="eyebrow">Avondeten plannen</p>
+                        <h2>Deze week</h2>
+                    </div>
+                    <div class="row">
+                        <button class="btn primary" id="btnSuggest">✨ Stel 5 avondmalen voor</button>
+                        <button class="btn ghost" id="btnClearWeek">Week leegmaken</button>
+                    </div>
+                </div>
+                <div id="clearConfirm" hidden class="confirm" style="margin-bottom: 12px">
+                    <span>Alle dagen, lunches en vinkjes wissen?</span>
+                    <button class="btn sm danger" id="btnClearYes">Ja, leegmaken</button>
+                    <button class="btn sm" id="btnClearNo">Annuleer</button>
+                </div>
+                <div id="suggestBox" hidden></div>
+                <div class="week-grid">
+                    <div>
+                        <div class="panel"><div class="days" id="days"></div></div>
+                        <div class="panel extras">
+                            <h3>Lunch &amp; ontbijt deze week</h3>
+                            <p class="muted small" style="margin: 4px 0 0">
+                                Kies bij Lunch of Ontbijt “+ Deze week”; de ingrediënten komen dan ook op de
+                                boodschappenlijst.
+                            </p>
+                            <ul id="extras"></ul>
+                        </div>
+                    </div>
+                    <aside class="panel shop" aria-labelledby="shopTitle">
+                        <div class="head" style="margin-bottom: 4px">
+                            <h3 id="shopTitle">Boodschappen</h3>
+                            <span class="muted small" id="shopCount"></span>
+                        </div>
+                        <div id="shop"></div>
+                        <form id="extraItemForm" class="textin" style="margin-top: 12px">
+                            <input
+                                type="text"
+                                id="extraItem"
+                                placeholder="Iets extra, bv. wc-papier"
+                                aria-label="Extra boodschap"
+                            />
+                            <button class="btn sm" type="submit">Voeg toe</button>
+                        </form>
+                        <div class="row" style="margin-top: 12px">
+                            <button class="btn sm" id="copyShop">Kopieer lijst</button>
+                            <button class="btn sm" id="copyXtra">Kopieer voor Xtra</button>
+                            <button class="btn sm ghost" id="resetChecks">Vinkjes wissen</button>
+                        </div>
+                        <textarea
+                            id="copyFallback"
+                            hidden
+                            readonly
+                            aria-label="Lijst om te kopiëren"
+                            style="margin-top: 8px"
+                        ></textarea>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- BIBLIOTHEKEN -->
+            <section class="page" id="p-dinner" hidden></section>
+            <section class="page" id="p-lunch" hidden></section>
+            <section class="page" id="p-breakfast" hidden></section>
+
+            <!-- TOEVOEGEN -->
+            <section class="page" id="p-add" hidden>
+                <div class="head">
+                    <div>
+                        <p class="eyebrow">Jullie databank laten groeien</p>
+                        <h2>Recept toevoegen</h2>
+                    </div>
+                </div>
+                <div class="add-grid">
+                    <div class="panel form">
+                        <h3>1. Recept van ergens anders</h3>
+                        <p class="muted small" style="margin: 0">
+                            Plak een link, de tekst van een recept, of laat leeg als je in de chat een foto of
+                            PDF toevoegt. De opdracht bevat jullie smaakprofiel, dus hij werkt ook in een
+                            nieuw gesprek.
+                        </p>
+                        <div>
+                            <label class="lbl" for="srcText">Link of recepttekst</label
+                            ><textarea
+                                id="srcText"
+                                placeholder="https://… of plak hier het recept"
+                            ></textarea>
+                        </div>
+                        <div class="two">
+                            <div>
+                                <label class="lbl" for="srcType">Soort</label
+                                ><select id="srcType">
+                                    <option value="dinner">Avondeten</option>
+                                    <option value="lunch">Lunch</option>
+                                    <option value="breakfast">Ontbijt</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="lbl" for="srcWish">Extra wens</label
+                                ><input type="text" id="srcWish" placeholder="bv. liever met kip" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="btn primary" id="cpConvert">Kopieer opdracht</button>
+                        </div>
+                        <div class="status" id="cpStatus" role="status"></div>
+                        <hr
+                            style="border: 0; border-top: 1px solid var(--line); width: 100%; margin: 4px 0"
+                        />
+                        <h3>Of: nieuwe ideeën laten bedenken</h3>
+                        <div class="two">
+                            <div>
+                                <label class="lbl" for="idType">Soort</label
+                                ><select id="idType">
+                                    <option value="dinner">Avondeten</option>
+                                    <option value="lunch">Lunch</option>
+                                    <option value="breakfast">Ontbijt</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="lbl" for="idN">Aantal</label
+                                ><select id="idN">
+                                    <option>3</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="lbl" for="idWish">Waar hebben jullie zin in?</label
+                            ><input
+                                type="text"
+                                id="idWish"
+                                placeholder="bv. meer traybakes, iets met scampi"
+                            />
+                        </div>
+                        <div class="row"><button class="btn" id="cpIdeas">Kopieer opdracht</button></div>
+                        <textarea
+                            id="copyFallbackAdd"
+                            hidden
+                            readonly
+                            aria-label="Opdracht om te kopiëren"
+                        ></textarea>
+                    </div>
+
+                    <div class="panel form">
+                        <h3>2. Plak het antwoord van de chatbot</h3>
+                        <ol class="small muted" style="margin: 0; padding-left: 1.2em">
+                            <li>
+                                Plak de gekopieerde opdracht in ChatGPT, Claude of Gemini (gratis versie is
+                                genoeg).
+                            </li>
+                            <li>Kopieer het volledige antwoord.</li>
+                            <li>Plak het hieronder en klik op Controleer.</li>
+                        </ol>
+                        <textarea
+                            id="ansIn"
+                            placeholder='{"name": "…", "ingredients": […], "steps": […]}'
+                        ></textarea>
+                        <div class="row">
+                            <select id="ansType" style="width: auto" aria-label="Soort">
+                                <option value="dinner">Avondeten</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="breakfast">Ontbijt</option></select
+                            ><button class="btn primary" id="ansGo">Controleer</button>
+                        </div>
+                        <div class="status" id="ansStatus" role="status"></div>
+                        <div id="ansResult" class="form"></div>
+                    </div>
+
+                    <div class="panel form">
+                        <h3>Zelf invoeren</h3>
+                        <form id="manual" class="form">
+                            <div>
+                                <label class="lbl" for="mName">Naam</label
+                                ><input type="text" id="mName" required />
+                            </div>
+                            <div class="two">
+                                <div>
+                                    <label class="lbl" for="mType">Soort</label
+                                    ><select id="mType">
+                                        <option value="dinner">Avondeten</option>
+                                        <option value="lunch">Lunch</option>
+                                        <option value="breakfast">Ontbijt</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="lbl" for="mServ">Porties</label
+                                    ><input type="number" id="mServ" min="1" max="12" value="4" />
+                                </div>
+                            </div>
+                            <div class="two">
+                                <div>
+                                    <label class="lbl" for="mTime">Tijd (min)</label
+                                    ><input type="number" id="mTime" min="0" value="30" />
+                                </div>
+                                <div>
+                                    <label class="lbl" for="mTags">Labels</label
+                                    ><input type="text" id="mTags" placeholder="kip, oven, koemelkvrij" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="lbl" for="mIng">Ingrediënten (één per regel)</label
+                                ><textarea id="mIng" placeholder="600 g kipfilet&#10;2 paprika's"></textarea>
+                            </div>
+                            <div>
+                                <label class="lbl" for="mSteps">Bereiding (één stap per regel)</label
+                                ><textarea id="mSteps"></textarea>
+                            </div>
+                            <div>
+                                <label class="lbl" for="mTmx">Thermomix (optioneel, één per regel)</label
+                                ><textarea id="mTmx" style="min-height: 60px"></textarea>
+                            </div>
+                            <div>
+                                <label class="lbl" for="mDay2">Restjes / dag 2 (optioneel)</label
+                                ><input type="text" id="mDay2" />
+                            </div>
+                            <div class="row"><button class="btn primary" type="submit">Opslaan</button></div>
+                            <div class="status" id="mStatus" role="status"></div>
+                        </form>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Mijn recepten</h3>
+                        <ul class="mine" id="mine"></ul>
+                    </div>
+
+                    <div class="panel form">
+                        <h3>Back-up</h3>
+                        <p class="muted small" style="margin: 0">
+                            Bewaar af en toe een kopie van jullie eigen recepten, favorieten en ‘niet voor
+                            ons’. Handig als iemand per ongeluk iets verwijdert, of om over te stappen.
+                        </p>
+                        <div class="row">
+                            <button class="btn" id="btnBackup">Download back-up</button>
+                            <label class="btn" for="restoreFile">Back-up terugzetten</label
+                            ><input type="file" id="restoreFile" accept="application/json,.json" hidden />
+                        </div>
+                        <div class="status" id="backupStatus" role="status"></div>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Ons smaakprofiel</h3>
+                        <p class="muted small">
+                            Dit bepaalt welke gerechten vaker voorgesteld worden en wat de chatbot meekrijgt.
+                        </p>
+                        <ul class="small" id="profileList" style="padding-left: 1.1em; margin: 0"></ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="login" class="overlay login" hidden>
+            <div class="sheet" style="max-width: 440px; margin-top: 10vh">
+                <p class="eyebrow">Gezinsmenu</p>
+                <h2>Log in om jullie weekmenu te zien</h2>
+                <p class="muted">
+                    Gebruik het Google-account waarmee je toegang kreeg. Alleen de gezinsleden die in de
+                    instellingen staan, kunnen de gegevens zien en wijzigen.
+                </p>
+                <div class="row">
+                    <button class="btn primary" id="btnLogin">Inloggen met Google</button
+                    ><button class="btn" id="btnLoginOther" hidden>Ander account kiezen</button>
+                </div>
+                <p id="loginMsg" class="status" role="status"></p>
+            </div>
+        </div>
+        <div id="overlay" class="overlay" hidden></div>
+        <div id="toast" class="toast" hidden role="status"></div>
+
+        <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+        <script src="firebase-config.js"></script>
+        <script src="data.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+rules_version = '2';
+
+// Gezinsmenu – beveiligingsregels voor Firestore
+// Alleen de Google-accounts in de lijst hieronder kunnen de gegevens lezen en wijzigen.
+// Een gezinslid toevoegen of verwijderen: pas de lijst aan en klik in Firebase op "Publish".
+// Schrijf e-mailadressen volledig in kleine letters.
+
+service cloud.firestore {
+    match /databases/{database}/documents {
+
+        function isFamily() {
+            return request.auth != null
+                && request.auth.token.email_verified == true
+                && request.auth.token.email.lower() in [
+                    "mietwelkenhuyzen@gmail.com",
+                    "VERVANG-door-gmail-van-partner@gmail.com",
+                    "VERVANG-door-gmail-van-zoon@gmail.com",
+                    "VERVANG-door-gmail-van-dochter@gmail.com"
+                ];
+        }
+
+        match /families/{familyId}/{document=**} {
+            allow read, write: if isFamily();
+        }
+
+        // Al de rest blijft dicht.
+        match /{document=**} {
+            allow read, write: if false;
+        }
+    }
+}
