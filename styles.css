@@ -1222,6 +1222,20 @@ details summary {
 .wk-sum {
     margin: 0;
 }
+.wk-rec {
+    background: none;
+    border: 0;
+    padding: 2px 0;
+    font: inherit;
+    color: var(--basil);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    text-align: left;
+}
+.wk-gone {
+    text-decoration: line-through;
+}
 .save-week {
     flex-wrap: wrap;
 }
