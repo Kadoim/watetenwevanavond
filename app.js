@@ -269,6 +269,33 @@
         if (one === "stengel") return "stengels";
         return u;
     }
+    // Eenheden die je kunt omrekenen naar één basiseenheid, zodat bv. "6 el" en "2 tl" olijfolie samen worden opgeteld.
+    const BASE_UNIT = {
+        el: ["tl", 3],
+        tl: ["tl", 1],
+        l: ["ml", 1000],
+        dl: ["ml", 100],
+        cl: ["ml", 10],
+        ml: ["ml", 1],
+        kg: ["g", 1000],
+        g: ["g", 1],
+    };
+    // Opgetelde hoeveelheid terug leesbaar maken: lepels in el (+ rest in tl), grote volumes in l.
+    function fmtBaseQty(q, unit) {
+        if (unit === "tl") {
+            if (q < 3) return fmtQ(roundQ(q, "tl")) + " tl";
+            let el = Math.floor(q / 3 + 1e-9),
+                rest = roundQ(q - el * 3, "tl");
+            if (rest >= 3) {
+                el += 1;
+                rest = 0;
+            }
+            return fmtQ(el) + " el" + (rest ? " + " + fmtQ(rest) + " tl" : "");
+        }
+        if (unit === "ml" && q >= 1000) return fmtQ(Math.round(q / 100) / 10) + " l";
+        if (unit === "g" && q >= 1000) return fmtQ(Math.round(q / 100) / 10) + " kg";
+        return fmtQ(roundQ(q, unit)) + " " + unit;
+    }
     function shoppingItems() {
         const map = new Map();
         const add = (r, portions) => {
@@ -278,11 +305,19 @@
                 const p = parseIng(line);
                 const name = p.name.replace(/\s*\(.*?\)\s*/g, " ").trim();
                 // "teentje" en "teentjes" (of "blik" en "blikken") samen optellen
-                const unitKey = p.unit.replace(/(jes|je|ken|s)$/, "");
+                const base = BASE_UNIT[p.unit];
+                const unitKey = base ? base[0] : p.unit.replace(/(jes|je|ken|s)$/, "");
                 const key = singular(norm(name)) + "|" + (p.q == null ? "" : unitKey);
-                const cur = map.get(key) || { name, unit: p.unit, q: 0, hasQ: p.q != null, from: new Set() };
-                if (p.unit.length > cur.unit.length && p.unit.startsWith(cur.unit)) cur.unit = p.unit;
-                if (p.q != null) cur.q += p.q * f;
+                const cur = map.get(key) || {
+                    name,
+                    unit: base ? base[0] : p.unit,
+                    q: 0,
+                    hasQ: p.q != null,
+                    based: !!base,
+                    from: new Set(),
+                };
+                if (!base && p.unit.length > cur.unit.length && p.unit.startsWith(cur.unit)) cur.unit = p.unit;
+                if (p.q != null) cur.q += p.q * f * (base ? base[1] : 1);
                 cur.from.add(r.name);
                 map.set(key, cur);
             });
@@ -296,7 +331,9 @@
             name: v.name,
             cat: cat(v.name),
             qty:
-                v.hasQ && v.q
+                v.hasQ && v.q && v.based
+                    ? fmtBaseQty(v.q, v.unit)
+                    : v.hasQ && v.q
                     ? fmtQ(roundQ(v.q, v.unit)) + (v.unit ? " " + unitFor(roundQ(v.q, v.unit), v.unit) : "")
                     : "",
             from: [...v.from],
@@ -957,6 +994,17 @@
             });
         return names.length ? names.join(" · ") : "Geen avondmalen";
     }
+    // Recepten van een bewaarde week als aanklikbare knopjes: openen het recept (en zo de kookmodus) zonder de week terug te zetten.
+    function weekRecipeLinks(w) {
+        const links = (w.days || [])
+            .filter((d) => d && d.kind === "recipe")
+            .map((d) => {
+                const r = byKey(d.key);
+                if (!r) return `<span class="wk-gone">${esc(d.name || "?")}</span>`;
+                return `<button class="wk-rec" data-wk="open" data-key="${esc(d.key)}" data-portions="${Number(d.portions) || ""}">${esc(r.name)}</button>`;
+            });
+        return links.length ? links.join(`<span aria-hidden="true"> · </span>`) : "Geen avondmalen";
+    }
     function renderArchive() {
         const el = $("#archive");
         if (!el) return;
@@ -977,7 +1025,7 @@
                               ? `<div class="confirm"><span>Deze bewaarde week definitief verwijderen?</span><button class="btn sm danger" data-wk="delyes" data-id="${esc(w.id)}">Verwijder</button><button class="btn sm" data-wk="no">Annuleer</button></div>`
                               : "";
                       return `<li><div class="wk-head"><strong>${esc(w.label)}</strong><span class="small muted">${when}</span></div>
-          <p class="small muted wk-sum">${esc(weekSummary(w))}</p>
+          <p class="small muted wk-sum">${weekRecipeLinks(w)}</p>
           <div class="row"><button class="btn sm" data-wk="restore" data-id="${esc(w.id)}">Terugzetten</button><button class="icon-btn" data-wk="del" data-id="${esc(w.id)}" aria-label="Verwijder ${esc(w.label)}">✕</button></div>
           ${confirmRestore}${confirmDel}</li>`;
                   })
@@ -987,9 +1035,10 @@
     $("#archive").addEventListener("click", (e) => {
         const t = e.target.closest("[data-wk]");
         if (!t) return;
-        if (S.readOnly) return toast("Je kunt hier alleen meekijken.");
         const a = t.dataset.wk,
             id = t.dataset.id;
+        if (a === "open") return openRecipe(t.dataset.key, Number(t.dataset.portions) || 0);
+        if (S.readOnly) return toast("Je kunt hier alleen meekijken.");
         S.restoreId = null;
         S.deleteWeekId = null;
         if (a === "restore") S.restoreId = id;
