@@ -937,6 +937,57 @@ details summary {
     font-weight: 700;
     color: inherit;
 }
+.cook-tname-txt {
+    display: block;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cook-tmeta {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.75;
+}
+.cook-tedit {
+    padding: 4px 8px;
+}
+.cook-tname {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    font-weight: 700;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    color: inherit;
+}
+.cook-alarm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 760px;
+    margin: 10px auto 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--tomato-soft);
+    border: 2px solid var(--tomato);
+    font-size: 1.2rem;
+}
+.cook-alarm-ico {
+    font-size: 1.6rem;
+}
+.cook-alarm-txt {
+    flex: 1;
+    min-width: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .cook-alarm-ico {
+        animation: cookPulse 1s ease-in-out infinite;
+    }
+}
 .cook-tleft {
     font-family: var(--f-display);
     font-weight: 800;

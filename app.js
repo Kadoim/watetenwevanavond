@@ -10,6 +10,7 @@
         "Grote favorieten: kip, scampi, zalm, avocado, broccoli, paprika, prei en champignons.",
         "Heel geliefd: Italiaanse pasta met veel groenten, Aziatische rijstbowls, zelf-vul-wraps, poke bowls, Mexicaans, ovenschotels, pizza/flatbread, Thaise kip met cashewnoten.",
         "Romige/smeuïge kip- en scampigerechten met veel groenten en een goede saus vallen bijzonder goed.",
+        "Afwisseling is belangrijk: kip eten we het vaakst, maar niet elke dag. Gehakt, rundvlees, zalm, scampi, andere vis en vegetarisch (als je het vlees niet mist) komen ook graag regelmatig op tafel. Vervang dus niet zomaar ander vlees of vis door kip.",
         "Poke/bowls: met rijst, mango als zoete component, zonder wortel.",
         "Curry is geliefd bij 3 van de 4; de zoon houdt niet van de currysmaak zelf. Curry mag, zonder het aan te passen.",
         "Feta is geliefd bij 3 van de 4; liefst koemelkvrij en apart serveren.",
@@ -122,7 +123,6 @@
         let s = 2;
         const h = hay(r);
         [
-            "kip",
             "scampi",
             "zalm",
             "avocado",
@@ -1219,7 +1219,7 @@
         const ok = (r) =>
             !c.includes(r) &&
             !c.some((x) => fam(x) === fam(r)) &&
-            c.filter((x) => protein(x) === "kip").length < (protein(r) === "kip" ? 3 : 9) &&
+            (protein(r) !== "kip" || c.filter((x) => protein(x) === "kip").length < 2) &&
             c.filter((x) => carb(x) === carb(r)).length < 2;
         const add = (test) => {
             const a = pool.filter((r) => ok(r) && test(r));
@@ -1229,7 +1229,10 @@
         add((r) => carb(r) === "rijst");
         add((r) => carb(r) === "wrap");
         add((r) => protein(r) === "vis");
-        if (Math.random() < 0.5) add((r) => protein(r) === "vegetarisch");
+        // Kip staat het vaakst in de bibliotheek; zonder dit vak kwam er bijna nooit iets anders uit.
+        const roll = Math.random();
+        if (roll < 0.45) add((r) => protein(r) === "vlees");
+        else if (roll < 0.75) add((r) => protein(r) === "vegetarisch");
         else add((r) => ["aardappel", "anders"].includes(carb(r)));
         let guard = 0;
         while (c.length < 5 && guard++ < 50) {
@@ -1259,12 +1262,15 @@
             const i = +t.dataset.i;
             const cur = S.suggestion;
             const r0 = byKey(cur[i]);
-            const pool = lib("dinner").filter(
-                (r) => !isNo(r.key) && !cur.includes(r.key) && carb(r) === carb(r0),
+            // Al 2 keer kip in de rest van de week? Dan geen kip als vervanger.
+            const kipFull = cur.filter((k, j) => j !== i && byKey(k) && protein(byKey(k)) === "kip").length >= 2;
+            const base = lib("dinner").filter(
+                (r) => !isNo(r.key) && !cur.includes(r.key) && !(kipFull && protein(r) === "kip"),
             );
+            const pool = base.filter((r) => carb(r) === carb(r0));
             const alt = pool.length
                 ? weighted(pool)
-                : weighted(lib("dinner").filter((r) => !isNo(r.key) && !cur.includes(r.key)));
+                : weighted(base.length ? base : lib("dinner").filter((r) => !isNo(r.key) && !cur.includes(r.key)));
             cur[i] = alt.key;
         }
         if (a === "apply" || a === "fill") {
@@ -1483,12 +1489,14 @@
         renderDetail();
         $("#overlay").hidden = false;
         document.body.style.overflow = "hidden";
+        keepAwake(); // scherm al aan houden tijdens het verzamelen van de ingrediënten
     }
     function closeDetail() {
         $("#overlay").hidden = true;
         $("#overlay").innerHTML = "";
         detail = null;
         document.body.style.overflow = "";
+        if (!cook) releaseAwake();
     }
     function renderDetail() {
         const { r, portions, view } = detail;
@@ -1600,7 +1608,7 @@
     /* ---------- kookmodus ---------- */
     // Eén stap per scherm, timers die je uit de staptekst haalt, het scherm blijft aan.
     let cook = null;
-    const timers = []; // { id, label, step, total, end, pausedLeft, done }
+    const timers = []; // { id, name, step, total, end, pausedLeft, done, editing }
     let timerTick = null,
         timerSeq = 0,
         wakeLock = null,
@@ -1610,18 +1618,78 @@
     // "bak 6–8 minuten" → 8 min; "rooster 25 min" → 25 min. Seconden en uren laten we weg:
     // korte Thermomix-tijden telt het toestel zelf af, en "een nacht laten staan" hoort niet in een timer.
     const TIME_RE = /(\d+)(?:\s*[–-]\s*(\d+))?\s*(minuten|minuut|min)\b/gi;
-    function stepTimes(text) {
+    function stepTimes(text, ings) {
         const out = [];
-        let m;
+        let m,
+            prevEnd = 0;
         TIME_RE.lastIndex = 0;
         while ((m = TIME_RE.exec(text))) {
             const lo = +m[1],
-                hi = m[2] ? +m[2] : lo;
+                hi = m[2] ? +m[2] : lo,
+                from = prevEnd;
+            prevEnd = m.index + m[0].length;
             if (hi < 1 || hi > 180) continue;
             if (!out.some((t) => t.min === hi))
-                out.push({ min: hi, label: m[2] ? `${lo}–${hi} min` : `${hi} min` });
+                out.push({
+                    min: hi,
+                    label: m[2] ? `${lo}–${hi} min` : `${hi} min`,
+                    name: timerName(text, from, m.index, ings || []),
+                });
         }
         return out;
+    }
+    // Naam voor een timer: de ingrediënten uit hetzelfde zinsdeel als de tijd ("bak de kip 8 min" → Kip).
+    // Vinden we niets in het zinsdeel, dan kijken we naar de hele zin en daarna de hele stap.
+    const TIMER_FILLER = /olie$|^(zout|peper|water|suiker|boter|peper zout)$/;
+    function timerName(text, from, at, ings) {
+        const before = text.slice(0, at),
+            after = text.slice(at);
+        const clause = Math.max(from, before.search(/[^.!?;:,]*$/));
+        const sentence = Math.max(from, before.search(/[^.!?;]*$/));
+        const ce = after.search(/[.!?;:,]/),
+            se = after.search(/[.!?;]/);
+        const clauseEnd = ce < 0 ? text.length : at + ce,
+            end = se < 0 ? text.length : at + se;
+        const found = (piece) => {
+            const p = norm(piece);
+            const pos = (n) => {
+                const i = words(n)
+                    .map((w) => p.indexOf(w.slice(0, 4)))
+                    .filter((i) => i >= 0);
+                return i.length ? Math.min(...i) : 999;
+            };
+            return [...new Set(stepIngredients(piece, ings, 1).map((s) => shortIng(s.name)).filter(Boolean))]
+                .filter((n) => !TIMER_FILLER.test(norm(n)))
+                .sort((a, b) => pos(a) - pos(b));
+        };
+        let names = found(text.slice(clause, clauseEnd));
+        if (!names.length) {
+            // Geen ingrediënt in het zinsdeel? Dan het onderwerp: "bak de balletjes 4 min" → Balletjes.
+            const m = /\b(?:de|het)\s+([a-zà-ÿ]{4,})/i.exec(text.slice(clause, clauseEnd));
+            if (m && !TIMER_FILLER.test(norm(m[1])) && !/^(pan|pot|kook|oven|vuur|deksel|rest|helft|kookpot|wok|airfryer|plaat|bakplaat|schaal|ovenschaal|hitte|verpakking)$/i.test(m[1]))
+                return capFirst(m[1].toLowerCase());
+        }
+        if (!names.length) names = found(text.slice(sentence, end));
+        if (!names.length) names = found(text.slice(from, end));
+        if (!names.length) names = found(text);
+        if (names.length) return capFirst(names.slice(0, 2).join(" & "));
+        if (/\boven\b/i.test(text.slice(sentence, end))) return "Oven";
+        return "";
+    }
+    function shortIng(name) {
+        const base = String(name)
+            .replace(/\(.*?\)/g, " ")
+            .split(/[,;]|\s(?:of|voor|om)\s/)[0];
+        const toks = base
+            .split(/\s+/)
+            .filter((w) => w && !ING_STOP.has(norm(w)) && !/^(en|met|van|in|à)$/i.test(w));
+        return toks.slice(0, 3).join(" ").trim();
+    }
+    function capFirst(s) {
+        return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+    }
+    function timerTitle(t) {
+        return t.name || `Stap ${t.step + 1}`;
     }
 
     // Welke ingrediënten komen in deze stap voor? Bewust voorzichtig: een woord uit de stap moet
@@ -1680,7 +1748,7 @@
         }
         timers.splice(0, timers.length);
         stopAlarm();
-        releaseAwake();
+        if (!detail) releaseAwake(); // receptfiche staat nog open: scherm blijft aan
         cook = null;
         $("#cook").hidden = true;
         $("#cook").innerHTML = "";
@@ -1706,7 +1774,7 @@
         const n = steps.length;
         const i = Math.min(cook.i, n - 1);
         const text = steps[i] || "";
-        const times = stepTimes(text);
+        const times = stepTimes(text, cook.r.ingredients || []);
         const ingNow = stepIngredients(text, cook.r.ingredients || [], cook.f);
         const hasTmx = (cook.r.thermomix || []).length > 0;
         $("#cook").innerHTML = `
@@ -1717,7 +1785,8 @@
       <button class="btn sm" data-c="ing" aria-expanded="${cook.showIng}">Ingrediënten</button>
     </div>
     <div class="cook-progress" aria-hidden="true"><span style="width:${((i + 1) / n) * 100}%"></span></div>
-    <div id="cookTimers" class="cook-timers">${((timerShape = timers.map((t) => `${t.id}${t.done ? "d" : ""}${t.pausedLeft != null ? "p" : ""}`).join()), timersHtml())}</div>
+    <div id="cookAlarm">${alarmHtml()}</div>
+    <div id="cookTimers" class="cook-timers">${((timerShape = shapeOf()), timersHtml())}</div>
   </div>
   ${
       cook.confirmClose
@@ -1745,7 +1814,7 @@
             ? `<div class="row cook-tbtns">${times
                   .map(
                       (t) =>
-                          `<button class="btn primary" data-c="timer" data-min="${t.min}">⏱ Timer ${t.min} min${t.label.includes("–") ? ` <span class="small">(${t.label})</span>` : ""}</button>`,
+                          `<button class="btn primary" data-c="timer" data-min="${t.min}" data-name="${esc(t.name)}">⏱ ${t.name ? `${esc(t.name)} · ` : "Timer "}${t.min} min${t.label.includes("–") ? ` <span class="small">(${t.label})</span>` : ""}</button>`,
                   )
                   .join("")}</div>`
             : ""
@@ -1765,13 +1834,29 @@
   </div>`;
     }
 
+    function shapeOf() {
+        return timers
+            .map((t) => `${t.id}${t.done ? "d" : ""}${t.pausedLeft != null ? "p" : ""}${t.editing ? "e" : ":" + t.name}`)
+            .join();
+    }
+    // Grote melding bovenaan zodra een timer afloopt, met de naam erbij.
+    function alarmHtml() {
+        const done = timers.filter((t) => t.done);
+        if (!done.length) return "";
+        const names = done.map((t) => `<b>${esc(timerTitle(t))}</b>`);
+        const list = names.length > 1 ? names.slice(0, -1).join(", ") + " en " + names[names.length - 1] : names[0];
+        return `<div class="cook-alarm" role="alert"><span class="cook-alarm-ico" aria-hidden="true">⏰</span><span class="cook-alarm-txt">${list}: tijd is om!</span><button class="btn sm primary" data-c="tokall">OK</button></div>`;
+    }
     function timersHtml() {
         if (!timers.length) return "";
         return timers
             .map((t) => {
                 const left = timerLeft(t);
+                const label = t.editing
+                    ? `<input class="cook-tname" data-id="${t.id}" value="${esc(t.name)}" placeholder="Naam, bv. pasta" maxlength="30" enterkeyhint="done" aria-label="Naam van de timer" />`
+                    : `<button class="cook-tlabel" data-c="goto" data-step="${t.step}" title="Naar deze stap"><span class="cook-tname-txt">${esc(timerTitle(t))}</span><span class="cook-tmeta">${t.name ? `Stap ${t.step + 1} · ` : ""}${t.total} min</span></button><button class="btn sm ghost cook-tedit" data-c="tname" data-id="${t.id}" aria-label="Naam van de timer wijzigen" title="Naam wijzigen">✎</button>`;
                 return `<div class="cook-timer ${t.done ? "done" : ""} ${t.pausedLeft != null ? "paused" : ""}">
-          <button class="cook-tlabel" data-c="goto" data-step="${t.step}" title="Naar deze stap">Stap ${t.step + 1} · ${t.total} min</button>
+          ${label}
           <span class="cook-tleft">${t.done ? "Tijd is om!" : fmtTime(left)}</span>
           ${
               t.done
@@ -1788,12 +1873,24 @@
     function refreshTimers() {
         const el = document.getElementById("cookTimers");
         if (!el) return;
-        const shape = timers
-            .map((t) => `${t.id}${t.done ? "d" : ""}${t.pausedLeft != null ? "p" : ""}`)
-            .join();
+        const al = document.getElementById("cookAlarm");
+        if (al) al.innerHTML = alarmHtml();
+        // Wordt er net een naam getypt? Bewaar die eerst, zodat opnieuw tekenen niets kwijtspeelt.
+        const inp = el.querySelector(".cook-tname");
+        const focused = inp && document.activeElement === inp;
+        if (inp) {
+            const tm = timers.find((x) => x.id === +inp.dataset.id);
+            if (tm) tm.name = inp.value.trim();
+        }
+        const shape = shapeOf();
         if (shape !== timerShape || el.children.length !== timers.length) {
             timerShape = shape;
             el.innerHTML = timersHtml();
+            const again = focused && el.querySelector(".cook-tname");
+            if (again) {
+                again.focus();
+                again.setSelectionRange(again.value.length, again.value.length);
+            }
             return;
         }
         timers.forEach((t, i) => {
@@ -1802,11 +1899,12 @@
         });
     }
 
-    function startTimer(min) {
+    function startTimer(min, name) {
         unlockAudio();
         const step = cook.i;
         timers.push({
             id: ++timerSeq,
+            name: name || "",
             step,
             total: min,
             end: Date.now() + min * 60000,
@@ -1815,7 +1913,7 @@
         });
         ensureTick();
         refreshTimers();
-        toast(`Timer van ${min} min gestart`);
+        toast(name ? `Timer “${name}” (${min} min) gestart` : `Timer van ${min} min gestart`);
     }
     function ensureTick() {
         if (timerTick) return;
@@ -1879,22 +1977,28 @@
     }
 
     // Scherm aan houden tijdens het koken (Wake Lock). Niet elk toestel ondersteunt dit; dan gebeurt er gewoon niets.
+    let wakeWanted = false;
     async function keepAwake() {
+        wakeWanted = true;
         try {
             if ("wakeLock" in navigator && !wakeLock) {
-                wakeLock = await navigator.wakeLock.request("screen");
-                wakeLock.addEventListener("release", () => (wakeLock = null));
+                wakeLock = "pending";
+                const l = await navigator.wakeLock.request("screen");
+                if (!wakeWanted) return l.release().catch(() => {}), (wakeLock = null);
+                wakeLock = l;
+                l.addEventListener("release", () => wakeLock === l && (wakeLock = null));
             }
         } catch (e) {
             wakeLock = null;
         }
     }
     function releaseAwake() {
-        if (wakeLock) wakeLock.release().catch(() => {});
-        wakeLock = null;
+        wakeWanted = false;
+        if (wakeLock && wakeLock !== "pending") wakeLock.release().catch(() => {});
+        if (wakeLock !== "pending") wakeLock = null;
     }
     document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState !== "visible" || !cook) return;
+        if (document.visibilityState !== "visible" || (!cook && !detail)) return;
         keepAwake(); // het systeem geeft de vergrendeling vrij als de app op de achtergrond gaat
         if (timers.length) {
             unlockAudio();
@@ -1931,7 +2035,22 @@
         if (a === "goto") {
             cook.i = +t.dataset.step;
         }
-        if (a === "timer") return startTimer(+t.dataset.min);
+        if (a === "timer") return startTimer(+t.dataset.min, t.dataset.name || "");
+        if (a === "tname" && tm) {
+            timers.forEach((x) => (x.editing = x === tm));
+            refreshTimers();
+            const inp = document.querySelector("#cookTimers .cook-tname");
+            if (inp) {
+                inp.focus();
+                inp.select();
+            }
+            return;
+        }
+        if (a === "tokall") {
+            for (let j = timers.length - 1; j >= 0; j--) if (timers[j].done) timers.splice(j, 1);
+            stopAlarm();
+            return refreshTimers();
+        }
         if (a === "tpause" && tm) {
             if (tm.pausedLeft != null) {
                 tm.end = Date.now() + tm.pausedLeft;
@@ -1947,8 +2066,25 @@
         }
         renderCook();
     });
+    // Naam van een timer bewaren bij Enter of als je ernaast tikt.
+    $("#cook").addEventListener("focusout", (e) => {
+        if (!e.target.classList || !e.target.classList.contains("cook-tname")) return;
+        const tm = timers.find((x) => x.id === +e.target.dataset.id);
+        if (!tm || !tm.editing) return;
+        tm.name = e.target.value.trim();
+        tm.editing = false;
+        setTimeout(refreshTimers, 0);
+    });
     document.addEventListener("keydown", (e) => {
         if (!cook) return;
+        if (e.target.classList && e.target.classList.contains("cook-tname")) {
+            if (e.key === "Enter" || e.key === "Escape") {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.target.blur();
+            }
+            return;
+        }
         if (e.key === "ArrowRight") cookGo(1);
         if (e.key === "ArrowLeft") cookGo(-1);
         if (e.key === "Escape") {
@@ -2020,7 +2156,7 @@ Is het een link, open dan de pagina en gebruik dat recept. Is er een foto of PDF
 Neem het recept GETROUW over en schrijf in standaard Nederlands.
 Vervang of schrap GEEN hoofdingrediënten en verander het karakter van het gerecht niet: vlees en vis, de kaas of het hoofdbestanddeel van het gerecht, en de basis zoals pasta, rijst of aardappel blijven wat in de bron staat. Dat geldt ook als iets in ons smaakprofiel onder "liever niet" staat.
 Kleine aanpassingen mogen wel: koemelkzuivel vervangen door een plantaardig alternatief (meld dat in cowmilk_note), stappen duidelijker en vollediger maken, en hoeveelheden omrekenen.
-Zou je volgens ons smaakprofiel iets groters vervangen of weglaten, voer het dan NIET uit maar zet het als voorstel in het veld suggestions. Wij beslissen zelf.
+Zou je volgens ons smaakprofiel iets groters vervangen of weglaten, voer het dan NIET uit maar zet het als voorstel in het veld suggestions. Wij beslissen zelf. Stel niet voor om vlees of vis door kip te vervangen alleen omdat kip bij onze favorieten staat: we hebben al veel kip en willen afwisseling.
 Hoeveelheden voor ${servingsFor(type)}. Maak het koemelkvrij waar dat zonder kwaliteitsverlies kan en zeg dat in cowmilk_note. Thermomix: alleen een volledige TM6-versie als de bron een Thermomix-recept is (neem die dan getrouw over) of als de Thermomix echt het meeste werk doet; anders laat je thermomix leeg. Er is ook een Thermomix Friend (37–120°C, alleen linksom, snelheid 1–2, kan stomen met de Varoma, kan niet hakken of mixen); gebruik die voor een tweede onderdeel dat tegelijk moet garen, en zet "Friend:" voor die stap. Bij een traybake: heel concreet (snijgrootte, volgorde, temperatuur, wanneer wat erbij).
 ${wish ? "Extra wens van ons (die mag je wel uitvoeren, ook als het een hoofdingrediënt is): " + wish + "\n" : ""}
 Ons smaakprofiel (alleen om voorstellen te doen, niet om het recept zelf te veranderen):
@@ -2045,7 +2181,7 @@ ${JSON.stringify(base)}`;
     }
     function ideasPrompt(type, n, wish) {
         return `Bedenk ${n} nieuwe, originele recepten (${LIBS[type].toLowerCase()}) voor onze gezinsreceptenwebsite. Schrijf in standaard Nederlands.
-Hoeveelheden voor ${servingsFor(type)}. Normale supermarktingrediënten, veel groenten, duidelijke stappen. Koemelkvrij waar het zonder kwaliteitsverlies kan. Thermomix: alleen een volledige TM6-versie waar de Thermomix echt het meeste werk doet (soep, risotto, curry, stoofpot, saus); anders thermomix leeg laten.
+Hoeveelheden voor ${servingsFor(type)}. Normale supermarktingrediënten, veel groenten, duidelijke stappen. Wissel af in eiwit: hooguit ongeveer een derde met kip, de rest met bv. gehakt of rundvlees, zalm, scampi of andere vis, of vegetarisch. Koemelkvrij waar het zonder kwaliteitsverlies kan. Thermomix: alleen een volledige TM6-versie waar de Thermomix echt het meeste werk doet (soep, risotto, curry, stoofpot, saus); anders thermomix leeg laten.
 ${wish ? "Waar we nu zin in hebben: " + wish + "\n" : ""}
 Ons smaakprofiel:
 ${profileText()}
