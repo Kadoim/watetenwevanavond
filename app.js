@@ -1854,7 +1854,7 @@
                 const left = timerLeft(t);
                 const label = t.editing
                     ? `<input class="cook-tname" data-id="${t.id}" value="${esc(t.name)}" placeholder="Naam, bv. pasta" maxlength="30" enterkeyhint="done" aria-label="Naam van de timer" />`
-                    : `<button class="cook-tlabel" data-c="goto" data-step="${t.step}" title="Naar deze stap"><span class="cook-tname-txt">${esc(timerTitle(t))}</span><span class="cook-tmeta">${t.name ? `Stap ${t.step + 1} · ` : ""}${t.total} min</span></button><button class="btn sm ghost cook-tedit" data-c="tname" data-id="${t.id}" aria-label="Naam van de timer wijzigen" title="Naam wijzigen">✎</button>`;
+                    : `<button class="cook-tlabel" data-c="goto" data-step="${t.step}" title="Naar deze stap"><span class="cook-tname-txt">${esc(timerTitle(t))}</span> <span class="cook-tmeta">${t.total} min</span></button><button class="btn sm ghost cook-tedit" data-c="tname" data-id="${t.id}" aria-label="Naam van de timer wijzigen" title="Naam wijzigen">✎</button>`;
                 return `<div class="cook-timer ${t.done ? "done" : ""} ${t.pausedLeft != null ? "paused" : ""}">
           ${label}
           <span class="cook-tleft">${t.done ? "Tijd is om!" : fmtTime(left)}</span>
